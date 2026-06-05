@@ -1,0 +1,6 @@
+{
+  "name": "Julia Nowak Nieruchomości Kraków",
+  "description": "Ekskluzywna, autorska strona internetowa Julii Nowak, agentki nieruchomości w Nest Brokers w Krakowie.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,2329 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Julia Nowak Nieruchomości Kraków | Nest Brokers</title>
+  <meta name="description" content="Sprzedaj i wynajmij nieruchomość w Krakowie z Julią Nowak — Debiut Roku 2024, TOP 3 Nest Brokers 2026. Darmowa konsultacja. Tel. 733 980 521">
+  <link rel="icon" href="https://i.ibb.co/0Rk20XYm/683768871-122174050130834212-9119480497001999177-n.jpg">
+
+  <!-- Google Fonts Connection -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-bg: #FAF8F5;
+      --secondary-bg: #F2EDE6;
+      --border-color: #C9B99A;
+      --dark-brown: #2C1F0E;
+      --gold: #B8924A;
+      --gold-hover: #9A7535;
+      --text-gray: #5C4F42;
+      --white: #FFFFFF;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--primary-bg);
+      color: var(--text-gray);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Common Section Styles */
+    section {
+      padding: 6rem 10% 6rem 10%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media (max-width: 1024px) {
+      section {
+        padding: 5rem 6% 5rem 6%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 4rem 5% 4rem 5%;
+      }
+    }
+
+    /* Typography Utilities */
+    .font-serif {
+      font-family: var(--font-serif);
+    }
+    .font-sans {
+      font-family: var(--font-sans);
+    }
+
+    .label-caps {
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    /* Partial horizontal gold rules */
+    .partial-divider {
+      width: 60%;
+      height: 1px;
+      background-color: var(--gold);
+      margin: 1rem 0 2.5rem 0;
+      border: none;
+    }
+
+    /* Custom Transitions & Hover States */
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .editorial-link {
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    .editorial-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--gold);
+      transition: width 0.30s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .editorial-link:hover::after {
+      width: 100%;
+    }
+
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--gold);
+      color: var(--white);
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, background-color 0.3s ease;
+    }
+
+    .btn-gold:hover {
+      background-color: var(--gold-hover);
+      transform: scale(1.02);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-ghost:hover {
+      background-color: var(--gold);
+      color: var(--white);
+      transform: scale(1.02);
+    }
+
+    /* SCROLL ANIMATIONS (Intersection Observer classes) */
+    .fade-up-init {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .fade-up-active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* STICKY TOP NAVIGATION */
+    nav.top-navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 10%;
+      background-color: rgba(250, 248, 245, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: padding 0.3s ease, border-bottom 0.3s ease;
+      border-bottom: 1px solid rgba(184, 146, 74, 0.05);
+    }
+
+    nav.top-navbar.scrolled {
+      padding: 1rem 10%;
+      border-bottom: 1px solid rgba(184, 146, 74, 0.2);
+    }
+
+    @media (max-width: 1024px) {
+      nav.top-navbar {
+        padding: 1.5rem 6%;
+      }
+      nav.top-navbar.scrolled {
+        padding: 1rem 6%;
+      }
+    }
+
+    nav.top-navbar .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    nav.top-navbar .logo-jn {
+      font-family: var(--font-serif);
+      font-size: 2.22rem;
+      font-style: italic;
+      font-weight: 600;
+      color: var(--dark-brown);
+      line-height: 1;
+    }
+
+    nav.top-navbar .logo-text {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-gray);
+      border-left: 1px solid var(--border-color);
+      padding-left: 0.75rem;
+      line-height: 1.3;
+    }
+
+    nav.top-navbar .nav-links {
+      display: flex;
+      gap: 3rem;
+    }
+
+    nav.top-navbar .nav-links a {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 400;
+      color: var(--dark-brown);
+    }
+
+    nav.top-navbar .right-action {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    nav.top-navbar .phone-pill {
+      background-color: transparent;
+      border: 1px solid var(--gold);
+      border-radius: 9999px;
+      padding: 0.5rem 1.25rem;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      transition: all 0.3s ease;
+    }
+
+    nav.top-navbar .phone-pill:hover {
+      background-color: var(--gold);
+      color: var(--white);
+    }
+
+    nav.top-navbar .nav-social-icon {
+      color: var(--dark-brown);
+      display: flex;
+      align-items: center;
+      transition: color 0.3s ease;
+    }
+
+    nav.top-navbar .nav-social-icon:hover {
+      color: var(--gold);
+    }
+
+    /* Elegant Language Switcher styling */
+    .lang-switch-container {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+
+    .lang-toggle-btn {
+      background: none;
+      border: none;
+      padding: 1px 3px;
+      color: rgba(92, 79, 66, 0.45);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      border-bottom: 1.5px solid transparent;
+    }
+
+    .lang-toggle-btn:hover {
+      color: var(--gold);
+    }
+
+    .lang-toggle-btn.active {
+      color: var(--gold);
+      border-bottom: 1.5px solid var(--gold);
+    }
+
+    /* Mobile Lang Swticher inside menu overlay */
+    .mobile-lang-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      letter-spacing: 0.12em;
+    }
+
+    .mobile-lang-btn {
+      background: none;
+      border: none;
+      padding: 2px 6px;
+      color: rgba(250, 248, 245, 0.5);
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border-bottom: 1.5px solid transparent;
+    }
+
+    .mobile-lang-btn.active {
+      color: var(--gold);
+      border-bottom: 1.5px solid var(--gold);
+    }
+
+    /* Hamburger icon for mobile */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      width: 24px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: var(--dark-brown);
+      transition: 0.3s ease;
+    }
+
+    /* Mobile hamburger active animations */
+    .menu-toggle.active span:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    /* Mobile Full-Screen Overlay Nav */
+    .mobile-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--dark-brown);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+
+    .mobile-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-overlay a {
+      color: var(--primary-bg);
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      font-style: italic;
+      transition: color 0.3s ease;
+    }
+
+    .mobile-overlay a:hover {
+      color: var(--gold);
+    }
+
+    .mobile-overlay .mobile-actions {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .mobile-overlay .mobile-pill {
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      border-radius: 9999px;
+      padding: 0.75rem 2rem;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 991px) {
+      nav.top-navbar .nav-links {
+        display: none;
+      }
+      nav.top-navbar .right-action {
+        display: none;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+
+    /* 1. HERO SECTION */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background-color: var(--primary-bg);
+      /* Dot pattern background */
+      background-image: radial-gradient(var(--border-color) 1.5px, transparent 1.5px);
+      background-size: 24px 24px;
+      background-repeat: repeat;
+      background-attachment: scroll;
+      /* Soft opacity for dots blending */
+      position: relative;
+      padding-top: 8rem;
+    }
+
+    .hero-container {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 55fr 45fr;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      z-index: 2;
+    }
+
+    .awards-badge {
+      display: inline-flex;
+      align-items: center;
+      background-color: var(--secondary-bg);
+      border: 1px solid var(--gold);
+      color: var(--dark-brown);
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: 12px;
+      padding: 0.5rem 1.25rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 2rem;
+      border-radius: 9999px;
+    }
+
+    .hero-headline {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 5vw, 4.8rem);
+      font-weight: 600;
+      font-style: italic;
+      color: var(--dark-brown);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-subheadline {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+      color: var(--text-gray);
+      margin-bottom: 3rem;
+      max-width: 520px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-location-marker {
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* Overlay CSS shapes for right side of Hero (no images) */
+    .hero-right {
+      position: relative;
+      width: 100%;
+      height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .shape-container {
+      position: relative;
+      width: 380px;
+      height: 440px;
+    }
+
+    .shape-solid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 320px;
+      height: 380px;
+      background-color: var(--secondary-bg);
+      box-shadow: 0 12px 40px rgba(44, 31, 14, 0.05);
+      z-index: 1;
+    }
+
+    .shape-border {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 320px;
+      height: 380px;
+      border: 1px solid var(--gold);
+      z-index: 2;
+      transition: transform 0.5s ease;
+    }
+
+    .hero-right:hover .shape-border {
+      transform: translate(-15px, -15px);
+    }
+
+    /* Scroll Down Indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 10%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .scroll-indicator .line {
+      width: 1px;
+      height: 60px;
+      background-color: var(--border-color);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .scroll-indicator .line::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 25px;
+      background-color: var(--gold);
+      animation: pulseLine 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+    }
+
+    @keyframes pulseLine {
+      0% {
+        transform: translateY(-25px);
+      }
+      100% {
+        transform: translateY(60px);
+      }
+    }
+
+    @media (max-width: 991px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: left;
+      }
+      .hero-right {
+        order: -1;
+        height: 380px;
+      }
+      .shape-container {
+        width: 290px;
+        height: 340px;
+      }
+      .shape-solid {
+        width: 240px;
+        height: 290px;
+      }
+      .shape-border {
+        width: 240px;
+        height: 290px;
+      }
+      .hero-section {
+        padding-top: 6rem;
+        min-height: auto;
+      }
+      .scroll-indicator {
+        display: none;
+      }
+    }
+
+
+    /* 2. TRUST BAR */
+    .trust-bar {
+      background-color: var(--dark-brown);
+      padding: 2rem 5%;
+      overflow: hidden;
+    }
+
+    .trust-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .trust-item {
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 400;
+      font-family: var(--font-sans);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-align: center;
+      flex: 1;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .trust-divider {
+      width: 1px;
+      height: 20px;
+      background-color: rgba(184, 146, 74, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .trust-container {
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+      .trust-divider {
+        display: none;
+      }
+      .trust-item {
+        border-bottom: 1px solid rgba(184, 146, 74, 0.15);
+        padding-bottom: 0.5rem;
+        width: 100%;
+      }
+      .trust-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+    }
+
+
+    /* 3. ABOUT / O MNIE */
+    .about-section {
+      background-color: var(--primary-bg);
+    }
+
+    .about-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 55fr 45fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .about-headline {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      font-style: italic;
+      color: var(--dark-brown);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 2rem;
+    }
+
+    .about-paragraph {
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-gray);
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+
+    .about-paragraph:last-of-type {
+      margin-bottom: 2.5rem;
+    }
+
+    .about-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .stat-card {
+      padding: 2.22rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(44, 31, 14, 0.03);
+    }
+
+    /* Stat Card 1: dark brown bg, gold text */
+    .stat-card-dark {
+      background-color: var(--dark-brown);
+      color: var(--gold);
+    }
+
+    .stat-card-dark .card-label {
+      color: var(--white);
+    }
+
+    /* Stat Card 2: gold bg, dark brown text */
+    .stat-card-gold {
+      background-color: var(--gold);
+      color: var(--dark-brown);
+    }
+
+    .stat-card-gold .card-label {
+      color: var(--white);
+      opacity: 0.9;
+    }
+
+    /* Stat Card 3: beige bg, dark brown text */
+    .stat-card-beige {
+      background-color: var(--secondary-bg);
+      color: var(--dark-brown);
+    }
+
+    .stat-card-beige .card-label {
+      color: var(--text-gray);
+    }
+
+    .stat-number-watermark {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: 5rem;
+      line-height: 1;
+      opacity: 0.25;
+      margin-bottom: 0.25rem;
+    }
+
+    /* Overlay actual small info text cleanly */
+    .card-label {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 991px) {
+      .about-container {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+    }
+
+
+    /* 4. SERVICES / CO OFERUJĘ */
+    .services-section {
+      background-color: var(--dark-brown);
+      color: var(--white);
+    }
+
+    .services-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .services-top {
+      margin-bottom: 4rem;
+    }
+
+    .services-headline {
+      font-family: var(--font-serif);
+      font-size: clamp(2.22rem, 4vw, 3.2rem);
+      font-weight: 300;
+      font-style: italic;
+      color: #FAF8F5; /* Cream */
+      line-height: 1.2;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .service-column {
+      border-top: 1px solid var(--gold);
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .service-icon {
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      line-height: 1;
+    }
+
+    .service-title {
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: 1.22rem;
+      color: var(--white);
+      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+    }
+
+    .service-body {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #EDE8E2; /* Muted creamy white */
+    }
+
+    .services-bottom {
+      border-top: 1px solid rgba(201, 185, 154, 0.2);
+      padding-top: 2rem;
+      text-align: center;
+    }
+
+    .services-bottom-text {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--gold);
+      letter-spacing: 0.02em;
+    }
+
+    @media (max-width: 991px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+
+    /* 5. LISTINGS / OFERTY */
+    .listings-section {
+      background-color: var(--primary-bg);
+    }
+
+    .listings-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .listings-top {
+      margin-bottom: 3.5rem;
+    }
+
+    .listings-headline {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-style: italic;
+      color: var(--dark-brown);
+      font-weight: 400;
+    }
+
+    .listings-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+    }
+
+    /* Property Card Common */
+    .property-card {
+      background-color: var(--white);
+      box-shadow: 0 8px 40px rgba(44, 31, 14, 0.08);
+      overflow: hidden;
+      border: none;
+      transition: transform 0.3s ease;
+    }
+
+    /* Listing 1 (Full Width) */
+    .listing-full {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Snapshot Slider (JS Carousel via Click only) */
+    .gallery-container {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-slider {
+      display: flex;
+      overflow-x: hidden; /* Disable swipe scroll to enforce click interaction */
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      transition: all 0.5s ease;
+    }
+
+    .gallery-item {
+      flex: 0 0 100%;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      position: relative;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Slick editorial navigation arrows */
+    .gallery-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(44, 31, 14, 0.75);
+      color: var(--white);
+      border: 1px solid rgba(201, 185, 154, 0.3);
+      width: 46px;
+      height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 20;
+      transition: all 0.3s ease;
+      font-size: 20px;
+      font-weight: 300;
+      border-radius: 50%;
+    }
+
+    .gallery-nav:hover {
+      background-color: var(--gold);
+      border-color: var(--gold);
+      color: var(--white);
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    .gallery-nav.prev {
+      left: 1.5rem;
+    }
+
+    .gallery-nav.next {
+      right: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-nav {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+      }
+      .gallery-nav.prev {
+        left: 0.75rem;
+      }
+      .gallery-nav.next {
+        right: 0.75rem;
+      }
+    }
+
+    /* Visual indicators for sliding on desktop (simple helper labels) */
+    .gallery-hint {
+      position: absolute;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      background-color: rgba(44, 31, 14, 0.75);
+      color: var(--white);
+      font-size: 11px;
+      font-family: var(--font-sans);
+      letter-spacing: 0.1em;
+      padding: 0.4rem 0.8rem;
+      text-transform: uppercase;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .listing-details-2col {
+      display: grid;
+      grid-template-columns: 48fr 52fr;
+      padding: 3rem;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 991px) {
+      .listing-details-2col {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+        gap: 2rem;
+      }
+    }
+
+    .listing-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .pill-badge {
+      display: inline-flex;
+      background-color: var(--secondary-bg);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      padding: 0.4rem 1rem;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .listing-title {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--dark-brown);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .listing-address {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      color: var(--text-gray);
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+    }
+
+    .listing-price-container {
+      margin-bottom: 2.5rem;
+    }
+
+    .listing-price {
+      font-family: var(--font-serif);
+      font-weight: 600;
+      font-style: italic;
+      font-size: 2.6rem;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .listing-price-sub {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      color: var(--text-gray);
+      margin-top: 0.25rem;
+    }
+
+    .listing-right {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 576px) {
+      .checklist-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 13px;
+      color: var(--text-gray);
+    }
+
+    .check-icon {
+      color: var(--gold);
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .listing-tagline {
+      font-family: var(--font-sans);
+      font-style: italic;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-gray);
+      border-left: 2px solid var(--gold);
+      padding-left: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Listing 2 (Half Width in Design Layout) */
+    .listing-half {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+    }
+
+    /* Embed Layout */
+    .video-embed-container {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--secondary-bg);
+      padding: 1.5rem 0;
+    }
+
+    .video-aspect-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 267px;
+      height: 476px;
+      box-shadow: 0 10px 30px rgba(44,31,14,0.12);
+    }
+
+    .listing-half-details {
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 768px) {
+      .listing-half {
+        grid-template-columns: 1fr;
+      }
+      .listing-half-details {
+        padding: 2rem;
+      }
+    }
+
+
+    /* 6. TESTIMONIAL / OPINIE */
+    .testimonials-section {
+      background-color: var(--dark-brown);
+      color: var(--white);
+      padding: 7rem 10%;
+    }
+
+    .testimonials-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .giant-quote {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 10rem;
+      line-height: 0.3;
+      color: var(--gold);
+      opacity: 0.3;
+      margin-bottom: 2rem;
+      line-height: 1;
+      user-select: none;
+    }
+
+    .quote-text {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(1.42rem, 3vw, 1.88rem);
+      line-height: 1.6;
+      color: #FAF8F5; /* Cream */
+      margin-bottom: 2.5rem;
+      max-width: 800px;
+    }
+
+    .quote-attribution {
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 3.5rem;
+    }
+
+    .btn-outline-gold {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      color: var(--white);
+      border: 1px solid rgba(184, 146, 74, 0.4);
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.9rem 1.8rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-gold:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      background-color: rgba(250,248,245,0.05);
+      transform: translateY(-2px);
+    }
+
+
+    /* 7. CONTACT / KONTAKT */
+    .contact-section {
+      background-color: var(--primary-bg);
+    }
+
+    .contact-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .contact-header {
+      margin-bottom: 4rem;
+    }
+
+    .contact-headline {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      color: var(--dark-brown);
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .contact-sub {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      font-size: 15px;
+      color: var(--text-gray);
+      max-width: 600px;
+    }
+
+    .contact-grid {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    /* Left Card: Dark elegance */
+    .contact-details-card {
+      background-color: var(--dark-brown);
+      color: var(--white);
+      border-radius: 12px;
+      padding: 3.5rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 12px 40px rgba(44, 31, 14, 0.12);
+      max-width: 640px;
+      width: 100%;
+    }
+
+    .contact-agent-name {
+      font-family: var(--font-serif);
+      font-size: 2.22rem;
+      font-style: italic;
+      color: #FAF8F5;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-agency-title {
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-thin-line {
+      width: 100%;
+      height: 1px;
+      background-color: rgba(184, 146, 74, 0.2);
+      margin: 1.5rem 0;
+    }
+
+    .contact-link-tel {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 2.22rem;
+      color: var(--gold);
+      line-height: 1.2;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .contact-link-tel:hover {
+      color: var(--white);
+    }
+
+    .contact-link-email {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      color: #EDE8E2;
+      transition: color 0.3s ease;
+    }
+
+    .contact-link-email:hover {
+      color: var(--gold);
+    }
+
+    .contact-areas {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: rgba(237, 232, 226, 0.75);
+      margin-top: 1rem;
+      letter-spacing: 0.05em;
+      line-height: 1.5;
+    }
+
+    .contact-social-row {
+      display: flex;
+      gap: 1.25rem;
+      margin-top: 1rem;
+      justify-content: center;
+    }
+
+    .contact-social-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(184, 146, 74, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FAF8F5;
+      transition: all 0.3s ease;
+    }
+
+    .contact-social-btn:hover {
+      border-color: var(--gold);
+      background-color: var(--gold);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .contact-social-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .consultation-badge-row {
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 991px) {
+      .contact-grid {
+        padding: 0 1rem;
+      }
+      .contact-details-card {
+        padding: 2.5rem 1.75rem;
+      }
+    }
+
+
+    /* 8. FOOTER */
+    .footer-section {
+      background-color: var(--dark-brown);
+      color: var(--white);
+      padding: 5rem 10% 3rem 10%;
+      border-top: 1px solid rgba(184, 146, 74, 0.1);
+    }
+
+    @media (max-width: 1024px) {
+      .footer-section {
+        padding: 4rem 6% 2.5rem 6%;
+      }
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 4fr 4fr 4fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+      max-width: 1400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .footer-col-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .footer-monogram {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      font-style: italic;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .footer-agent-title {
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-location {
+      font-size: 11px;
+      color: rgba(237, 232, 226, 0.65);
+      letter-spacing: 0.05em;
+    }
+
+    .footer-col-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 768px) {
+      .footer-col-center {
+        align-items: flex-start;
+      }
+    }
+
+    .footer-links-title {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .footer-links {
+        align-items: flex-start;
+      }
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: rgba(250, 248, 245, 0.7);
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .footer-col-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    @media (max-width: 768px) {
+      .footer-col-right {
+        align-items: flex-start;
+      }
+    }
+
+    .footer-affiliation {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid rgba(201, 185, 154, 0.2);
+      padding: 0.5rem 1rem;
+      font-size: 12px;
+      color: rgba(250, 248, 245, 0.82);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-social-row {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .footer-social-icon {
+      color: rgba(250, 248, 245, 0.75);
+      transition: color 0.3s ease;
+    }
+
+    .footer-social-icon:hover {
+      color: var(--gold);
+    }
+
+    .footer-social-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .footer-bottom-divider {
+      width: 100%;
+      height: 1px;
+      background-color: rgba(184, 146, 74, 0.15);
+      margin-bottom: 2rem;
+      max-width: 1400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .footer-bottom-row {
+      max-width: 1400px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: rgba(250, 248, 245, 0.5);
+      letter-spacing: 0.05em;
+    }
+
+    .footer-bottom-right {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-bottom-right a {
+      transition: color 0.3s ease;
+    }
+
+    .footer-bottom-right a:hover {
+      color: var(--gold);
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .footer-bottom-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- STICKY TOP NAVIGATION -->
+  <nav class="top-navbar" id="navbar">
+    <div class="logo-container">
+      <span class="logo-jn">JN</span>
+      <div class="logo-text">
+        Julia Nowak<br>Nieruchomości · Kraków
+      </div>
+    </div>
+
+    <div class="nav-links">
+      <a href="#" class="editorial-link" data-translate-id="nav-about">O mnie</a>
+      <a href="#oferty" class="editorial-link" data-translate-id="nav-properties">Oferty</a>
+      <a href="#opinie" class="editorial-link" data-translate-id="nav-reviews">Opinie</a>
+      <a href="#kontakt" class="editorial-link" data-translate-id="nav-contact">Kontakt</a>
+    </div>
+
+    <div class="right-action">
+      <div class="lang-switch-container">
+        <button class="lang-toggle-btn active" data-lang="PL">PL</button>
+        <span style="color: rgba(92, 79, 66, 0.25);">|</span>
+        <button class="lang-toggle-btn" data-lang="EN">EN</button>
+      </div>
+      <a href="tel:733980521" class="phone-pill">733 980 521</a>
+      <a href="https://www.instagram.com/nowa_estate" target="_blank" rel="noopener" class="nav-social-icon" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+      </a>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Otwórz menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAVIGATION OVERLAY -->
+  <div class="mobile-overlay" id="mobileOverlay">
+    <a href="#" class="mobile-nav-link" data-translate-id="mob-about">O mnie</a>
+    <a href="#oferty" class="mobile-nav-link" data-translate-id="mob-properties">Oferty</a>
+    <a href="#opinie" class="mobile-nav-link" data-translate-id="mob-reviews">Opinie</a>
+    <a href="#kontakt" class="mobile-nav-link" data-translate-id="mob-contact">Kontakt</a>
+    <div class="mobile-actions">
+      <a href="tel:733980521" class="mobile-pill">733 980 521</a>
+      <div class="mobile-lang-container">
+        <button class="mobile-lang-btn active" data-lang="PL">PL</button>
+        <span style="color: rgba(250, 248, 245, 0.2);">|</span>
+        <button class="mobile-lang-btn" data-lang="EN">EN</button>
+      </div>
+      <div style="display: flex; gap: 1.5rem; margin-top: 1.5rem; justify-content: center;">
+        <a href="https://www.facebook.com/nowa.estate/" target="_blank" rel="noopener" style="color: var(--white);" aria-label="Facebook">
+          <svg style="width: 24px; height: 24px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/nowa_estate" target="_blank" rel="noopener" style="color: var(--white);" aria-label="Instagram">
+          <svg style="width: 24px; height: 24px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 1. HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="hero-left fade-up-init">
+        <h1 class="hero-headline text-dark-brown" data-translate-id="hero-title">Twoje wymarzone<br>mieszkanie<br>w Krakowie.</h1>
+        <p class="hero-subheadline" data-translate-id="hero-subtitle">Sprzedaż i wynajem nieruchomości — profesjonalna obsługa dla Polaków i obcokrajowców.</p>
+        <div class="hero-ctas">
+          <a href="#kontakt" class="btn-gold" data-translate-id="hero-btn-consultation">Darmowa konsultacja</a>
+          <a href="#oferty" class="btn-ghost" data-translate-id="hero-btn-properties">Zobacz oferty</a>
+        </div>
+        <div class="hero-location-marker" data-translate-id="hero-location">
+          Kraków · Wieliczka · Libertów
+        </div>
+      </div>
+
+      <div class="hero-right fade-up-init" style="transition-delay: 0.2s;">
+        <div class="shape-container">
+          <div class="shape-solid"></div>
+          <div class="shape-border"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Animated Down Scroll Pulse -->
+    <div class="scroll-indicator">
+      <div class="line"></div>
+    </div>
+  </section>
+
+
+  <!-- 2. TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-container">
+      <div class="trust-item" data-translate-id="trust-1">Debiut Roku 2024</div>
+      <div class="trust-divider"></div>
+      <div class="trust-item" data-translate-id="trust-2">TOP 3 Nest Brokers 2026</div>
+      <div class="trust-divider"></div>
+      <div class="trust-item" data-translate-id="trust-3">Kraków · Wieliczka · Libertów</div>
+    </div>
+  </div>
+
+
+  <!-- 3. ABOUT / O MNIE -->
+  <section class="about-section">
+    <div class="about-container">
+      <div class="about-left fade-up-init">
+        <span class="label-caps" data-translate-id="about-label">O mnie</span>
+        <hr class="partial-divider">
+        <h2 class="about-headline" data-translate-id="about-headline">Sprzedaję i wynajmuję — z zaangażowaniem i wynikami.</h2>
+        <p class="about-paragraph" data-translate-id="about-p1">Specjalizuję się w transakcjach na krakowskim rynku nieruchomości. Moja praca opiera się na pełnym wsparciu klientów od pierwszego kontaktu aż do przekazania kluczy. Zwracam szczególną uwagę na detale, przygotowanie nieruchomości (home staging) i skuteczne negocjacje.</p>
+        <p class="about-paragraph" data-translate-id="about-p2">Pracuję zarówno z klientami z Polski, jak i z zagranicy — swobodnie prowadzę cały proces w języku polskim oraz angielskim. Zamiast szablonowych schematów, wybieram szczere, ludzkie podejście. Spotkajmy się przy dobrej kawce, porozmawiajmy o Twoich planach i zobacz, jak bezpiecznie przejść przez cały proces transakcji.</p>
+        <a href="#kontakt" class="btn-gold" style="margin-top: 1rem;" data-translate-id="about-btn">Umów bezpłatną konsultację</a>
+      </div>
+
+      <div class="about-right fade-up-init" style="transition-delay: 0.2s;">
+        <!-- Card 1 -->
+        <div class="stat-card stat-card-dark rounded">
+          <span class="stat-number-watermark">2024</span>
+          <span class="card-label" data-translate-id="about-badge1">Debiut Roku</span>
+        </div>
+        <!-- Card 2 -->
+        <div class="stat-card stat-card-gold rounded">
+          <span class="stat-number-watermark">TOP 3</span>
+          <span class="card-label" data-translate-id="about-badge2">Nest Brokers 2026</span>
+        </div>
+        <!-- Card 3 -->
+        <div class="stat-card stat-card-beige rounded">
+          <span class="stat-number-watermark" style="font-size: 3.5rem;">PL + EN</span>
+          <span class="card-label" data-translate-id="about-badge3">Obsługa w języku polskim i angielskim</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 4. SERVICES / CO OFERUJĘ -->
+  <section class="services-section">
+    <div class="services-container">
+      <div class="services-top fade-up-init">
+        <span class="label-caps" data-translate-id="services-label">Zakres współpracy</span>
+        <h2 class="services-headline" data-translate-id="services-headline">Sprzedaj i wynajmij z zyskiem.</h2>
+      </div>
+
+      <div class="services-grid">
+        <!-- Col 1 -->
+        <div class="service-column fade-up-init">
+          <div class="service-icon">✦</div>
+          <h3 class="service-title" data-translate-id="service1-title">Sprzedaż</h3>
+          <p class="service-body" data-translate-id="service1-body">Kompleksowa usługa sprzedaży Twojej nieruchomości. Opracowuję solidną strategię wyceny, zajmuję się profesjonalnym przygotowaniem oferty, marketingiem premium oraz w pełni nadzoruję proces negocjacji i formalności.</p>
+        </div>
+        <!-- Col 2 -->
+        <div class="service-column fade-up-init" style="transition-delay: 0.1s;">
+          <div class="service-icon">✦</div>
+          <h3 class="service-title" data-translate-id="service2-title">Wynajem</h3>
+          <p class="service-body" data-translate-id="service2-body">Skutecznie łączę właścicieli z wiarygodnymi najemcami. Dbam o staranną weryfikację profilu lokatorów, przygotowuję bezpieczne, precyzyjne umowy chroniące Twoje interesy i uwalniam Cię od codziennego stresu.</p>
+        </div>
+        <!-- Col 3 -->
+        <div class="service-column fade-up-init" style="transition-delay: 0.2s;">
+          <div class="service-icon">✦</div>
+          <h3 class="service-title" data-translate-id="service3-title">Doradztwo</h3>
+          <p class="service-body" data-translate-id="service3-body">Indywidualne konsultacje dotyczące krakowskiego rynku mieszkaniowego. Pomagam ocenić potencjał inwestycyjny nieruchomości, analizuję trendy i służę merytorycznym wsparciem przed podjęciem kluczowych decyzji.</p>
+        </div>
+      </div>
+
+      <div class="services-bottom fade-up-init">
+        <p class="services-bottom-text">Pracuję z Polakami i obcokrajowcami / I work with Polish and foreign clients</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 5. LISTINGS / OFERTY -->
+  <section class="listings-section" id="oferty">
+    <div class="listings-container">
+      <div class="listings-top fade-up-init">
+        <span class="label-caps" data-translate-id="listings-label">Aktualne oferty</span>
+        <hr class="partial-divider">
+        <h2 class="listings-headline" data-translate-id="listings-headline">Wybrane nieruchomości</h2>
+      </div>
+
+      <div class="listings-grid">
+        <!-- LISTING 1: Azory full-width -->
+        <div class="property-card listing-full fade-up-init">
+          <div class="gallery-container">
+            <button class="gallery-nav prev" aria-label="Poprzednie zdjęcie">⟨</button>
+            <button class="gallery-nav next" aria-label="Następne zdjęcie">⟩</button>
+            <div class="gallery-slider">
+              <div class="gallery-item"><img src="https://i.ibb.co/MkF7s1z7/715019975-17953857297150874-1260901476368984526-n.jpg" alt="Mieszkanie Azory 1"></div>
+              <div class="gallery-item"><img src="https://i.ibb.co/SwCs6kKV/715910399-17953857249150874-4251038923446927734-n.jpg" alt="Mieszkanie Azory 2"></div>
+              <div class="gallery-item"><img src="https://i.ibb.co/7hQJdNZ/715255125-17953857258150874-5054624590445265260-n.jpg" alt="Mieszkanie Azory 3"></div>
+              <div class="gallery-item"><img src="https://i.ibb.co/3yNZYb1b/712924276-17953857267150874-4952646149137498052-n.jpg" alt="Mieszkanie Azory 4"></div>
+              <div class="gallery-item"><img src="https://i.ibb.co/jkmsTgvD/717140065-17953857276150874-4026495416970975205-n.jpg" alt="Mieszkanie Azory 5"></div>
+              <div class="gallery-item"><img src="https://i.ibb.co/Pv1YvwBj/715830209-17953857210150874-2650110431490837540-n.jpg" alt="Mieszkanie Azory 6"></div>
+              <div class="gallery-item"><img src="https://i.ibb.co/zdQC3nQ/711493870-17953857234150874-51298356451292870-n.jpg" alt="Mieszkanie Azory 7"></div>
+              <div class="gallery-item"><img src="https://i.ibb.co/gZZ1rcvz/710848173-17953857237150874-121544835253548221-n.jpg" alt="Mieszkanie Azory 8"></div>
+              <div class="gallery-item"><img src="https://i.ibb.co/tpLSG9Lx/711546343-17953857240150874-2012856606936441237-n.jpg" alt="Mieszkanie Azory 9"></div>
+              <div class="gallery-item"><img src="https://i.ibb.co/whsLcr0t/716974820-17953857198150874-4810206574662464350-n.jpg" alt="Mieszkanie Azory 10"></div>
+            </div>
+            <div class="gallery-hint">Kliknij, aby zobaczyć zdjęcia (1/10) ✦</div>
+          </div>
+
+          <div class="listing-details-2col">
+            <div class="listing-left">
+              <span class="pill-badge" data-translate-id="list1-badge">Na Sprzedaż</span>
+              <h3 class="listing-title" data-translate-id="list1-title">4-pokojowe mieszkanie po generalnym remoncie</h3>
+              <p class="listing-address">ul. Czerwieńskiego 10, Kraków – Azory</p>
+              <div class="listing-price-container">
+                <span class="listing-price">879 000 zł</span>
+                <p class="listing-price-sub" data-translate-id="list1-rent">czynsz: 610 zł/mies.</p>
+              </div>
+              <a href="tel:733980521" class="btn-gold" data-translate-id="list1-btn">Umów prezentację → 733 980 521</a>
+            </div>
+
+            <div class="listing-right">
+              <div class="checklist-grid">
+                <div class="check-item"><span class="check-icon">✓</span> 55,15 m²</div>
+                <div class="check-item"><span class="check-icon">✓</span> <span data-translate-id="list1-check2">4 pokoje</span></div>
+                <div class="check-item"><span class="check-icon">✓</span> <span data-translate-id="list1-check3">3. piętro (3/4)</span></div>
+                <div class="check-item"><span class="check-icon">✓</span> <span data-translate-id="list1-check4">Klimatyzacja</span></div>
+                <div class="check-item"><span class="check-icon">✓</span> <span data-translate-id="list1-check5">Ogrzewanie MPEC (brak gazu)</span></div>
+                <div class="check-item"><span class="check-icon">✓</span> <span data-translate-id="list1-check6">Nowe okna PCV 3-szybowe</span></div>
+                <div class="check-item"><span class="check-icon">✓</span> <span data-translate-id="list1-check7">Pełne wyposażenie i AGD</span></div>
+                <div class="check-item"><span class="check-icon">✓</span> <span data-translate-id="list1-check8">Meble na wymiar</span></div>
+                <div class="check-item"><span class="check-icon">✓</span> <span data-translate-id="list1-check9">Nowy licznik 3-fazowy</span></div>
+                <div class="check-item"><span class="check-icon">✓</span> <span data-translate-id="list1-check10">Balkon + p.wymiar w realizacji</span></div>
+                <div class="check-item"><span class="check-icon">✓</span> <span data-translate-id="list1-check11">Duża piwnica i schowek</span></div>
+                <div class="check-item"><span class="check-icon">✓</span> <span data-translate-id="list1-check12">Parking dla mieszkańców</span></div>
+                <div class="check-item"><span class="check-icon">✓</span> <span data-translate-id="list1-check13">Klatka schodowa po remoncie (2026)</span></div>
+                <div class="check-item"><span class="check-icon">✓</span> <span data-translate-id="list1-check14">Pełna własność z KW, bez obciążeń</span></div>
+              </div>
+              <p class="listing-tagline" data-translate-id="list1-tagline">Idealne dla rodziny, pary pracującej zdalnie lub jako inwestycja pod rentowny wynajem.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- LISTING 2: Mikołajska/Myślenicka asymmetric/smaller layout (50%) -->
+        <div class="property-card listing-half fade-up-init" style="align-self: center;">
+          <div class="video-embed-container">
+            <div class="video-aspect-wrapper">
+              <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1644296836863550%2F&show_text=false&width=267&t=0" style="border:none;width:100%;height:100%;" scrolling="no" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+          </div>
+
+          <div class="listing-half-details">
+            <span class="pill-badge" data-translate-id="list2-badge">Na Sprzedaż</span>
+            <h3 class="listing-title" style="font-size: 1.88rem; margin-bottom: 0.5rem;" data-translate-id="list2-title">Mieszkanie z ogródkiem w Krakowie? Możliwe.</h3>
+            <p class="listing-address" style="margin-bottom: 1.5rem;">ul. Myślenicka 73, Kraków</p>
+            
+            <p style="font-size: 14px; font-weight: 500; color: var(--gold); margin-bottom: 1rem;" data-translate-id="list2-features">
+              3 pokoje · 46,94 m² · Ogródek 29 m²
+            </p>
+
+            <div class="checklist-grid" style="grid-template-columns: 1fr; margin-bottom: 1.5rem; gap: 0.5rem;">
+              <div class="check-item"><span class="check-icon">✓</span> <span data-translate-id="list2-check1">Nowe kameralne osiedle (2019 r.)</span></div>
+              <div class="check-item"><span class="check-icon">✓</span> <span data-translate-id="list2-check2">Niski czynsz: tylko 330 zł/mies.</span></div>
+              <div class="check-item"><span class="check-icon">✓</span> <span data-translate-id="list2-check3">Inwestycja na zaledwie 20 mieszkań</span></div>
+              <div class="check-item"><span class="check-icon">✓</span> <span data-translate-id="list2-check4">Piękny, intymny ogródek 29 m²</span></div>
+              <div class="check-item"><span class="check-icon">✓</span> <span data-translate-id="list2-check5">Bezpośredni widok na tereny zielone</span></div>
+            </div>
+
+            <p class="listing-tagline" style="font-family: var(--font-serif); font-size: 15px; font-style: italic; margin-bottom: 2rem;" data-translate-id="list2-tagline">
+              Splatają się tu nowoczesność i kameralność, a unikatowy widok na kojącą zieleń to absolutna rzadkość w wielkim mieście.
+            </p>
+
+            <a href="https://www.instagram.com/nowa_estate" target="_blank" rel="noopener" class="btn-gold" style="font-size: 11px; padding: 0.8rem 1.5rem; width: 100%;" data-translate-id="list2-btn">Napisz na Instagram lub zadzwoń</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 6. TESTIMONIAL / OPINIE -->
+  <section class="testimonials-section" id="opinie">
+    <div class="testimonials-container fade-up-init">
+      <span class="label-caps" style="color: var(--gold);" data-translate-id="test-label">Opinie</span>
+      <div class="giant-quote">“</div>
+      <p class="quote-text" data-translate-id="test-quote">Polecam z całego serca. Najbardziej pomocna, rzeczowa i kompetentna agentka jaką spotkałam na swojej drodze do zakupu wymarzonego mieszkania.</p>
+      <div class="quote-attribution" data-translate-id="test-attr">— Klientka Julii</div>
+      <a href="https://www.facebook.com/nowa.estate/reviews/?id=61575026378027&sk=reviews" target="_blank" rel="noopener" class="btn-outline-gold" data-translate-id="test-btn">Czytaj więcej opinii na Facebook →</a>
+    </div>
+  </section>
+
+
+  <!-- 7. CONTACT / KONTAKT -->
+  <section class="contact-section" id="kontakt">
+    <div class="contact-container">
+      <div class="contact-header fade-up-init" style="text-align: center; margin-bottom: 3.5rem; display: flex; flex-direction: column; align-items: center;">
+        <span class="label-caps" data-translate-id="contact-label">Męczy Cię szukanie?</span>
+        <h2 class="contact-headline" data-translate-id="contact-title">Zacznijmy od kawki.</h2>
+        <p class="contact-sub" style="margin: 0 auto; max-width: 600px;" data-translate-id="contact-subtitle">Napisz do mnie bezpośrednio na e-mail, zadzwoń lub skontaktuj się w mediach społecznościowych — umówimy się i obgadamy cały plan bez absolutnie żadnych zobowiązań.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- LEFT: Contact details card -->
+        <div class="contact-details-card fade-up-init">
+          <h3 class="contact-agent-name">Julia Nowak</h3>
+          <span class="contact-agency-title">Nest Brokers · Kraków</span>
+          
+          <div class="contact-thin-line"></div>
+          
+          <a href="tel:733980521" class="contact-link-tel">733 980 521</a>
+          <a href="mailto:julia.nowak@nestbrokers.pl" class="contact-link-email">julia.nowak@nestbrokers.pl</a>
+          
+          <p class="contact-areas" data-translate-id="contact-area">Obsługiwany obszar:<br>Kraków · Wieliczka · Libertów</p>
+          
+          <div class="contact-thin-line"></div>
+          
+          <div class="contact-social-row">
+            <a href="https://www.facebook.com/nowa.estate/" target="_blank" rel="noopener" class="contact-social-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/nowa_estate" target="_blank" rel="noopener" class="contact-social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            </a>
+          </div>
+          
+          <div class="consultation-badge-row">
+            <span data-translate-id="contact-badge">✦ Darmowa konsultacja — bez zobowiązań</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer-section">
+    <div class="footer-grid">
+      <!-- Footer Left -->
+      <div class="footer-col-left">
+        <span class="footer-monogram">JN</span>
+        <span class="footer-agent-title" data-translate-id="footer-agent-title">Julia Nowak Nieruchomości</span>
+        <span class="footer-location" data-translate-id="footer-location">Kraków · Wieliczka · Libertów</span>
+      </div>
+
+      <!-- Footer Center -->
+      <div class="footer-col-center">
+        <span class="footer-links-title" data-translate-id="footer-nav-title">Skróty</span>
+        <div class="footer-links">
+          <a href="#" data-translate-id="foot-about">O mnie</a>
+          <a href="#oferty" data-translate-id="foot-properties">Oferty</a>
+          <a href="#opinie" data-translate-id="foot-reviews">Opinie</a>
+          <a href="#kontakt" data-translate-id="foot-contact">Kontakt</a>
+        </div>
+      </div>
+
+      <!-- Footer Right -->
+      <div class="footer-col-right">
+        <span class="footer-links-title" data-translate-id="footer-agency-title">Agencja</span>
+        <div class="footer-affiliation">
+          Nest Brokers · Kraków
+        </div>
+        <div class="footer-social-row">
+          <a href="https://www.facebook.com/nowa.estate/" target="_blank" rel="noopener" class="footer-social-icon" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/nowa_estate" target="_blank" rel="noopener" class="footer-social-icon" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-divider"></div>
+
+    <div class="footer-bottom-row">
+      <div data-translate-id="footer-copyright">
+        © 2026 Julia Nowak Nieruchomości · Nest Brokers · Kraków
+      </div>
+      <div class="footer-bottom-right">
+        <a href="tel:733980521">733 980 521</a>
+        <span>|</span>
+        <a href="mailto:julia.nowak@nestbrokers.pl">julia.nowak@nestbrokers.pl</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- VANILLA INTERACTIVITY & ANIMATIONS -->
+  <script>
+    // STICKY NAVBAR CLASS TOGGLE ON SCROLL
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // MOBILE OVERLAY HAMBURGER TOGGLE
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+    function toggleMenu() {
+      menuToggle.classList.toggle('active');
+      mobileOverlay.classList.toggle('active');
+      document.body.style.overflow = mobileOverlay.classList.contains('active') ? 'hidden' : '';
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        // Close menu on link selection
+        menuToggle.classList.remove('active');
+        mobileOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // INTERSECTION OBSERVER FOR FADE-UP ANIMATIONS (scroll-induced entry)
+    const observerOptions = {
+      root: null,
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries, observerInstance) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-up-active');
+          observerInstance.unobserve(entry.target); // Trigger once
+        }
+      });
+    }, observerOptions);
+
+    const fadeElements = document.querySelectorAll('.fade-up-init');
+    fadeElements.forEach(el => observer.observe(el));
+
+
+    // GALLERY CLICK-BASED ARROWS HELPER
+    const prevBtn = document.querySelector('.gallery-nav.prev');
+    const nextBtn = document.querySelector('.gallery-nav.next');
+    const gallerySlider = document.querySelector('.gallery-slider');
+    const galleryHint = document.querySelector('.gallery-hint');
+    const totalItems = 10;
+    let currentIndex = 0;
+    let currentLang = 'PL';
+
+    // Multi-language translation dictionaries
+    const translations = {
+      PL: {
+        "nav-about": "O mnie",
+        "nav-properties": "Oferty",
+        "nav-reviews": "Opinie",
+        "nav-contact": "Kontakt",
+        "mob-about": "O mnie",
+        "mob-properties": "Oferty",
+        "mob-reviews": "Opinie",
+        "mob-contact": "Kontakt",
+        "hero-title": "Twoje wymarzone<br>mieszkanie<br>w Krakowie.",
+        "hero-subtitle": "Sprzedaż i wynajem nieruchomości — profesjonalna obsługa dla Polaków i obcokrajowców.",
+        "hero-btn-consultation": "Darmowa konsultacja",
+        "hero-btn-properties": "Zobacz oferty",
+        "hero-location": "Kraków · Wieliczka · Libertów",
+        "trust-1": "Debiut Roku 2024",
+        "trust-2": "TOP 3 Nest Brokers 2026",
+        "trust-3": "Kraków · Wieliczka · Libertów",
+        "about-label": "O mnie",
+        "about-headline": "Sprzedaję i wynajmuję — z zaangażowaniem i wynikami.",
+        "about-p1": "Specjalizuję się w transakcjach na krakowskim rynku nieruchomości. Moja praca opiera się na pełnym wsparciu klientów od pierwszego kontaktu aż do przekazania kluczy. Zwracam szczególną uwagę na detale, przygotowanie nieruchomości (home staging) i skuteczne negocjacje.",
+        "about-p2": "Pracuję zarówno z klientami z Polski, jak i z zagranicy — swobodnie prowadzę cały proces w języku polskim oraz angielskim. Zamiast szablonowych schematów, wybieram szczere, ludzkie podejście. Spotkajmy się przy dobrej kawce, porozmawiajmy o Twoich planach i zobacz, jak bezpiecznie przejść przez cały proces transakcji.",
+        "about-btn": "Umów bezpłatną konsultację",
+        "about-badge1": "Debiut Roku",
+        "about-badge2": "Nest Brokers 2026",
+        "about-badge3": "Obsługa w języku polskim i angielskim",
+        "services-label": "Zakres współpracy",
+        "services-headline": "Sprzedaj i wynajmij z zyskiem.",
+        "service1-title": "Sprzedaż",
+        "service1-body": "Kompleksowa usługa sprzedaży Twojej nieruchomości. Opracowuję solidną strategię wyceny, zajmuję się profesjonalnym przygotowaniem oferty, marketingiem premium oraz w pełni nadzoruję proces negocjacji i formalności.",
+        "service2-title": "Wynajem",
+        "service2-body": "Skutecznie łączę właścicieli z wiarygodnymi najemcami. Dbam o staranną weryfikację profilu lokatorów, przygotowuję bezpieczne, precyzyjne umowy chroniące Twoje interesy i uwalniam Cię od codziennego stresu.",
+        "service3-title": "Doradztwo",
+        "service3-body": "Indywidualne konsultacje dotyczące krakowskiego rynku mieszkaniowego. Pomagam ocenić potencjał inwestycyjny nieruchomości, analizuję trendy i służę merytorycznym wsparciem przed podjęciem kluczowych decyzji.",
+        "listings-label": "Aktualne oferty",
+        "listings-headline": "Wybrane nieruchomości",
+        "list1-badge": "Na Sprzedaż",
+        "list1-title": "4-pokojowe mieszkanie po generalnym remoncie",
+        "list1-rent": "czynsz: 610 zł/mies.",
+        "list1-btn": "Umów prezentację → 733 980 521",
+        "list1-check2": "4 pokoje",
+        "list1-check3": "3. piętro (3/4)",
+        "list1-check4": "Klimatyzacja",
+        "list1-check5": "Ogrzewanie MPEC (brak gazu)",
+        "list1-check6": "Nowe okna PCV 3-szybowe",
+        "list1-check7": "Pełne wyposażenie i AGD",
+        "list1-check8": "Meble na wymiar",
+        "list1-check9": "Nowy licznik 3-fazowy",
+        "list1-check10": "Balkon + p.wymiar w realizacji",
+        "list1-check11": "Duża piwnica i schowek",
+        "list1-check12": "Parking dla mieszkańców",
+        "list1-check13": "Klatka schodowa po remoncie (2026)",
+        "list1-check14": "Pełna własność z KW, bez obciążeń",
+        "list1-tagline": "Idealne dla rodziny, pary pracującej zdalnie lub jako inwestycja pod rentowny wynajem.",
+        "list2-badge": "Na Sprzedaż",
+        "list2-title": "Mieszkanie z ogródkiem w Krakowie? Możliwe.",
+        "list2-features": "3 pokoje · 46,94 m² · Ogródek 29 m²",
+        "list2-check1": "Nowe kameralne osiedle (2019 r.)",
+        "list2-check2": "Niski czynsz: tylko 330 zł/mies.",
+        "list2-check3": "Inwestycja na zaledwie 20 mieszkań",
+        "list2-check4": "Piękny, intymny ogródek 29 m²",
+        "list2-check5": "Bezpośredni widok na tereny zielone",
+        "list2-tagline": "Splatają się tu nowoczesność i kameralność, a unikatowy widok na kojącą zieleń to absolutna rzadkość w wielkim mieście.",
+        "list2-btn": "Napisz na Instagram lub zadzwoń",
+        "test-label": "Opinie",
+        "test-quote": "Polecam z całego serca. Najbardziej pomocna, rzeczowa i kompetentna agentka jaką spotkałam na swojej drodze do zakupu wymarzonego mieszkania.",
+        "test-attr": "— Klientka Julii",
+        "test-btn": "Czytaj więcej opinii na Facebook →",
+        "contact-label": "Męczy Cię szukanie?",
+        "contact-title": "Zacznijmy od kawki.",
+        "contact-subtitle": "Napisz do mnie bezpośrednio na e-mail, zadzwoń lub skontaktuj się w mediach społecznościowych — umówimy się i obgadamy cały plan bez absolutnie żadnych zobowiązań.",
+        "contact-area": "Obsługiwany obszar:<br>Kraków · Wieliczka · Libertów",
+        "contact-badge": "✦ Darmowa konsultacja — bez zobowiązań",
+        "footer-agent-title": "Julia Nowak Nieruchomości",
+        "footer-location": "Kraków · Wieliczka · Libertów",
+        "footer-nav-title": "Skróty",
+        "foot-about": "O mnie",
+        "foot-properties": "Oferty",
+        "foot-reviews": "Opinie",
+        "foot-contact": "Kontakt",
+        "footer-agency-title": "Agencja",
+        "footer-copyright": "© 2026 Julia Nowak Nieruchomości · Nest Brokers · Kraków"
+      },
+      EN: {
+        "nav-about": "About me",
+        "nav-properties": "Properties",
+        "nav-reviews": "Reviews",
+        "nav-contact": "Contact",
+        "mob-about": "About me",
+        "mob-properties": "Properties",
+        "mob-reviews": "Reviews",
+        "mob-contact": "Contact",
+        "hero-title": "Your dream<br>apartment<br>in Krakow.",
+        "hero-subtitle": "Property sales and rentals — professional service for Polish and foreign clients.",
+        "hero-btn-consultation": "Free consultation",
+        "hero-btn-properties": "View properties",
+        "hero-location": "Krakow · Wieliczka · Libertow",
+        "trust-1": "Debut of the Year 2024",
+        "trust-2": "TOP 3 Nest Brokers 2026",
+        "trust-3": "Krakow · Wieliczka · Libertow",
+        "about-label": "About me",
+        "about-headline": "I sell and rent — with commitment and high results.",
+        "about-p1": "I specialize in transactions on the Krakow real estate market. My work is built upon providing full support for my customers from the first touchpoint until the keys are handed over. I pay close attention to nuances, proper presentation (home staging), and highly effective negotiations.",
+        "about-p2": "I work with Polish and international clients alike — easily conducting the entire flow in both Polish and English. Instead of generic formulas, I build sincere, human connection. Let's arrange a good cup of coffee, discuss your plans, and see how safely we can guide you through the transition.",
+        "about-btn": "Schedule a free consultation",
+        "about-badge1": "Debut of the Year",
+        "about-badge2": "Nest Brokers 2026",
+        "about-badge3": "Service in Polish & English",
+        "services-label": "Scope of cooperation",
+        "services-headline": "Sell and rent out with profit.",
+        "service1-title": "Sales",
+        "service1-body": "Comprehensive sales service for your property. I formulate a bulletproof pricing strategy, manage professional styling, premium marketing, and take full control of negotiations and bureaucratic paperwork.",
+        "service2-title": "Rentals",
+        "service2-body": "I effectively match landlords with trustworthy tenants. I thoroughly verify background profiles, prepare robust, custom legal contracts to shield your interests, and save you from everyday stress.",
+        "services-label": "Scope of cooperation",
+        "services-headline": "Sell and rent out with profit.",
+        "service3-title": "Advisory",
+        "service3-body": "Tailored consultation regarding the Krakow housing market. I help evaluate property investment viability, analyze emerging trends, and offer reliable guidance before key financial moves.",
+        "listings-label": "Current offers",
+        "listings-headline": "Selected Properties",
+        "list1-badge": "For Sale",
+        "list1-title": "4-room apartment after general renovation",
+        "list1-rent": "rent: 610 PLN/mo.",
+        "list1-btn": "Schedule viewing → 733 980 521",
+        "list1-check2": "4 rooms",
+        "list1-check3": "3rd floor (3/4)",
+        "list1-check4": "Air conditioning",
+        "list1-check5": "MPEC heating (no gas)",
+        "list1-check6": "New PCV 3-layer windows",
+        "list1-check7": "Fully equipped with modern appliances",
+        "list1-check8": "Custom layout furniture",
+        "list1-check9": "New 3-phase meter",
+        "list1-check10": "Balcony + custom shelving under construction",
+        "list1-check11": "Large cellar and storage room",
+        "list1-check12": "Private parking space for residents",
+        "list1-check13": "Renovated staircase (2026)",
+        "list1-check14": "Full freehold with KW, no encumbrances",
+        "list1-tagline": "Perfect for families, remote work couples or as a highly profitable rental investment.",
+        "list2-badge": "For Sale",
+        "list2-title": "Apartment with a private garden in Krakow? Yes, possible.",
+        "list2-features": "3 rooms · 46.94 m² · Garden 29 m²",
+        "list2-check1": "New cozy residential development (2019)",
+        "list2-check2": "Low maintenance fee: only 330 PLN/mo.",
+        "list2-check3": "Cosy community of only 20 apartments",
+        "list2-check4": "Intimate, lush garden 29 m²",
+        "list2-check5": "Direct viewpoints of scenic green elements",
+        "list2-tagline": "Modernity and architectural comfort intertwine seamlessly, and the unique view on calming nature is a true rare jewel in a big city.",
+        "list2-btn": "Write to Instagram or call",
+        "test-label": "Reviews",
+        "test-quote": "I recommend Julia with all my heart. She is the most helpful, reliable, and competent real estate agent I have met on my way to buying my dream home.",
+        "test-attr": "— Julia's Client",
+        "test-btn": "Read more reviews on Facebook →",
+        "contact-label": "Tired of searching?",
+        "contact-title": "Let's start with coffee.",
+        "contact-subtitle": "Write to me directly via email, give me a call, or contact me on social media — we'll meet and map out the strategy together with absolutely no strings attached.",
+        "contact-area": "Served Area:<br>Krakow · Wieliczka · Libertow",
+        "contact-badge": "✦ Free consultation — no obligations",
+        "footer-agent-title": "Julia Nowak Real Estate",
+        "footer-location": "Krakow · Wieliczka · Libertow",
+        "footer-nav-title": "Navigation",
+        "foot-about": "About me",
+        "foot-properties": "Properties",
+        "foot-reviews": "Reviews",
+        "foot-contact": "Contact",
+        "footer-agency-title": "Agency",
+        "footer-copyright": "© 2026 Julia Nowak Real Estate · Nest Brokers · Krakow"
+      }
+    };
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      
+      const elementsMap = translations[lang];
+      for (const [id, value] of Object.entries(elementsMap)) {
+        const el = document.querySelectorAll(`[data-translate-id="${id}"]`);
+        el.forEach(node => {
+          node.innerHTML = value;
+        });
+      }
+
+      // Sync active states on desktop buttons
+      document.querySelectorAll('.lang-toggle-btn').forEach(btn => {
+        if (btn.getAttribute('data-lang') === lang) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      // Sync active states on mobile buttons
+      document.querySelectorAll('.mobile-lang-btn').forEach(btn => {
+        if (btn.getAttribute('data-lang') === lang) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      updateGalleryHint();
+    }
+
+    function updateGalleryHint() {
+      if (galleryHint) {
+        const hintText = currentLang === 'EN' ? 'Click to view photos' : 'Kliknij, aby zobaczyć zdjęcia';
+        galleryHint.innerHTML = `${hintText} (${currentIndex + 1}/${totalItems}) ✦`;
+      }
+    }
+
+    // Attach Language switcher events
+    document.querySelectorAll('.lang-toggle-btn, .mobile-lang-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const targetLang = e.currentTarget.getAttribute('data-lang');
+        setLanguage(targetLang);
+      });
+    });
+
+    function updateGallery(index) {
+      if (!gallerySlider) return;
+      currentIndex = index;
+      if (currentIndex < 0) currentIndex = totalItems - 1;
+      if (currentIndex >= totalItems) currentIndex = 0;
+      
+      const slideWidth = gallerySlider.offsetWidth;
+      gallerySlider.scrollTo({
+        left: currentIndex * slideWidth,
+        behavior: 'smooth'
+      });
+      updateGalleryHint();
+    }
+
+    if (prevBtn && nextBtn && gallerySlider) {
+      prevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        updateGallery(currentIndex - 1);
+      });
+
+      nextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        updateGallery(currentIndex + 1);
+      });
+
+      // Handle window resize dynamically to align the current image position
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+          const slideWidth = gallerySlider.offsetWidth;
+          gallerySlider.scrollTo({
+            left: currentIndex * slideWidth,
+            behavior: 'auto'
+          });
+        }, 100);
+      });
+    }
+
+    // Initialize to Polish default
+    setLanguage('PL');
+  </script>
+</body>
+</html>
