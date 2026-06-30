@@ -4,24 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Julia Nowak Nieruchomości Kraków | Nest Brokers</title>
-  <meta name="description" content="Sprzedaj i wynajmij nieruchomość w Krakowie z Julią Nowak — Debiut Roku 2024, TOP 3 Nest Brokers 2026. Darmowa konsultacja. Tel. 733 980 521">
+  <meta name="description" content="Sprzedaj i wynajmij nieruchomość w Krakowie z Julią Nowak, Debiut Roku 2024, TOP 3 Nest Brokers 2026. Darmowa konsultacja. Tel. 733 980 521">
   <link rel="icon" href="https://i.ibb.co/0Rk20XYm/683768871-122174050130834212-9119480497001999177-n.jpg">
 
   <!-- Google Fonts Connection -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Alex+Brush&family=Pinyon+Script&family=Great+Vibes&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --primary-bg: #FAF8F5;
-      --secondary-bg: #F2EDE6;
-      --border-color: #C9B99A;
-      --dark-brown: #2C1F0E;
+      --primary-bg: #EAE2D5; /* Rich, elegant warmer brown-beige */
+      --secondary-bg: #DDD3C3; /* Darker warm brown-beige for panels/cards */
+      --border-color: #BCAE97; /* Warm gold-tinted beige-brown border */
+      --dark-brown: #251B0D; /* Deeper chocolate dark brown */
       --gold: #B8924A;
       --gold-hover: #9A7535;
-      --text-gray: #5C4F42;
-      --white: #FFFFFF;
+      --text-gray: #3D3226; /* Deeper warm brown-gray for high-contrast readability */
+      --white: #FAF7F2; /* Clean off-white cream */
       --font-serif: 'Cormorant Garamond', Georgia, serif;
       --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
     }
@@ -182,7 +182,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 1.5rem 10%;
-      background-color: rgba(250, 248, 245, 0.92);
+      background-color: rgba(242, 237, 230, 0.92);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       transition: padding 0.3s ease, border-bottom 0.3s ease;
@@ -228,6 +228,18 @@
       border-left: 1px solid var(--border-color);
       padding-left: 0.75rem;
       line-height: 1.3;
+    }
+
+    nav.top-navbar .logo-name {
+      font-family: 'Alex Brush', 'Great Vibes', 'Pinyon Script', cursive;
+      font-size: 1.68rem;
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: normal;
+      color: var(--dark-brown);
+      display: inline-block;
+      line-height: 0.95;
+      margin-bottom: 0.1rem;
     }
 
     nav.top-navbar .nav-links {
@@ -444,12 +456,6 @@
       display: flex;
       align-items: center;
       background-color: var(--primary-bg);
-      /* Dot pattern background */
-      background-image: radial-gradient(var(--border-color) 1.5px, transparent 1.5px);
-      background-size: 24px 24px;
-      background-repeat: repeat;
-      background-attachment: scroll;
-      /* Soft opacity for dots blending */
       position: relative;
       padding-top: 8rem;
     }
@@ -521,46 +527,58 @@
       color: var(--gold);
     }
 
-    /* Overlay CSS shapes for right side of Hero (no images) */
+    /* Phone Mockup illustration inside the header */
     .hero-right {
       position: relative;
       width: 100%;
-      height: 520px;
+      height: 600px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .shape-container {
+    .phone-mockup {
       position: relative;
-      width: 380px;
-      height: 440px;
+      width: 290px;
+      height: 580px;
+      background: var(--dark-brown);
+      border: 12px solid #191107; /* Sleek dark brown frame */
+      border-radius: 40px;
+      box-shadow: 0 25px 50px -12px rgba(37, 27, 13, 0.5), 
+                  0 0 0 3px var(--border-color);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
     }
 
-    .shape-solid {
+    /* Phone notch */
+    .phone-mockup::before {
+      content: '';
       position: absolute;
       top: 0;
-      left: 0;
-      width: 320px;
-      height: 380px;
-      background-color: var(--secondary-bg);
-      box-shadow: 0 12px 40px rgba(44, 31, 14, 0.05);
-      z-index: 1;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 110px;
+      height: 22px;
+      background: #191107;
+      border-bottom-left-radius: 14px;
+      border-bottom-right-radius: 14px;
+      z-index: 10;
     }
 
-    .shape-border {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 320px;
-      height: 380px;
-      border: 1px solid var(--gold);
-      z-index: 2;
+    /* Screen inside phone */
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
       transition: transform 0.5s ease;
     }
 
-    .hero-right:hover .shape-border {
-      transform: translate(-15px, -15px);
+    .phone-mockup:hover .phone-screen {
+      transform: scale(1.05);
     }
 
     /* Scroll Down Indicator */
@@ -610,19 +628,19 @@
       }
       .hero-right {
         order: -1;
-        height: 380px;
+        height: 440px;
       }
-      .shape-container {
-        width: 290px;
-        height: 340px;
+      .phone-mockup {
+        width: 210px;
+        height: 420px;
+        border-radius: 32px;
+        border-width: 8px;
       }
-      .shape-solid {
-        width: 240px;
-        height: 290px;
-      }
-      .shape-border {
-        width: 240px;
-        height: 290px;
+      .phone-mockup::before {
+        width: 80px;
+        height: 16px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
       }
       .hero-section {
         padding-top: 6rem;
@@ -634,55 +652,58 @@
     }
 
 
-    /* 2. TRUST BAR */
+    /* 2. TRUST BAR (STATCOUNTER) */
     .trust-bar {
       background-color: var(--dark-brown);
-      padding: 2rem 5%;
+      padding: 3rem 5%;
       overflow: hidden;
     }
 
     .trust-container {
-      max-width: 1400px;
+      max-width: 1200px;
       margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      align-items: start;
     }
 
     .trust-item {
-      color: var(--white);
-      font-size: 11px;
-      font-weight: 400;
-      font-family: var(--font-sans);
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      text-align: center;
-      flex: 1;
-      height: 100%;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
+      text-align: center;
+      gap: 0.5rem;
     }
 
-    .trust-divider {
-      width: 1px;
-      height: 20px;
-      background-color: rgba(184, 146, 74, 0.4);
+    .trust-number {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .trust-label {
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 400;
+      font-family: var(--font-sans);
+      letter-spacing: 0.05em;
+      line-height: 1.5;
+      max-width: 280px;
+      text-transform: uppercase;
+      opacity: 0.9;
     }
 
     @media (max-width: 768px) {
       .trust-container {
-        flex-direction: column;
-        gap: 1.25rem;
-      }
-      .trust-divider {
-        display: none;
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
       }
       .trust-item {
         border-bottom: 1px solid rgba(184, 146, 74, 0.15);
-        padding-bottom: 0.5rem;
-        width: 100%;
+        padding-bottom: 2rem;
       }
       .trust-item:last-child {
         border-bottom: none;
@@ -806,22 +827,22 @@
     }
 
 
-    /* 4. SERVICES / CO OFERUJĘ */
-    .services-section {
+    /* 4. STEPS / OD CZEGO ZACZĄĆ WSPÓŁPRACĘ */
+    .steps-section {
       background-color: var(--dark-brown);
       color: var(--white);
     }
 
-    .services-container {
+    .steps-container {
       max-width: 1400px;
       margin: 0 auto;
     }
 
-    .services-top {
+    .steps-top {
       margin-bottom: 4rem;
     }
 
-    .services-headline {
+    .steps-headline {
       font-family: var(--font-serif);
       font-size: clamp(2.22rem, 4vw, 3.2rem);
       font-weight: 300;
@@ -830,63 +851,277 @@
       line-height: 1.2;
     }
 
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 3rem;
-      margin-bottom: 4rem;
+    .steps-grid {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: var(--gold) rgba(255, 255, 255, 0.03);
     }
 
-    .service-column {
-      border-top: 1px solid var(--gold);
-      padding-top: 2rem;
+    .steps-grid::-webkit-scrollbar {
+      height: 6px;
+    }
+    
+    .steps-grid::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 3px;
+    }
+    
+    .steps-grid::-webkit-scrollbar-thumb {
+      background: var(--gold);
+      border-radius: 3px;
+    }
+
+    .step-card {
+      flex: 0 0 320px;
+      scroll-snap-align: start;
+      background-color: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(184, 146, 74, 0.15);
+      border-radius: 8px;
+      padding: 2.5rem 1.5rem;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
     }
 
-    .service-icon {
-      font-size: 2rem;
+    @media (max-width: 768px) {
+      .step-card {
+        flex: 0 0 280px;
+        padding: 2rem 1.25rem;
+      }
+    }
+
+    .step-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-5px);
+      background-color: rgba(255, 255, 255, 0.06);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .step-number {
+      font-family: var(--font-serif);
+      font-size: 2.8rem;
+      font-weight: 700;
       color: var(--gold);
-      margin-bottom: 1.5rem;
       line-height: 1;
+      margin-bottom: 1.25rem;
+      opacity: 0.95;
     }
 
-    .service-title {
+    .step-title {
       font-family: var(--font-sans);
       font-weight: 500;
-      font-size: 1.22rem;
+      font-size: 1.15rem;
       color: var(--white);
-      margin-bottom: 1rem;
-      letter-spacing: 0.05em;
+      margin-bottom: 0.88rem;
+      letter-spacing: 0.02em;
+      line-height: 1.3;
     }
 
-    .service-body {
+    .step-body {
       font-family: var(--font-sans);
       font-weight: 300;
-      font-size: 14px;
+      font-size: 13.5px;
       line-height: 1.6;
       color: #EDE8E2; /* Muted creamy white */
     }
 
-    .services-bottom {
-      border-top: 1px solid rgba(201, 185, 154, 0.2);
-      padding-top: 2rem;
+    .steps-hint {
       text-align: center;
+      font-size: 11px;
+      color: rgba(237, 232, 226, 0.45);
+      margin-bottom: 4rem;
+      font-family: var(--font-sans);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
     }
 
-    .services-bottom-text {
+    /* Steps Contact Form styles */
+    .steps-contact-form-container {
+      max-width: 850px;
+      margin: 5rem auto 0 auto;
+      width: 100%;
+    }
+
+    .steps-form-card {
+      background-color: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(184, 146, 74, 0.15);
+      border-radius: 12px;
+      padding: 3.5rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .steps-form-title {
       font-family: var(--font-serif);
+      font-size: 1.88rem;
       font-style: italic;
-      font-size: 1.15rem;
-      color: var(--gold);
+      color: #FAF8F5;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      font-weight: 300;
+    }
+
+    .steps-form-subtitle {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 300;
+      color: #EDE8E2;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .steps-form .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .steps-form .form-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+      width: 100%;
+    }
+
+    .steps-form .form-group label {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 400;
+      color: #EDE8E2;
       letter-spacing: 0.02em;
     }
 
-    @media (max-width: 991px) {
-      .services-grid {
+    .steps-form .form-group input,
+    .steps-form .form-group select,
+    .steps-form .form-group textarea {
+      width: 100%;
+      padding: 1rem 1.25rem;
+      background-color: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(188, 174, 151, 0.2);
+      border-radius: 6px;
+      color: var(--white);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .steps-form .form-group input:focus,
+    .steps-form .form-group select:focus,
+    .steps-form .form-group textarea:focus {
+      border-color: var(--gold);
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.07);
+    }
+
+    .steps-form .form-group select option {
+      background-color: var(--dark-brown);
+      color: var(--white);
+    }
+
+    .steps-form .form-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      margin-bottom: 2.22rem;
+      text-align: left;
+    }
+
+    .steps-form .form-consent input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--gold);
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 0.15rem;
+    }
+
+    .steps-form .form-consent label {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: #EDE8E2;
+      cursor: pointer;
+    }
+
+    .steps-form .form-submit-btn {
+      width: 100%;
+      padding: 1.1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .steps-form .form-submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .steps-form .form-status-message {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      border-radius: 6px;
+      font-family: var(--font-sans);
+      font-size: 13.5px;
+      text-align: center;
+      line-height: 1.5;
+      animation: fadeIn 0.3s ease forwards;
+    }
+
+    .steps-form .form-status-message.success {
+      background-color: rgba(46, 117, 89, 0.15);
+      border: 1px solid rgba(46, 117, 89, 0.3);
+      color: #a3e635;
+    }
+
+    .steps-form .form-status-message.error {
+      background-color: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #fca5a5;
+    }
+
+    /* Spinner */
+    .btn-spinner {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 768px) {
+      .steps-form .form-row-2 {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        gap: 1.5rem;
+      }
+      .steps-form-card {
+        padding: 2rem 1.5rem;
       }
     }
 
@@ -1099,9 +1334,10 @@
 
     .listing-price-sub {
       font-family: var(--font-sans);
-      font-size: 12px;
+      font-size: 17px;
+      font-weight: 500;
       color: var(--text-gray);
-      margin-top: 0.25rem;
+      margin-top: 0.4rem;
     }
 
     .listing-right {
@@ -1620,6 +1856,155 @@
         gap: 1rem;
       }
     }
+
+    /* Modal / Pop-up Styles for Privacy Policy */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(37, 27, 13, 0.8);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-container {
+      background-color: var(--white);
+      border: 1px solid rgba(188, 174, 151, 0.2);
+      border-radius: 12px;
+      width: 90%;
+      max-width: 800px;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 30px 60px rgba(37, 27, 13, 0.25);
+      transform: translateY(20px);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .modal-overlay.active .modal-container {
+      transform: translateY(0);
+    }
+
+    .modal-header {
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid rgba(188, 174, 151, 0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-title {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      color: var(--dark-brown);
+      font-weight: 500;
+      margin: 0;
+      letter-spacing: -0.02em;
+    }
+
+    .modal-close-btn {
+      background: none;
+      border: none;
+      color: var(--dark-brown);
+      font-size: 1.8rem;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      line-height: 1;
+    }
+
+    .modal-close-btn:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    .modal-body {
+      padding: 2rem;
+      overflow-y: auto;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-gray);
+      scrollbar-width: thin;
+      scrollbar-color: var(--gold) transparent;
+    }
+
+    .modal-body h2 {
+      font-family: var(--font-serif);
+      color: var(--dark-brown);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 500;
+      font-size: 1.3rem;
+      border-bottom: 1px solid rgba(188, 174, 151, 0.15);
+      padding-bottom: 0.3rem;
+      letter-spacing: -0.01em;
+    }
+
+    .modal-body h3 {
+      font-family: var(--font-sans);
+      color: var(--dark-brown);
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-body p {
+      margin-bottom: 1rem;
+    }
+
+    .modal-body ul {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      list-style-type: disc;
+    }
+
+    .modal-body li {
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-body-p-muted {
+      font-size: 12.5px;
+      color: #7A7264;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    /* Style for footer privacy link */
+    .privacy-link {
+      cursor: pointer;
+      font-size: 11px;
+      color: rgba(250, 248, 245, 0.5);
+      text-decoration: none;
+      background: none;
+      border: none;
+      padding: 0;
+      font-family: inherit;
+      transition: color 0.3s ease;
+    }
+    
+    .privacy-link:hover {
+      color: var(--gold);
+    }
   </style>
 </head>
 <body>
@@ -1628,8 +2013,8 @@
   <nav class="top-navbar" id="navbar">
     <div class="logo-container">
       <span class="logo-jn">JN</span>
-      <div class="logo-text">
-        Julia Nowak<br>Nieruchomości · Kraków
+      <div class="logo-text" data-translate-id="logo-text">
+        <span class="logo-name">Julia Nowak</span><br>Agent nieruchomości
       </div>
     </div>
 
@@ -1688,21 +2073,18 @@
   <section class="hero-section">
     <div class="hero-container">
       <div class="hero-left fade-up-init">
-        <h1 class="hero-headline text-dark-brown" data-translate-id="hero-title">Twoje wymarzone<br>mieszkanie<br>w Krakowie.</h1>
-        <p class="hero-subheadline" data-translate-id="hero-subtitle">Sprzedaż i wynajem nieruchomości — profesjonalna obsługa dla Polaków i obcokrajowców.</p>
+        <h1 class="hero-headline text-dark-brown" data-translate-id="hero-title">Julia Nowak<br>agent<br>nieruchomości</h1>
+        <p class="hero-subheadline" data-translate-id="hero-subtitle">Sprzedaż i wynajem nieruchomości, profesjonalna obsługa dla Polaków i obcokrajowców.</p>
         <div class="hero-ctas">
           <a href="#kontakt" class="btn-gold" data-translate-id="hero-btn-consultation">Darmowa konsultacja</a>
           <a href="#oferty" class="btn-ghost" data-translate-id="hero-btn-properties">Zobacz oferty</a>
         </div>
-        <div class="hero-location-marker" data-translate-id="hero-location">
-          Kraków · Wieliczka · Libertów
-        </div>
+
       </div>
 
       <div class="hero-right fade-up-init" style="transition-delay: 0.2s;">
-        <div class="shape-container">
-          <div class="shape-solid"></div>
-          <div class="shape-border"></div>
+        <div class="phone-mockup">
+          <img class="phone-screen" src="https://i.ibb.co/tp3Jymtt/julianowak.png" alt="Julia Nowak" referrerPolicy="no-referrer">
         </div>
       </div>
     </div>
@@ -1717,11 +2099,18 @@
   <!-- 2. TRUST BAR -->
   <div class="trust-bar">
     <div class="trust-container">
-      <div class="trust-item" data-translate-id="trust-1">Debiut Roku 2024</div>
-      <div class="trust-divider"></div>
-      <div class="trust-item" data-translate-id="trust-2">TOP 3 Nest Brokers 2026</div>
-      <div class="trust-divider"></div>
-      <div class="trust-item" data-translate-id="trust-3">Kraków · Wieliczka · Libertów</div>
+      <div class="trust-item">
+        <span class="trust-number">100+</span>
+        <span class="trust-label" data-translate-id="trust-1">Ponad 100 zrealizowanych transakcji</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-number">90%+</span>
+        <span class="trust-label" data-translate-id="trust-2">Ponad 90% nieruchomości sprzedanych w mniej niż miesiąc</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-number">250k</span>
+        <span class="trust-label" data-translate-id="trust-3">Miesięczne dotarcie na poziomie 250 tyś</span>
+      </div>
     </div>
   </div>
 
@@ -1732,9 +2121,9 @@
       <div class="about-left fade-up-init">
         <span class="label-caps" data-translate-id="about-label">O mnie</span>
         <hr class="partial-divider">
-        <h2 class="about-headline" data-translate-id="about-headline">Sprzedaję i wynajmuję — z zaangażowaniem i wynikami.</h2>
+        <h2 class="about-headline" data-translate-id="about-headline">Sprzedaję i wynajmuję, z zaangażowaniem i wynikami.</h2>
         <p class="about-paragraph" data-translate-id="about-p1">Specjalizuję się w transakcjach na krakowskim rynku nieruchomości. Moja praca opiera się na pełnym wsparciu klientów od pierwszego kontaktu aż do przekazania kluczy. Zwracam szczególną uwagę na detale, przygotowanie nieruchomości (home staging) i skuteczne negocjacje.</p>
-        <p class="about-paragraph" data-translate-id="about-p2">Pracuję zarówno z klientami z Polski, jak i z zagranicy — swobodnie prowadzę cały proces w języku polskim, angielskim oraz hiszpańskim. Zamiast szablonowych schematów, wybieram szczere, ludzkie podejście. Spotkajmy się przy dobrej kawce, porozmawiajmy o Twoich planach i zobacz, jak bezpiecznie przejść przez cały proces transakcji.</p>
+        <p class="about-paragraph" data-translate-id="about-p2">Pracuję zarówno z klientami z Polski, jak i z zagranicy, swobodnie prowadząc cały proces w języku polskim oraz angielskim. Zamiast szablonowych schematów, wybieram szczere, ludzkie podejście. Spotkajmy się przy dobrej kawce, porozmawiajmy o Twoich planach i zobacz, jak bezpiecznie przejść przez cały proces transakcji.</p>
         <a href="#kontakt" class="btn-gold" style="margin-top: 1rem;" data-translate-id="about-btn">Umów bezpłatną konsultację</a>
       </div>
 
@@ -1751,45 +2140,112 @@
         </div>
         <!-- Card 3 -->
         <div class="stat-card stat-card-beige rounded">
-          <span class="stat-number-watermark" style="font-size: 3.2rem;">PL+EN+ES</span>
-          <span class="card-label" data-translate-id="about-badge3">Obsługa w języku polskim, angielskim i hiszpańskim</span>
+          <span class="stat-number-watermark" style="font-size: 3.5rem;">PL+EN</span>
+          <span class="card-label" data-translate-id="about-badge3">Obsługa w języku polskim i angielskim</span>
         </div>
       </div>
     </div>
   </section>
 
 
-  <!-- 4. SERVICES / CO OFERUJĘ -->
-  <section class="services-section">
-    <div class="services-container">
-      <div class="services-top fade-up-init">
-        <span class="label-caps" data-translate-id="services-label">Zakres współpracy</span>
-        <h2 class="services-headline" data-translate-id="services-headline">Sprzedaj i wynajmij z zyskiem.</h2>
+  <!-- 4. STEPS / OD CZEGO ZACZĄĆ WSPÓŁPRACĘ -->
+  <section class="steps-section" style="padding: 7rem 10%;">
+    <div class="steps-container">
+      <div class="steps-top fade-up-init">
+        <span class="label-caps" data-translate-id="steps-label">Od czego zacząć?</span>
+        <h2 class="steps-headline" data-translate-id="steps-headline">Od czego zacząć współpracę?</h2>
       </div>
 
-      <div class="services-grid">
-        <!-- Col 1 -->
-        <div class="service-column fade-up-init">
-          <div class="service-icon">✦</div>
-          <h3 class="service-title" data-translate-id="service1-title">Sprzedaż</h3>
-          <p class="service-body" data-translate-id="service1-body">Kompleksowa usługa sprzedaży Twojej nieruchomości. Opracowuję solidną strategię wyceny, zajmuję się profesjonalnym przygotowaniem oferty, marketingiem premium oraz w pełni nadzoruję proces negocjacji i formalności.</p>
+      <div class="steps-grid">
+        <!-- Card 1 -->
+        <div class="step-card fade-up-init">
+          <span class="step-number" data-translate-id="step1-num">01</span>
+          <h3 class="step-title" data-translate-id="step1-title">Bezpłatna konsultacja</h3>
+          <p class="step-body" data-translate-id="step1-body">Rozmowa telefoniczna lub przy dobrej kawce, na której poznam Twoje potrzeby, budżet i cele.</p>
         </div>
-        <!-- Col 2 -->
-        <div class="service-column fade-up-init" style="transition-delay: 0.1s;">
-          <div class="service-icon">✦</div>
-          <h3 class="service-title" data-translate-id="service2-title">Wynajem</h3>
-          <p class="service-body" data-translate-id="service2-body">Skutecznie łączę właścicieli z wiarygodnymi najemcami. Dbam o staranną weryfikację profilu lokatorów, przygotowuję bezpieczne, precyzyjne umowy chroniące Twoje interesy i uwalniam Cię od codziennego stresu.</p>
+        <!-- Card 2 -->
+        <div class="step-card fade-up-init" style="transition-delay: 0.1s;">
+          <span class="step-number" data-translate-id="step2-num">02</span>
+          <h3 class="step-title" data-translate-id="step2-title">Analiza i wycena</h3>
+          <p class="step-body" data-translate-id="step2-body">Rzetelna ocena wartości nieruchomości, dogłębna analiza rynku i wybór najlepszej strategii.</p>
         </div>
-        <!-- Col 3 -->
-        <div class="service-column fade-up-init" style="transition-delay: 0.2s;">
-          <div class="service-icon">✦</div>
-          <h3 class="service-title" data-translate-id="service3-title">Doradztwo</h3>
-          <p class="service-body" data-translate-id="service3-body">Indywidualne konsultacje dotyczące krakowskiego rynku mieszkaniowego. Pomagam ocenić potencjał inwestycyjny nieruchomości, analizuję trendy i służę merytorycznym wsparciem przed podjęciem kluczowych decyzji.</p>
+        <!-- Card 3 -->
+        <div class="step-card fade-up-init" style="transition-delay: 0.2s;">
+          <span class="step-number" data-translate-id="step3-num">03</span>
+          <h3 class="step-title" data-translate-id="step3-title">Przygotowanie oferty</h3>
+          <p class="step-body" data-translate-id="step3-body">Profesjonalny home staging, piękna sesja zdjęciowa oraz opracowanie materiałów reklamowych.</p>
+        </div>
+        <!-- Card 4 -->
+        <div class="step-card fade-up-init" style="transition-delay: 0.3s;">
+          <span class="step-number" data-translate-id="step4-num">04</span>
+          <h3 class="step-title" data-translate-id="step4-title">Promocja i prezentacja</h3>
+          <p class="step-body" data-translate-id="step4-body">Skuteczne dotarcie do tysięcy kupców lub najemców oraz profesjonalne, angażujące prezentacje.</p>
+        </div>
+        <!-- Card 5 -->
+        <div class="step-card fade-up-init" style="transition-delay: 0.4s;">
+          <span class="step-number" data-translate-id="step5-num">05</span>
+          <h3 class="step-title" data-translate-id="step5-title">Finalizacja i klucze</h3>
+          <p class="step-body" data-translate-id="step5-body">Kompleksowa opieka prawna, bezpieczne podpisanie umowy i radosne przekazanie kluczy.</p>
         </div>
       </div>
 
-      <div class="services-bottom fade-up-init">
-        <p class="services-bottom-text">Pracuję z Polakami i obcokrajowcami / I work with Polish and foreign clients</p>
+      <!-- Scroll Hint -->
+      <div class="steps-hint fade-up-init" data-translate-id="steps-hint">← Przesuń w bok, aby zobaczyć kolejne kroki →</div>
+
+      <!-- Embedded Contact Form -->
+      <div class="steps-contact-form-container fade-up-init" style="transition-delay: 0.1s;">
+        <div class="steps-form-card">
+          <h3 class="steps-form-title" data-translate-id="steps-form-title">Zacznijmy współpracę</h3>
+          <p class="steps-form-subtitle" data-translate-id="steps-form-subtitle">Zostaw swoje dane – skontaktuję się z Tobą w ciągu 24 godzin.</p>
+          
+          <form class="steps-form" id="steps-contact-form">
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="step-name" data-translate-id="form-label-name">Imię i nazwisko</label>
+                <input type="text" id="step-name" name="name" required placeholder="np. Jan Kowalski">
+              </div>
+              <div class="form-group">
+                <label for="step-phone" data-translate-id="form-label-phone">Numer telefonu</label>
+                <input type="tel" id="step-phone" name="phone" required placeholder="np. +48 123 456 789">
+              </div>
+            </div>
+            
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="step-email" data-translate-id="form-label-email">Adres e-mail</label>
+                <input type="email" id="step-email" name="email" required placeholder="np. jan.kowalski@email.com">
+              </div>
+              <div class="form-group">
+                <label for="step-service" data-translate-id="form-label-service">Temat rozmowy</label>
+                <select id="step-service" name="service">
+                  <option value="sprzedaz" data-translate-id="form-opt-sell">Chcę sprzedać nieruchomość</option>
+                  <option value="zakup" data-translate-id="form-opt-buy">Chcę kupić nieruchomość</option>
+                  <option value="wynajem" data-translate-id="form-opt-rent">Chcę wynająć nieruchomość</option>
+                  <option value="inna" data-translate-id="form-opt-other">Inny temat / Doradztwo</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+              <label for="step-message" data-translate-id="form-label-msg">Twoja wiadomość (opcjonalnie)</label>
+              <textarea id="step-message" name="message" rows="4" placeholder="Opisz krótko swoje potrzeby..."></textarea>
+            </div>
+            
+            <div class="form-consent">
+              <input type="checkbox" id="step-consent" name="consent" required>
+              <label for="step-consent">
+                <span data-translate-id="form-consent-text">Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z Polityką Prywatności.</span>
+              </label>
+            </div>
+            
+            <button type="submit" class="btn-gold form-submit-btn">
+              <span class="btn-text" data-translate-id="form-btn-submit">Wyślij wiadomość</span>
+              <span class="btn-spinner" style="display: none;"></span>
+            </button>
+            
+            <div class="form-status-message" style="display: none;" id="steps-form-status"></div>
+          </form>
+        </div>
       </div>
     </div>
   </section>
@@ -1831,7 +2287,7 @@
               <h3 class="listing-title" data-translate-id="list1-title">4-pokojowe mieszkanie po generalnym remoncie</h3>
               <p class="listing-address">ul. Czerwieńskiego 10, Kraków – Azory</p>
               <div class="listing-price-container">
-                <span class="listing-price">879 000 zł</span>
+                <span class="listing-price">849 000 zł</span>
                 <p class="listing-price-sub" data-translate-id="list1-rent">czynsz: 610 zł/mies.</p>
               </div>
               <a href="tel:733980521" class="btn-gold" data-translate-id="list1-btn">Umów prezentację → 733 980 521</a>
@@ -1854,7 +2310,7 @@
                 <div class="check-item"><span class="check-icon">✓</span> <span data-translate-id="list1-check13">Klatka schodowa po remoncie (2026)</span></div>
                 <div class="check-item"><span class="check-icon">✓</span> <span data-translate-id="list1-check14">Pełna własność z KW, bez obciążeń</span></div>
               </div>
-              <p class="listing-tagline" data-translate-id="list1-tagline">Idealne dla rodziny, pary pracującej zdalnie lub jako inwestycja pod rentowny wynajem.</p>
+
             </div>
           </div>
         </div>
@@ -1884,9 +2340,7 @@
               <div class="check-item"><span class="check-icon">✓</span> <span data-translate-id="list2-check5">Bezpośredni widok na tereny zielone</span></div>
             </div>
 
-            <p class="listing-tagline" style="font-family: var(--font-serif); font-size: 15px; font-style: italic; margin-bottom: 2rem;" data-translate-id="list2-tagline">
-              Splatają się tu nowoczesność i kameralność, a unikatowy widok na kojącą zieleń to absolutna rzadkość w wielkim mieście.
-            </p>
+
 
             <a href="https://www.instagram.com/nowa_estate" target="_blank" rel="noopener" class="btn-gold" style="font-size: 11px; padding: 0.8rem 1.5rem; width: 100%;" data-translate-id="list2-btn">Napisz na Instagram lub zadzwoń</a>
           </div>
@@ -1901,8 +2355,8 @@
     <div class="testimonials-container fade-up-init">
       <span class="label-caps" style="color: var(--gold);" data-translate-id="test-label">Opinie</span>
       <div class="giant-quote">“</div>
-      <p class="quote-text" data-translate-id="test-quote">Polecam z całego serca. Najbardziej pomocna, rzeczowa i kompetentna agentka jaką spotkałam na swojej drodze do zakupu wymarzonego mieszkania.</p>
-      <div class="quote-attribution" data-translate-id="test-attr">— Klientka Julii</div>
+      <p class="quote-text" data-translate-id="test-quote">Miałam ogromną przyjemność współpracować z Julią Nowak podczas zakupu mojego pierwszego mieszkania. Od samego początku czułam się w pełni zaopiekowana i mogłam liczyć na jej wsparcie na każdym etapie tego procesu. Zakup nieruchomości w moim przypadku wiązał się z kilkoma wyzwaniami i nieoczekiwanymi sytuacjami, jednak Julia za każdym razem podchodziła do nich z pełnym profesjonalizmem, spokojem i skutecznością. Dzięki jej doświadczeniu oraz zaangażowaniu nawet bardziej skomplikowane kwestie były sprawnie rozwiązywane, a ja mogłam czuć się bezpiecznie i pewnie podczas podejmowania ważnych decyzji. Dla Julii priorytetem jest zadowolenie jej klientów. Współpracuje ona również z wieloma sprawdzonymi specjalistami – od fachowców technicznych po ekspertów związanych z rynkiem nieruchomości, dzięki czemu mogłam liczyć na rzetelne wsparcie i profesjonalną pomoc praktycznie na wszystkich frontach.<br><br>Jestem bardzo zadowolona ze współpracy i z pełnym przekonaniem mogę polecić zarówno Julię, jak i całą agencję Nest Brokers każdemu, kto szuka rzetelnego, skutecznego i zaangażowanego pośrednika nieruchomości.</p>
+      <div class="quote-attribution" data-translate-id="test-attr">Martyna</div>
       <a href="https://www.facebook.com/nowa.estate/reviews/?id=61575026378027&sk=reviews" target="_blank" rel="noopener" class="btn-outline-gold" data-translate-id="test-btn">Czytaj więcej opinii na Facebook →</a>
     </div>
   </section>
@@ -1914,7 +2368,7 @@
       <div class="contact-header fade-up-init" style="text-align: center; margin-bottom: 3.5rem; display: flex; flex-direction: column; align-items: center;">
         <span class="label-caps" data-translate-id="contact-label">Męczy Cię szukanie?</span>
         <h2 class="contact-headline" data-translate-id="contact-title">Zacznijmy od kawki.</h2>
-        <p class="contact-sub" style="margin: 0 auto; max-width: 600px;" data-translate-id="contact-subtitle">Napisz do mnie bezpośrednio na e-mail, zadzwoń lub skontaktuj się w mediach społecznościowych — umówimy się i obgadamy cały plan bez absolutnie żadnych zobowiązań.</p>
+        <p class="contact-sub" style="margin: 0 auto; max-width: 600px;" data-translate-id="contact-subtitle">Napisz do mnie bezpośrednio na e-mail, zadzwoń lub skontaktuj się w mediach społecznościowych, umówimy się i obgadamy cały plan bez absolutnie żadnych zobowiązań.</p>
       </div>
 
       <div class="contact-grid">
@@ -1928,7 +2382,7 @@
           <a href="tel:733980521" class="contact-link-tel">733 980 521</a>
           <a href="mailto:julia.nowak@nestbrokers.pl" class="contact-link-email">julia.nowak@nestbrokers.pl</a>
           
-          <p class="contact-areas" data-translate-id="contact-area">Obsługiwany obszar:<br>Kraków · Wieliczka · Libertów</p>
+          <p class="contact-areas" data-translate-id="contact-area">Obsługiwany obszar:<br>Kraków i okolice do 20km</p>
           
           <div class="contact-thin-line"></div>
           
@@ -1942,7 +2396,7 @@
           </div>
           
           <div class="consultation-badge-row">
-            <span data-translate-id="contact-badge">✦ Darmowa konsultacja — bez zobowiązań</span>
+            <span data-translate-id="contact-badge">✦ Darmowa konsultacja, bez zobowiązań</span>
           </div>
         </div>
       </div>
@@ -1995,12 +2449,146 @@
         © 2026 Julia Nowak Nieruchomości · Nest Brokers · Kraków
       </div>
       <div class="footer-bottom-right">
+        <button class="privacy-link" id="privacy-trigger" data-translate-id="footer-privacy-btn">Polityka Prywatności i Pliki Cookies</button>
+        <span>|</span>
         <a href="tel:733980521">733 980 521</a>
         <span>|</span>
         <a href="mailto:julia.nowak@nestbrokers.pl">julia.nowak@nestbrokers.pl</a>
       </div>
     </div>
   </footer>
+
+  <!-- PRIVACY POLICY MODAL -->
+  <div class="modal-overlay" id="privacy-modal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title" data-translate-id="modal-title">Polityka Prywatności i Pliki Cookies</h3>
+        <button class="modal-close-btn" id="privacy-close" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-body-p-muted"><strong>Julia Nowak Nieruchomości</strong><br>Kraków<br>Data ostatniej aktualizacji: 30 czerwca 2026 r.</p>
+
+        <h2>1. Postanowienia ogólne</h2>
+        <p>1.1. Niniejsza Polityka Prywatności i Plików Cookies (zwana dalej „Polityką") określa zasady przetwarzania danych osobowych oraz wykorzystywania plików cookies w związku z korzystaniem z usług świadczonych przez Julię Nowak prowadzącą działalność pod nazwą Julia Nowak Nieruchomości (zwaną dalej „Administratorem"), z siedzibą w Krakowie.</p>
+        <p>1.2. Administratorem danych osobowych jest:</p>
+        <p><strong>Julia Nowak Nieruchomości</strong><br>Kraków<br>Telefon: 733 980 521<br>E-mail: julia.nowak@nestbrokers.pl</p>
+        <p>1.3. Administrator dokłada szczególnej staranności w celu ochrony interesów osób, których dane dotyczą, a w szczególności zapewnia, że zbierane przez niego dane są przetwarzane zgodnie z prawem, zbierane dla oznaczonych, zgodnych z prawem celów i niepoddawane dalszemu przetwarzaniu niezgodnemu z tymi celami.</p>
+        <p>1.4. Podstawą prawną przetwarzania danych osobowych jest Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. (RODO/GDPR) oraz ustawa z dnia 10 maja 2018 r. o ochronie danych osobowych.</p>
+
+        <h2>2. Zakres i cele przetwarzania danych osobowych</h2>
+        <p>2.1. Administrator może przetwarzać dane osobowe osób korzystających z usług pośrednictwa w obrocie nieruchomościami, osób kontaktujących się telefonicznie, mailowo lub za pośrednictwem formularza kontaktowego na stronie internetowej, w następujących celach:</p>
+        <ul>
+          <li>przygotowania i realizacji umowy pośrednictwa w obrocie nieruchomościami,</li>
+          <li>udzielania odpowiedzi na zapytania ofertowe dotyczące nieruchomości,</li>
+          <li>przedstawiania ofert sprzedaży, najmu lub wynajmu nieruchomości,</li>
+          <li>prowadzenia korespondencji i kontaktu telefonicznego,</li>
+          <li>wypełnienia obowiązków prawnych ciążących na Administratorze (np. wynikających z ustawy o przeciwdziałaniu praniu pieniędzy),</li>
+          <li>dochodzenia roszczeń lub obrony przed roszczeniami,</li>
+          <li>marketingu bezpośredniego usług własnych Administratora (na podstawie odrębnej zgody lub prawnie uzasadnionego interesu).</li>
+        </ul>
+        <p>2.2. Zakres przetwarzanych danych obejmuje w szczególności: imię i nazwisko, numer telefonu, adres e-mail, adres korespondencyjny, dane dotyczące nieruchomości będącej przedmiotem usługi, a w przypadku realizacji umowy – także inne dane niezbędne do jej wykonania (np. numer PESEL, NIP, dane dokumentu tożsamości w zakresie wymaganym przepisami).</p>
+        <p>2.3. Podanie danych osobowych jest dobrowolne, jednak niezbędne do realizacji wskazanych powyżej celów, w szczególności do zawarcia i wykonania umowy pośrednictwa lub udzielenia odpowiedzi na zapytanie.</p>
+
+        <h2>3. Podstawy prawne przetwarzania</h2>
+        <p>Dane osobowe przetwarzane są na podstawie:</p>
+        <ul>
+          <li>art. 6 ust. 1 lit. b RODO – w celu podjęcia działań przed zawarciem umowy oraz wykonania umowy,</li>
+          <li>art. 6 ust. 1 lit. c RODO – w celu wypełnienia obowiązku prawnego ciążącego na Administratorze,</li>
+          <li>art. 6 ust. 1 lit. f RODO – w celu realizacji prawnie uzasadnionego interesu Administratora (np. marketing bezpośredni, dochodzenie roszczeń),</li>
+          <li>art. 6 ust. 1 lit. a RODO – na podstawie dobrowolnie udzielonej zgody (np. zgoda na otrzymywanie newslettera, zgoda na przetwarzanie danych po zakończeniu umowy).</li>
+        </ul>
+
+        <h2>4. Okres przechowywania danych</h2>
+        <p>4.1. Dane osobowe przechowywane są przez okres:</p>
+        <ul>
+          <li>niezbędny do realizacji umowy pośrednictwa oraz przez okres przedawnienia roszczeń z niej wynikających,</li>
+          <li>wynikający z obowiązujących przepisów prawa (np. przepisów podatkowych, przepisów dotyczących przeciwdziałania praniu pieniędzy),</li>
+          <li>do czasu wycofania zgody – w przypadku danych przetwarzanych na podstawie zgody,</li>
+          <li>do czasu wniesienia skutecznego sprzeciwu – w przypadku danych przetwarzanych w celu marketingu bezpośredniego.</li>
+        </ul>
+
+        <h2>5. Odbiorcy danych osobowych</h2>
+        <p>5.1. Dane osobowe mogą być przekazywane następującym kategoriom odbiorców:</p>
+        <ul>
+          <li>podmiotom świadczącym usługi na rzecz Administratora (np. biura rachunkowe, kancelarie prawne, dostawcy usług IT, dostawcy systemów CRM i hostingu),</li>
+          <li>potencjalnym kontrahentom (np. stronom transakcji, w zakresie niezbędnym do realizacji usługi pośrednictwa, za zgodą osoby, której dane dotyczą),</li>
+          <li>organom i podmiotom uprawnionym na podstawie obowiązujących przepisów prawa.</li>
+        </ul>
+        <p>5.2. Administrator nie przekazuje danych osobowych do państw trzecich (poza Europejski Obszar Gospodarczy), chyba że odbywa się to w ramach korzystania z narzędzi (np. hostingowych, analitycznych), które zapewniają odpowiedni stopień ochrony danych zgodnie z wymogami RODO (np. na podstawie standardowych klauzul umownych).</p>
+
+        <h2>6. Prawa osób, których dane dotyczą</h2>
+        <p>6.1. Osobie, której dane dotyczą, przysługuje prawo do:</p>
+        <ul>
+          <li>dostępu do swoich danych osobowych,</li>
+          <li>sprostowania (poprawiania) danych,</li>
+          <li>usunięcia danych („prawo do bycia zapomnianym"),</li>
+          <li>ograniczenia przetwarzania danych,</li>
+          <li>przenoszenia danych,</li>
+          <li>wniesienia sprzeciwu wobec przetwarzania danych,</li>
+          <li>cofnięcia zgody w dowolnym momencie, bez wpływu na zgodność z prawem przetwarzania, którego dokonano na podstawie zgody przed jej cofnięciem,</li>
+          <li>wniesienia skargi do organu nadzorczego – Prezesa Urzędu Ochrony Danych Osobowych (ul. Stawki 2, 00-193 Warszawa).</li>
+        </ul>
+        <p>6.2. W celu realizacji powyższych praw należy skontaktować się z Administratorem pod adresem e-mail: julia.nowak@nestbrokers.pl lub telefonicznie: 733 980 521.</p>
+
+        <h2>7. Bezpieczeństwo danych</h2>
+        <p>Administrator stosuje odpowiednie środki techniczne i organizacyjne zapewniające ochronę przetwarzanych danych osobowych, odpowiednie do zagrożeń oraz kategorii danych objętych ochroną, a w szczególności zabezpiecza dane przed ich udostępnieniem osobom nieupoważnionym, zabraniem przez osobę nieuprawnioną, przetwarzaniem z naruszeniem obowiązujących przepisów oraz zmianą, utratą, uszkodzeniem lub zniszczeniem.</p>
+
+        <h2>8. Zautomatyzowane podejmowanie decyzji</h2>
+        <p>Dane osobowe nie są przetwarzane w sposób zautomatyzowany (w tym w formie profilowania) w sposób, który wywoływałby wobec osoby, której dane dotyczą, skutki prawne lub w podobny sposób istotnie na nią wpływał.</p>
+
+        <h2>9. Polityka plików Cookies</h2>
+        <h3>9.1. Czym są pliki cookies</h3>
+        <p>Pliki cookies (tzw. „ciasteczka") to niewielkie pliki tekstowe wysyłane przez serwer internetowy i przechowywane przez przeglądarkę na urządzeniu końcowym użytkownika (komputerze, smartfonie, tablecie) podczas odwiedzania strony internetowej.</p>
+
+        <h3>9.2. Rodzaje wykorzystywanych plików cookies</h3>
+        <p>Strona internetowa Administratora może wykorzystywać następujące rodzaje plików cookies:</p>
+        <ul>
+          <li><strong>Cookies niezbędne (funkcjonalne)</strong> – konieczne do prawidłowego funkcjonowania strony internetowej i jej podstawowych funkcji (np. nawigacja, zapamiętywanie ustawień).</li>
+          <li><strong>Cookies analityczne (statystyczne)</strong> – umożliwiające zbieranie informacji o sposobie korzystania ze strony internetowej (np. Google Analytics), co pozwala na poprawę jakości i funkcjonalności serwisu.</li>
+          <li><strong>Cookies marketingowe (reklamowe)</strong> – wykorzystywane do wyświetlania treści marketingowych dostosowanych do zainteresowań użytkownika oraz mierzenia skuteczności kampanii reklamowych (np. piksel Facebooka/Meta, Google Ads).</li>
+          <li><strong>Cookies podmiotów trzecich</strong> – umieszczane przez serwisy zewnętrzne (np. mapy Google, wtyczki społecznościowe), z których funkcjonalności korzysta strona internetowa.</li>
+        </ul>
+
+        <h3>9.3. Cele wykorzystywania plików cookies</h3>
+        <p>Pliki cookies wykorzystywane są w celu:</p>
+        <ul>
+          <li>zapewnienia prawidłowego działania strony internetowej,</li>
+          <li>dostosowania zawartości strony internetowej do preferencji użytkownika,</li>
+          <li>tworzenia statystyk pomagających zrozumieć, w jaki sposób użytkownicy korzystają ze strony,</li>
+          <li>prowadzenia działań marketingowych i remarketingowych,</li>
+          <li>utrzymania sesji użytkownika (np. po zalogowaniu do panelu klienta, jeśli dotyczy).</li>
+        </ul>
+
+        <h3>9.4. Zgoda na wykorzystanie cookies</h3>
+        <p>Podczas pierwszej wizyty na stronie internetowej użytkownikowi wyświetlany jest komunikat (baner cookies) informujący o wykorzystywaniu plików cookies wraz z możliwością wyrażenia zgody na poszczególne kategorie cookies (poza cookies niezbędnymi, które nie wymagają zgody). Użytkownik może w każdej chwili zmienić swoje preferencje dotyczące cookies za pośrednictwem ustawień przeglądarki lub panelu zarządzania zgodami na stronie.</p>
+
+        <h3>9.5. Zarządzanie plikami cookies</h3>
+        <p>9.5.1. Użytkownik może samodzielnie i w każdym czasie zmienić ustawienia dotyczące plików cookies, określając warunki ich przechowywania i uzyskiwania dostępu przez pliki cookies do urządzenia użytkownika za pomocą ustawień przeglądarki internetowej.</p>
+        <p>9.5.2. Instrukcje zarządzania plikami cookies dostępne są na stronach pomocy poszczególnych przeglądarek:</p>
+        <ul>
+          <li>Google Chrome</li>
+          <li>Mozilla Firefox</li>
+          <li>Safari</li>
+          <li>Microsoft Edge</li>
+          <li>Opera</li>
+        </ul>
+        <p>9.5.3. Ograniczenie stosowania plików cookies może wpłynąć na niektóre funkcjonalności dostępne na stronie internetowej.</p>
+
+        <h3>9.6. Czas przechowywania cookies</h3>
+        <p>Pliki cookies mogą mieć charakter:</p>
+        <ul>
+          <li><strong>sesyjny</strong> – przechowywane są do momentu zamknięcia przeglądarki,</li>
+          <li><strong>stały</strong> – przechowywane są przez czas określony w parametrach pliku cookie lub do momentu ich ręcznego usunięcia przez użytkownika.</li>
+        </ul>
+
+        <h2>10. Postanowienia końcowe</h2>
+        <p>10.1. Administrator zastrzega sobie prawo do wprowadzania zmian w niniejszej Polityce, w szczególności w związku ze zmianami przepisów prawa, technologii lub zakresu świadczonych usług. Aktualna wersja Polityki publikowana jest na stronie internetowej Administratora.</p>
+        <p>10.2. W sprawach nieuregulowanych niniejszą Polityką zastosowanie mają przepisy RODO oraz ustawy o ochronie danych osobowych.</p>
+        <p>10.3. W przypadku pytań dotyczących niniejszej Polityki, prosimy o kontakt:</p>
+        <p><strong>Julia Nowak Nieruchomości</strong><br>Tel.: 733 980 521<br>E-mail: julia.nowak@nestbrokers.pl</p>
+      </div>
+    </div>
+  </div>
 
 
   <!-- VANILLA INTERACTIVITY & ANIMATIONS -->
@@ -2069,6 +2657,7 @@
     // Multi-language translation dictionaries
     const translations = {
       PL: {
+        "logo-text": "<span class=\"logo-name\">Julia Nowak</span><br>Agent nieruchomości",
         "nav-about": "O mnie",
         "nav-properties": "Oferty",
         "nav-reviews": "Opinie",
@@ -2077,30 +2666,39 @@
         "mob-properties": "Oferty",
         "mob-reviews": "Opinie",
         "mob-contact": "Kontakt",
-        "hero-title": "Twoje wymarzone<br>mieszkanie<br>w Krakowie.",
-        "hero-subtitle": "Sprzedaż i wynajem nieruchomości — profesjonalna obsługa dla Polaków i obcokrajowców.",
+        "hero-title": "Julia Nowak<br>agent<br>nieruchomości",
+        "hero-subtitle": "Sprzedaż i wynajem nieruchomości, profesjonalna obsługa dla Polaków i obcokrajowców.",
         "hero-btn-consultation": "Darmowa konsultacja",
         "hero-btn-properties": "Zobacz oferty",
         "hero-location": "Kraków · Wieliczka · Libertów",
-        "trust-1": "Debiut Roku 2024",
-        "trust-2": "TOP 3 Nest Brokers 2026",
-        "trust-3": "Kraków · Wieliczka · Libertów",
+        "trust-1": "Ponad 100 zrealizowanych transakcji",
+        "trust-2": "Ponad 90% nieruchomości sprzedanych w mniej niż miesiąc",
+        "trust-3": "Miesięczne dotarcie na poziomie 250 tyś",
         "about-label": "O mnie",
-        "about-headline": "Sprzedaję i wynajmuję — z zaangażowaniem i wynikami.",
+        "about-headline": "Sprzedaję i wynajmuję, z zaangażowaniem i wynikami.",
         "about-p1": "Specjalizuję się w transakcjach na krakowskim rynku nieruchomości. Moja praca opiera się na pełnym wsparciu klientów od pierwszego kontaktu aż do przekazania kluczy. Zwracam szczególną uwagę na detale, przygotowanie nieruchomości (home staging) i skuteczne negocjacje.",
-        "about-p2": "Pracuję zarówno z klientami z Polski, jak i z zagranicy — swobodnie prowadzę cały proces w języku polskim, angielskim oraz hiszpańskim. Zamiast szablonowych schematów, wybieram szczere, ludzkie podejście. Spotkajmy się przy dobrej kawce, porozmawiajmy o Twoich planach i zobacz, jak bezpiecznie przejść przez cały proces transakcji.",
+        "about-p2": "Pracuję zarówno z klientami z Polski, jak i z zagranicy, swobodnie prowadząc cały proces w języku polskim oraz angielskim. Zamiast szablonowych schematów, wybieram szczere, ludzkie podejście. Spotkajmy się przy dobrej kawce, porozmawiajmy o Twoich planach i zobacz, jak bezpiecznie przejść przez cały proces transakcji.",
         "about-btn": "Umów bezpłatną konsultację",
         "about-badge1": "Debiut Roku",
         "about-badge2": "Nest Brokers 2026",
-        "about-badge3": "Obsługa w języku polskim, angielskim i hiszpańskim",
-        "services-label": "Zakres współpracy",
-        "services-headline": "Sprzedaj i wynajmij z zyskiem.",
-        "service1-title": "Sprzedaż",
-        "service1-body": "Kompleksowa usługa sprzedaży Twojej nieruchomości. Opracowuję solidną strategię wyceny, zajmuję się profesjonalnym przygotowaniem oferty, marketingiem premium oraz w pełni nadzoruję proces negocjacji i formalności.",
-        "service2-title": "Wynajem",
-        "service2-body": "Skutecznie łączę właścicieli z wiarygodnymi najemcami. Dbam o staranną weryfikację profilu lokatorów, przygotowuję bezpieczne, precyzyjne umowy chroniące Twoje interesy i uwalniam Cię od codziennego stresu.",
-        "service3-title": "Doradztwo",
-        "service3-body": "Indywidualne konsultacje dotyczące krakowskiego rynku mieszkaniowego. Pomagam ocenić potencjał inwestycyjny nieruchomości, analizuję trendy i służę merytorycznym wsparciem przed podjęciem kluczowych decyzji.",
+        "about-badge3": "Obsługa w języku polskim i angielskim",
+        "steps-label": "Od czego zacząć?",
+        "steps-headline": "Od czego zacząć współpracę?",
+        "step1-num": "01",
+        "step1-title": "Bezpłatna konsultacja",
+        "step1-body": "Rozmowa telefoniczna lub przy dobrej kawce, na której poznam Twoje potrzeby, budżet i cele.",
+        "step2-num": "02",
+        "step2-title": "Analiza i wycena",
+        "step2-body": "Rzetelna ocena wartości nieruchomości, dogłębna analiza rynku i wybór najlepszej strategii.",
+        "step3-num": "03",
+        "step3-title": "Przygotowanie oferty",
+        "step3-body": "Profesjonalny home staging, piękna sesja zdjęciowa oraz opracowanie materiałów reklamowych.",
+        "step4-num": "04",
+        "step4-title": "Promocja i prezentacja",
+        "step4-body": "Skuteczne dotarcie do tysięcy kupców lub najemców oraz profesjonalne, angażujące prezentacje.",
+        "step5-num": "05",
+        "step5-title": "Finalizacja i klucze",
+        "step5-body": "Kompleksowa opieka prawna, bezpieczne podpisanie umowy i radosne przekazanie kluczy.",
         "listings-label": "Aktualne oferty",
         "listings-headline": "Wybrane nieruchomości",
         "list1-badge": "Na Sprzedaż",
@@ -2132,14 +2730,14 @@
         "list2-tagline": "Splatają się tu nowoczesność i kameralność, a unikatowy widok na kojącą zieleń to absolutna rzadkość w wielkim mieście.",
         "list2-btn": "Napisz na Instagram lub zadzwoń",
         "test-label": "Opinie",
-        "test-quote": "Polecam z całego serca. Najbardziej pomocna, rzeczowa i kompetentna agentka jaką spotkałam na swojej drodze do zakupu wymarzonego mieszkania.",
-        "test-attr": "— Klientka Julii",
+        "test-quote": "Miałam ogromną przyjemność współpracować z Julią Nowak podczas zakupu mojego pierwszego mieszkania. Od samego początku czułam się w pełni zaopiekowana i mogłam liczyć na jej wsparcie na każdym etapie tego procesu. Zakup nieruchomości w moim przypadku wiązał się z kilkoma wyzwaniami i nieoczekiwanymi sytuacjami, jednak Julia za każdym razem podchodziła do nich z pełnym profesjonalizmem, spokojem i skutecznością. Dzięki jej doświadczeniu oraz zaangażowaniu nawet bardziej skomplikowane kwestie były sprawnie rozwiązywane, a ja mogłam czuć się bezpiecznie i pewnie podczas podejmowania ważnych decyzji. Dla Julii priorytetem jest zadowolenie jej klientów. Współpracuje ona również z wieloma sprawdzonymi specjalistami – od fachowców technicznych po ekspertów związanych z rynkiem nieruchomości, dzięki czemu mogłam liczyć na rzetelne wsparcie i profesjonalną pomoc praktycznie na wszystkich frontach.<br><br>Jestem bardzo zadowolona ze współpracy i z pełnym przekonaniem mogę polecić zarówno Julię, jak i całą agencję Nest Brokers każdemu, kto szuka rzetelnego, skutecznego i zaangażowanego pośrednika nieruchomości.",
+        "test-attr": "Martyna",
         "test-btn": "Czytaj więcej opinii na Facebook →",
         "contact-label": "Męczy Cię szukanie?",
         "contact-title": "Zacznijmy od kawki.",
-        "contact-subtitle": "Napisz do mnie bezpośrednio na e-mail, zadzwoń lub skontaktuj się w mediach społecznościowych — umówimy się i obgadamy cały plan bez absolutnie żadnych zobowiązań.",
-        "contact-area": "Obsługiwany obszar:<br>Kraków · Wieliczka · Libertów",
-        "contact-badge": "✦ Darmowa konsultacja — bez zobowiązań",
+        "contact-subtitle": "Napisz do mnie bezpośrednio na e-mail, zadzwoń lub skontaktuj się w mediach społecznościowych, umówimy się i obgadamy cały plan bez absolutnie żadnych zobowiązań.",
+        "contact-area": "Obsługiwany obszar:<br>Kraków i okolice do 20km",
+        "contact-badge": "✦ Darmowa konsultacja, bez zobowiązań",
         "footer-agent-title": "Julia Nowak Nieruchomości",
         "footer-location": "Kraków · Wieliczka · Libertów",
         "footer-nav-title": "Skróty",
@@ -2148,9 +2746,28 @@
         "foot-reviews": "Opinie",
         "foot-contact": "Kontakt",
         "footer-agency-title": "Agencja",
-        "footer-copyright": "© 2026 Julia Nowak Nieruchomości · Nest Brokers · Kraków"
+        "footer-copyright": "© 2026 Julia Nowak Nieruchomości · Nest Brokers · Kraków",
+        "footer-privacy-btn": "Polityka Prywatności i Pliki Cookies",
+        "modal-title": "Polityka Prywatności i Pliki Cookies",
+        "steps-hint": "← Przesuń w bok, aby zobaczyć kolejne kroki →",
+        "steps-form-title": "Zacznijmy współpracę",
+        "steps-form-subtitle": "Zostaw swoje dane – skontaktuję się z Tobą w ciągu 24 godzin.",
+        "form-label-name": "Imię i nazwisko",
+        "form-label-phone": "Numer telefonu",
+        "form-label-email": "Adres e-mail",
+        "form-label-service": "Temat rozmowy",
+        "form-opt-sell": "Chcę sprzedać nieruchomość",
+        "form-opt-buy": "Chcę kupić nieruchomość",
+        "form-opt-rent": "Chcę wynająć nieruchomość",
+        "form-opt-other": "Inny temat / Doradztwo",
+        "form-label-msg": "Twoja wiadomość (opcjonalnie)",
+        "form-consent-text": "Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z Polityką Prywatności.",
+        "form-btn-submit": "Wyślij wiadomość",
+        "form-success": "Wiadomość została wysłana! Dziękuję za kontakt, odezwę się niebawem.",
+        "form-error": "Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie lub zadzwoń bezpośrednio."
       },
       EN: {
+        "logo-text": "<span class=\"logo-name\">Julia Nowak</span><br>Real estate agent",
         "nav-about": "About me",
         "nav-properties": "Properties",
         "nav-reviews": "Reviews",
@@ -2159,32 +2776,39 @@
         "mob-properties": "Properties",
         "mob-reviews": "Reviews",
         "mob-contact": "Contact",
-        "hero-title": "Your dream<br>apartment<br>in Krakow.",
-        "hero-subtitle": "Property sales and rentals — professional service for Polish and foreign clients.",
+        "hero-title": "Julia Nowak<br>real estate<br>agent",
+        "hero-subtitle": "Property sales and rentals, professional service for Polish and foreign clients.",
         "hero-btn-consultation": "Free consultation",
         "hero-btn-properties": "View properties",
-        "hero-location": "Krakow · Wieliczka · Libertow",
-        "trust-1": "Debut of the Year 2024",
-        "trust-2": "TOP 3 Nest Brokers 2026",
-        "trust-3": "Krakow · Wieliczka · Libertow",
+        "hero-location": "Cracow · Wieliczka · Libertow",
+        "trust-1": "Over 100 completed transactions",
+        "trust-2": "Over 90% of properties sold in under a month",
+        "trust-3": "Monthly reach of 250k views",
         "about-label": "About me",
-        "about-headline": "I sell and rent — with commitment and high results.",
-        "about-p1": "I specialize in transactions on the Krakow real estate market. My work is built upon providing full support for my customers from the first touchpoint until the keys are handed over. I pay close attention to nuances, proper presentation (home staging), and highly effective negotiations.",
-        "about-p2": "I work with Polish and international clients alike — easily conducting the entire flow in Polish, English, and Spanish. Instead of generic formulas, I build sincere, human connection. Let's arrange a good cup of coffee, discuss your plans, and see how safely we can guide you through the transition.",
+        "about-headline": "I sell and rent, with commitment and high results.",
+        "about-p1": "I specialize in transactions on the Cracow real estate market. My work is built upon providing full support for my customers from the first touchpoint until the keys are handed over. I pay close attention to nuances, proper presentation (home staging), and highly effective negotiations.",
+        "about-p2": "I work with Polish and international clients alike, easily conducting the entire flow in Polish and English. Instead of generic formulas, I build sincere, human connection. Let's arrange a good cup of coffee, discuss your plans, and see how safely we can guide you through the transition.",
         "about-btn": "Schedule a free consultation",
         "about-badge1": "Debut of the Year",
         "about-badge2": "Nest Brokers 2026",
-        "about-badge3": "Service in Polish, English & Spanish",
-        "services-label": "Scope of cooperation",
-        "services-headline": "Sell and rent out with profit.",
-        "service1-title": "Sales",
-        "service1-body": "Comprehensive sales service for your property. I formulate a bulletproof pricing strategy, manage professional styling, premium marketing, and take full control of negotiations and bureaucratic paperwork.",
-        "service2-title": "Rentals",
-        "service2-body": "I effectively match landlords with trustworthy tenants. I thoroughly verify background profiles, prepare robust, custom legal contracts to shield your interests, and save you from everyday stress.",
-        "services-label": "Scope of cooperation",
-        "services-headline": "Sell and rent out with profit.",
-        "service3-title": "Advisory",
-        "service3-body": "Tailored consultation regarding the Krakow housing market. I help evaluate property investment viability, analyze emerging trends, and offer reliable guidance before key financial moves.",
+        "about-badge3": "Service in Polish & English",
+        "steps-label": "How to start?",
+        "steps-headline": "Where to start cooperation?",
+        "step1-num": "01",
+        "step1-title": "Free Consultation",
+        "step1-body": "A quick phone call or meeting over good coffee, where I will get to know your needs and goals.",
+        "step2-num": "02",
+        "step2-title": "Analysis & Valuation",
+        "step2-body": "Accurate assessment of property value, in-depth Cracow market analysis and optimal strategy selection.",
+        "step3-num": "03",
+        "step3-title": "Offer Preparation",
+        "step3-body": "Professional home staging, high-quality photoshoot, and crafting of attractive marketing materials.",
+        "step4-num": "04",
+        "step4-title": "Marketing & Viewings",
+        "step4-body": "Effective reach to thousands of prospective buyers or tenants and professional, engaging viewings.",
+        "step5-num": "05",
+        "step5-title": "Closing & Handover",
+        "step5-body": "Comprehensive legal support, secure contract signing, and formal key handover.",
         "listings-label": "Current offers",
         "listings-headline": "Selected Properties",
         "list1-badge": "For Sale",
@@ -2206,7 +2830,7 @@
         "list1-check14": "Full freehold with KW, no encumbrances",
         "list1-tagline": "Perfect for families, remote work couples or as a highly profitable rental investment.",
         "list2-badge": "For Sale",
-        "list2-title": "Apartment with a private garden in Krakow? Yes, possible.",
+        "list2-title": "Apartment with a private garden in Cracow? Yes, possible.",
         "list2-features": "3 rooms · 46.94 m² · Garden 29 m²",
         "list2-check1": "New cozy residential development (2019)",
         "list2-check2": "Low maintenance fee: only 330 PLN/mo.",
@@ -2216,23 +2840,41 @@
         "list2-tagline": "Modernity and architectural comfort intertwine seamlessly, and the unique view on calming nature is a true rare jewel in a big city.",
         "list2-btn": "Write to Instagram or call",
         "test-label": "Reviews",
-        "test-quote": "I recommend Julia with all my heart. She is the most helpful, reliable, and competent real estate agent I have met on my way to buying my dream home.",
-        "test-attr": "— Julia's Client",
+        "test-quote": "I had the great pleasure of working with Julia Nowak when purchasing my first apartment. From the very beginning, I felt fully taken care of and could count on her support at every stage of the process. In my case, buying a property involved several challenges and unexpected situations, but Julia approached them each time with full professionalism, calmness, and effectiveness. Thanks to her experience and commitment, even more complex issues were resolved efficiently, and I could feel safe and confident when making key decisions. For Julia, customer satisfaction is the absolute priority. She also works with many proven specialists – from technical experts to professionals in the real estate industry – so I could count on reliable support and professional help on all fronts.<br><br>I am extremely satisfied with the cooperation and with full conviction I can recommend both Julia and the entire Nest Brokers agency to anyone looking for a reliable, effective, and dedicated real estate agent.",
+        "test-attr": "Martyna",
         "test-btn": "Read more reviews on Facebook →",
         "contact-label": "Tired of searching?",
         "contact-title": "Let's start with coffee.",
-        "contact-subtitle": "Write to me directly via email, give me a call, or contact me on social media — we'll meet and map out the strategy together with absolutely no strings attached.",
-        "contact-area": "Served Area:<br>Krakow · Wieliczka · Libertow",
-        "contact-badge": "✦ Free consultation — no obligations",
+        "contact-subtitle": "Write to me directly via email, give me a call, or contact me on social media, we'll meet and map out the strategy together with absolutely no strings attached.",
+        "contact-area": "Served Area:<br>Cracow and surroundings up to 20km",
+        "contact-badge": "✦ Free consultation, no obligations",
         "footer-agent-title": "Julia Nowak Real Estate",
-        "footer-location": "Krakow · Wieliczka · Libertow",
+        "footer-location": "Cracow · Wieliczka · Libertow",
         "footer-nav-title": "Navigation",
         "foot-about": "About me",
         "foot-properties": "Properties",
         "foot-reviews": "Reviews",
         "foot-contact": "Contact",
         "footer-agency-title": "Agency",
-        "footer-copyright": "© 2026 Julia Nowak Real Estate · Nest Brokers · Krakow"
+        "footer-copyright": "© 2026 Julia Nowak Real Estate · Nest Brokers · Cracow",
+        "footer-privacy-btn": "Privacy Policy & Cookies",
+        "modal-title": "Privacy Policy & Cookies",
+        "steps-hint": "← Scroll sideways to see more steps →",
+        "steps-form-title": "Let's work together",
+        "steps-form-subtitle": "Leave your details – I will contact you within 24 hours.",
+        "form-label-name": "Full Name",
+        "form-label-phone": "Phone Number",
+        "form-label-email": "Email Address",
+        "form-label-service": "Topic",
+        "form-opt-sell": "I want to sell a property",
+        "form-opt-buy": "I want to buy a property",
+        "form-opt-rent": "I want to rent a property",
+        "form-opt-other": "Other topic / Consulting",
+        "form-label-msg": "Your message (optional)",
+        "form-consent-text": "I consent to the processing of my personal data in accordance with the Privacy Policy.",
+        "form-btn-submit": "Send Message",
+        "form-success": "Message sent! Thank you for contacting me, I will get back to you soon.",
+        "form-error": "An error occurred while sending the message. Please try again or call directly."
       }
     };
 
@@ -2319,6 +2961,102 @@
             behavior: 'auto'
           });
         }, 100);
+      });
+    }
+
+    // Privacy Policy Modal interactivity
+    const privacyTrigger = document.getElementById('privacy-trigger');
+    const privacyModal = document.getElementById('privacy-modal');
+    const privacyClose = document.getElementById('privacy-close');
+
+    if (privacyTrigger && privacyModal && privacyClose) {
+      const openModal = () => {
+        privacyModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      };
+
+      const closeModal = () => {
+        privacyModal.classList.remove('active');
+        document.body.style.overflow = '';
+      };
+
+      privacyTrigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal();
+      });
+
+      privacyClose.addEventListener('click', closeModal);
+
+      // Close on clicking outside container
+      privacyModal.addEventListener('click', (e) => {
+        if (e.target === privacyModal) {
+          closeModal();
+        }
+      });
+
+      // Close on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && privacyModal.classList.contains('active')) {
+          closeModal();
+        }
+      });
+    }
+
+    // Steps Contact Form submission logic
+    const stepsForm = document.getElementById('steps-contact-form');
+    const stepsStatus = document.getElementById('steps-form-status');
+    
+    if (stepsForm) {
+      stepsForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        
+        const submitBtn = stepsForm.querySelector('.form-submit-btn');
+        const btnText = stepsForm.querySelector('.btn-text');
+        const spinner = stepsForm.querySelector('.btn-spinner');
+        
+        // Show loading state
+        submitBtn.disabled = true;
+        if (btnText) btnText.style.opacity = '0.5';
+        if (spinner) spinner.style.display = 'inline-block';
+        
+        if (stepsStatus) {
+          stepsStatus.style.display = 'none';
+          stepsStatus.className = 'form-status-message';
+        }
+        
+        // Simulate premium network request
+        setTimeout(() => {
+          // Re-enable and hide spinner
+          submitBtn.disabled = false;
+          if (btnText) btnText.style.opacity = '1';
+          if (spinner) spinner.style.display = 'none';
+          
+          // Get translated message
+          const successMsg = translations[currentLang]["form-success"] || "Dziękujemy! Wiadomość została wysłana.";
+          
+          if (stepsStatus) {
+            stepsStatus.innerHTML = successMsg;
+            stepsStatus.classList.add('success');
+            stepsStatus.style.display = 'block';
+          }
+          
+          // Reset form fields
+          stepsForm.reset();
+          
+          // Auto-hide success message after 7 seconds
+          setTimeout(() => {
+            if (stepsStatus) {
+              stepsStatus.style.transition = 'opacity 0.5s ease';
+              stepsStatus.style.opacity = '0';
+              setTimeout(() => {
+                stepsStatus.style.display = 'none';
+                stepsStatus.style.opacity = '1';
+                stepsStatus.style.transition = '';
+              }, 500);
+            }
+          }, 7000);
+          
+        }, 1500);
       });
     }
 
