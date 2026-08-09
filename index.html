@@ -165,13 +165,16 @@
     /* SCROLL ANIMATIONS (Intersection Observer classes) */
     .fade-up-init {
       opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transform: translate3d(0, 20px, 0);
+      transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
     }
 
     .fade-up-active {
       opacity: 1;
-      transform: translateY(0);
+      transform: translate3d(0, 0, 0);
     }
 
     /* STICKY TOP NAVIGATION */
@@ -185,24 +188,52 @@
       align-items: center;
       justify-content: space-between;
       padding: 1.5rem 10%;
-      background-color: rgba(242, 237, 230, 0.92);
+      background-color: rgba(242, 237, 230, 0.95);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      transition: padding 0.3s ease, border-bottom 0.3s ease;
+      transition: padding 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-bottom 0.3s ease, background-color 0.3s ease;
       border-bottom: 1px solid rgba(184, 146, 74, 0.05);
+      will-change: padding, background-color;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
     }
 
     nav.top-navbar.scrolled {
       padding: 1rem 10%;
       border-bottom: 1px solid rgba(184, 146, 74, 0.2);
+      background-color: rgba(242, 237, 230, 0.98);
     }
 
     @media (max-width: 1024px) {
       nav.top-navbar {
-        padding: 1.5rem 6%;
+        padding: 1.25rem 6%;
       }
       nav.top-navbar.scrolled {
-        padding: 1rem 6%;
+        padding: 0.85rem 6%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav.top-navbar {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background-color: rgba(242, 237, 230, 0.98);
+      }
+
+      .fade-up-init {
+        transform: translate3d(0, 10px, 0);
+        transition-duration: 0.35s;
+      }
+
+      /* Content visibility auto rendering hint for smooth scrolling on mobile */
+      .trust-strip-section,
+      .about-section,
+      .steps-section,
+      .listings-section,
+      .testimonials-section,
+      .contact-section {
+        content-visibility: auto;
+        contain-intrinsic-size: 1px 400px;
       }
     }
 
@@ -1733,21 +1764,24 @@
       width: 100%;
       opacity: 0;
       visibility: hidden;
-      transform: translateY(18px) scale(0.97);
-      transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), 
-                  transform 0.55s cubic-bezier(0.16, 1, 0.3, 1), 
-                  visibility 0.55s ease;
+      transform: translate3d(0, 16px, 0) scale(0.98);
+      transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), 
+                  transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), 
+                  visibility 0.45s ease;
       display: flex;
       flex-direction: column;
       align-items: center;
       pointer-events: none;
+      will-change: opacity, transform;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
     }
 
     .review-slide.active {
       position: relative;
       opacity: 1;
       visibility: visible;
-      transform: translateY(0) scale(1);
+      transform: translate3d(0, 0, 0) scale(1);
       pointer-events: auto;
     }
 
@@ -2996,15 +3030,24 @@
 
   <!-- VANILLA INTERACTIVITY & ANIMATIONS -->
   <script>
-    // STICKY NAVBAR CLASS TOGGLE ON SCROLL
+    // STICKY NAVBAR CLASS TOGGLE ON SCROLL (Throttled with requestAnimationFrame for mobile smoothness)
+    let isNavScrolling = false;
     window.addEventListener('scroll', () => {
-      const navbar = document.getElementById('navbar');
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
+      if (!isNavScrolling) {
+        window.requestAnimationFrame(() => {
+          const navbar = document.getElementById('navbar');
+          if (navbar) {
+            if (window.scrollY > 40) {
+              navbar.classList.add('scrolled');
+            } else {
+              navbar.classList.remove('scrolled');
+            }
+          }
+          isNavScrolling = false;
+        });
+        isNavScrolling = true;
       }
-    });
+    }, { passive: true });
 
     // MOBILE OVERLAY HAMBURGER TOGGLE
     const menuToggle = document.getElementById('menuToggle');
@@ -3768,6 +3811,34 @@
           let nextIdx = (currentReviewIdx + 1) % reviewSlides.length;
           goToReview(nextIdx);
         }, 9000);
+      }
+
+      // Touch swipe support for mobile
+      const reviewsContainer = document.querySelector('.reviews-carousel');
+      if (reviewsContainer) {
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        reviewsContainer.addEventListener('touchstart', (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        reviewsContainer.addEventListener('touchend', (e) => {
+          touchEndX = e.changedTouches[0].screenX;
+          handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+          const swipeThreshold = 35;
+          if (touchEndX < touchStartX - swipeThreshold) {
+            let nextIdx = (currentReviewIdx + 1) % reviewSlides.length;
+            goToReview(nextIdx);
+          } else if (touchEndX > touchStartX + swipeThreshold) {
+            let prevIdx = currentReviewIdx - 1;
+            if (prevIdx < 0) prevIdx = reviewSlides.length - 1;
+            goToReview(prevIdx);
+          }
+        }
       }
 
       resetReviewAutoplay();
