@@ -12,8 +12,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://i.ibb.co" crossorigin>
   <link rel="dns-prefetch" href="https://i.ibb.co">
-  <link rel="preload" as="image" href="https://i.ibb.co/tp3Jymtt/julianowak.png" fetchpriority="high">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Alex+Brush&family=Pinyon+Script&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="https://i.ibb.co/1fQ2g6Cb/IMG-20261002-104610.png" fetchpriority="high">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -25,7 +25,8 @@
       --gold-hover: #9A7535;
       --text-gray: #3D3226; /* Deeper warm brown-gray for high-contrast readability */
       --white: #FAF7F2; /* Clean off-white cream */
-      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-hero: 'Playfair Display', Georgia, serif;
       --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
     }
 
@@ -444,7 +445,8 @@
       color: var(--primary-bg);
       font-family: var(--font-serif);
       font-size: 2.2rem;
-      font-style: italic;
+      font-style: normal;
+      font-weight: 500;
       transition: color 0.3s ease;
     }
 
@@ -530,7 +532,8 @@
       font-family: var(--font-serif);
       font-size: clamp(2.8rem, 5vw, 4.8rem);
       font-weight: 600;
-      font-style: italic;
+      font-style: normal;
+      letter-spacing: -0.02em;
       color: var(--dark-brown);
       line-height: 1.1;
       margin-bottom: 1.5rem;
@@ -713,7 +716,8 @@
     .trust-number {
       font-family: var(--font-serif);
       font-size: 3rem;
-      font-weight: 700;
+      font-weight: 600;
+      font-variant-numeric: lining-nums;
       color: var(--gold);
       line-height: 1;
     }
@@ -769,9 +773,10 @@
     .about-headline {
       font-family: var(--font-serif);
       font-size: clamp(1.8rem, 3.5vw, 3rem);
-      font-style: italic;
+      font-style: normal;
       color: var(--dark-brown);
       font-weight: 600;
+      letter-spacing: -0.015em;
       line-height: 1.2;
       margin-bottom: 2rem;
     }
@@ -879,8 +884,9 @@
     .steps-headline {
       font-family: var(--font-serif);
       font-size: clamp(2.22rem, 4vw, 3.2rem);
-      font-weight: 300;
-      font-style: italic;
+      font-weight: 500;
+      font-style: normal;
+      letter-spacing: -0.015em;
       color: #FAF8F5; /* Cream */
       line-height: 1.2;
     }
@@ -944,7 +950,8 @@
     .step-number {
       font-family: var(--font-serif);
       font-size: 2.8rem;
-      font-weight: 700;
+      font-weight: 600;
+      font-variant-numeric: lining-nums;
       color: var(--gold);
       line-height: 1;
       margin-bottom: 1.25rem;
@@ -1001,11 +1008,11 @@
     .steps-form-title {
       font-family: var(--font-serif);
       font-size: 1.88rem;
-      font-style: italic;
+      font-style: normal;
       color: #FAF8F5;
       text-align: center;
       margin-bottom: 0.5rem;
-      font-weight: 300;
+      font-weight: 500;
     }
 
     .steps-form-subtitle {
@@ -1177,9 +1184,10 @@
     .listings-headline {
       font-family: var(--font-serif);
       font-size: clamp(2.2rem, 4vw, 3.2rem);
-      font-style: italic;
+      font-style: normal;
       color: var(--dark-brown);
-      font-weight: 400;
+      font-weight: 600;
+      letter-spacing: -0.015em;
     }
 
     .listings-grid {
@@ -1487,7 +1495,8 @@
     .quick-contact-title {
       font-family: var(--font-serif);
       font-size: 1.6rem;
-      font-style: italic;
+      font-style: normal;
+      font-weight: 500;
       color: #FAF8F5;
       margin-bottom: 0.3rem;
       text-align: center;
@@ -1590,10 +1599,10 @@
     .listing-title {
       font-family: var(--font-serif);
       font-size: 2.2rem;
-      font-weight: 400;
-      font-style: italic;
+      font-weight: 600;
+      font-style: normal;
       color: var(--dark-brown);
-      line-height: 1.2;
+      line-height: 1.25;
       margin-bottom: 1rem;
     }
 
@@ -1613,7 +1622,8 @@
     .listing-price {
       font-family: var(--font-serif);
       font-weight: 600;
-      font-style: italic;
+      font-style: normal;
+      font-variant-numeric: lining-nums;
       font-size: 2.6rem;
       color: var(--gold);
       line-height: 1;
@@ -1880,7 +1890,9 @@
       font-family: var(--font-serif);
       font-size: clamp(2.2rem, 5vw, 3.5rem);
       color: var(--dark-brown);
-      font-style: italic;
+      font-style: normal;
+      font-weight: 600;
+      letter-spacing: -0.015em;
       margin-bottom: 1rem;
     }
 
@@ -1916,7 +1928,8 @@
     .contact-agent-name {
       font-family: var(--font-serif);
       font-size: 2.22rem;
-      font-style: italic;
+      font-style: normal;
+      font-weight: 600;
       color: #FAF8F5;
       margin-bottom: 0.5rem;
     }
@@ -1940,7 +1953,9 @@
 
     .contact-link-tel {
       font-family: var(--font-serif);
-      font-style: italic;
+      font-style: normal;
+      font-weight: 600;
+      font-variant-numeric: lining-nums;
       font-size: 2.22rem;
       color: var(--gold);
       line-height: 1.2;
@@ -2362,6 +2377,60 @@
     .privacy-link:hover {
       color: var(--gold);
     }
+
+    /* ===== EDITS ===== */
+    /* Header */
+    nav.top-navbar { padding: 1.3rem 6%; }
+    nav.top-navbar.scrolled { padding: 0.9rem 6%; }
+    .site-logo-img { height: 68px; width: auto; display: block; mix-blend-mode: multiply; }
+    .footer-logo-img { height: 96px; margin-bottom: 1rem; filter: invert(1); mix-blend-mode: screen; }
+    nav.top-navbar .logo-container { gap: 1rem; }
+    nav.top-navbar .logo-text { font-size: 13px; padding-left: 1rem; }
+    nav.top-navbar .logo-name { font-family: var(--font-serif); font-style: normal; font-weight: 600; font-size: 1.85rem; letter-spacing: -0.01em; line-height: 1.05; }
+    nav.top-navbar .nav-links { gap: 2.5rem; }
+    nav.top-navbar .nav-links a { font-size: 17px; font-weight: 500; }
+    nav.top-navbar .phone-pill { font-size: 18px; padding: 0.65rem 1.6rem; }
+    nav.top-navbar .nav-social-icon svg { width: 26px; height: 26px; }
+    .lang-switch-container { font-size: 14px; }
+    @media (max-width: 600px) {
+      .site-logo-img { height: 48px; }
+      nav.top-navbar .logo-name { font-size: 1.5rem; }
+      nav.top-navbar .logo-text { font-size: 10px; padding-left: 0.6rem; }
+    }
+
+    /* Hero */
+    .hero-section { padding-top: 9rem; }
+    .hero-container { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (min-width: 992px) { .hero-left { padding-left: 9%; } }
+    .hero-headline { font-family: var(--font-serif); font-style: normal; font-weight: 600; font-size: clamp(3rem, 5.4vw, 5.4rem); line-height: 1.08; letter-spacing: -0.02em; }
+    .hero-subheadline { font-size: clamp(1.3rem, 2.1vw, 1.75rem); max-width: 620px; }
+    .hero-ctas { gap: 1.25rem; }
+    .hero-ctas .btn-gold, .hero-ctas .btn-ghost { font-size: 17px; padding: 1.35rem 2.8rem; }
+
+    /* About */
+    .about-section .label-caps { font-family: var(--font-serif); font-size: 2.2rem; font-weight: 600; letter-spacing: 0.1em; }
+    .about-right { align-items: center; justify-content: center; }
+    .about-paragraph { font-family: 'Lora', Georgia, serif; font-weight: 500; font-size: 1.3rem; line-height: 1.7; color: var(--dark-brown); text-align: left; }
+    .about-paragraph:first-of-type { font-size: 1.45rem; font-weight: 600; }
+
+    /* Steps */
+    .step-card { flex: 0 0 430px; padding: 3rem 2.25rem; }
+    .step-number { font-size: 4.2rem; }
+    .step-title { font-size: 1.7rem; }
+    .step-body { font-size: 17.5px; line-height: 1.65; }
+    @media (max-width: 768px) { .step-card { flex: 0 0 320px; padding: 2.25rem 1.5rem; } .step-title { font-size: 1.45rem; } }
+    .steps-form-title { font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 1rem; font-weight: 600; font-style: normal; }
+
+    /* Google review cards */
+    .testimonials-container { max-width: 760px; }
+    .g-card { position: relative; width: 100%; background: #fff; color: #202124; border-radius: 12px; padding: 1.75rem 1.75rem 1.5rem; text-align: left; box-shadow: 0 8px 30px rgba(0,0,0,0.3); font-family: Roboto, 'DM Sans', Arial, sans-serif; }
+    .g-logo { position: absolute; top: 1.25rem; right: 1.25rem; width: 28px; height: 28px; }
+    .g-head { display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.75rem; padding-right: 2.5rem; }
+    .g-avatar { width: 46px; height: 46px; border-radius: 50%; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 500; flex-shrink: 0; }
+    .g-name { font-size: 16px; font-weight: 500; color: #202124; }
+    .g-meta { font-size: 13px; color: #70757a; }
+    .g-stars { color: #FBBC04; font-size: 20px; letter-spacing: 2px; margin-bottom: 0.6rem; }
+    .g-text { font-size: 15px; line-height: 1.6; color: #3c4043; }
   </style>
 </head>
 <body>
@@ -2369,9 +2438,9 @@
   <!-- STICKY TOP NAVIGATION -->
   <nav class="top-navbar" id="navbar">
     <div class="logo-container">
-      <span class="logo-jn">JN</span>
+      <img class="site-logo-img" src="https://i.ibb.co/gFvjS3Qq/Black-White-Minimalist-Simple-Monogram-Typography-Logo.png" alt="Julia Nowak logo">
       <div class="logo-text" data-translate-id="logo-text">
-        <span class="logo-name">Julia Nowak</span><br>Agent nieruchomości
+        <span class="logo-name">Julia Nowak</span><br>Agentka nieruchomości
       </div>
     </div>
 
@@ -2430,7 +2499,7 @@
   <section class="hero-section">
     <div class="hero-container">
       <div class="hero-left fade-up-init">
-        <h1 class="hero-headline text-dark-brown" data-translate-id="hero-title">Julia Nowak<br>agent<br>nieruchomości</h1>
+        <h1 class="hero-headline text-dark-brown" data-translate-id="hero-title">Julia Nowak<br>agentka<br>nieruchomości</h1>
         <p class="hero-subheadline" data-translate-id="hero-subtitle">Sprzedaż i wynajem nieruchomości, profesjonalna obsługa dla Polaków i obcokrajowców.</p>
         <div class="hero-ctas">
           <a href="#formularz-konsultacji" class="btn-gold" data-translate-id="hero-btn-consultation">Darmowa konsultacja</a>
@@ -2441,7 +2510,7 @@
 
       <div class="hero-right fade-up-init">
         <div class="phone-mockup">
-          <img class="phone-screen" src="https://i.ibb.co/tp3Jymtt/julianowak.png" alt="Julia Nowak" referrerPolicy="no-referrer" decoding="sync" fetchpriority="high" loading="eager">
+          <img class="phone-screen" src="https://i.ibb.co/1fQ2g6Cb/IMG-20261002-104610.png" alt="Julia Nowak" referrerPolicy="no-referrer" decoding="sync" fetchpriority="high" loading="eager">
         </div>
       </div>
     </div>
@@ -2466,7 +2535,7 @@
       </div>
       <div class="trust-item">
         <span class="trust-number">250k</span>
-        <span class="trust-label" data-translate-id="trust-3">Miesięczne dotarcie na poziomie 250 tyś</span>
+        <span class="trust-label" data-translate-id="trust-3">Miesięczne dotarcie na poziomie<br>250&nbsp;tysięcy</span>
       </div>
     </div>
   </div>
@@ -2479,30 +2548,36 @@
         <span class="label-caps" data-translate-id="about-label">O mnie</span>
         <hr class="partial-divider">
         <h2 class="about-headline" data-translate-id="about-headline">Sprzedaję i wynajmuję, z zaangażowaniem i wynikami.</h2>
-        <p class="about-paragraph" data-translate-id="about-p1">Specjalizuję się w transakcjach na krakowskim rynku nieruchomości. Moja praca opiera się na pełnym wsparciu klientów od pierwszego kontaktu aż do przekazania kluczy. Zwracam szczególną uwagę na detale, przygotowanie nieruchomości (home staging) i skuteczne negocjacje.</p>
-        <p class="about-paragraph" data-translate-id="about-p2">Pracuję zarówno z klientami z Polski, jak i z zagranicy, swobodnie prowadząc cały proces w języku polskim oraz angielskim. Zamiast szablonowych schematów, wybieram szczere, ludzkie podejście. Spotkajmy się przy dobrej kawce, porozmawiajmy o Twoich planach i zobacz, jak bezpiecznie przejść przez cały proces transakcji.</p>
+        <p class="about-paragraph" data-translate-id="about-p1">Specjalizuję się w transakcjach na krakowskim rynku nieruchomości. Moja praca opiera się na pełnym wsparciu Klientów od pierwszego kontaktu aż do przekazania kluczy. Zwracam szczególną uwagę na detale, przygotowanie nieruchomości (home staging) i skuteczne negocjacje.</p>
+        <p class="about-paragraph" data-translate-id="about-p2">Pracuję zarówno z Klientami z Polski, jak i z zagranicy, swobodnie prowadząc cały proces w języku polskim oraz angielskim. Zamiast szablonowych schematów, wybieram szczere, ludzkie podejście. Spotkajmy się przy dobrej kawce, porozmawiajmy o Twoich planach i zobacz, jak bezpiecznie przejść przez cały proces transakcji.</p>
         <a href="#formularz-konsultacji" class="btn-gold" style="margin-top: 1rem;" data-translate-id="about-btn">Umów bezpłatną konsultację</a>
       </div>
 
       <div class="about-right fade-up-init" style="transition-delay: 0.2s;">
-        <!-- Card 1 -->
-        <div class="stat-card stat-card-dark rounded">
-          <span class="stat-number-watermark">2024</span>
-          <span class="card-label" data-translate-id="about-badge1">Debiut Roku</span>
-        </div>
-        <!-- Card 2 -->
-        <div class="stat-card stat-card-gold rounded">
-          <span class="stat-number-watermark">TOP 3</span>
-          <span class="card-label" data-translate-id="about-badge2">Nest Brokers 2026</span>
-        </div>
-        <!-- Card 3 -->
-        <div class="stat-card stat-card-beige rounded">
-          <span class="stat-number-watermark" style="font-size: 3.5rem;">PL+EN</span>
-          <span class="card-label" data-translate-id="about-badge3">Obsługa w języku polskim i angielskim</span>
+        <div class="phone-mockup">
+          <video class="phone-screen" src="https://github.com/przemekszcz7/zvbvcx/releases/download/ee/julia.nowak.1.mp4" autoplay muted loop playsinline controls preload="metadata"></video>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- ABOUT STATCOUNTER -->
+  <div class="trust-bar">
+    <div class="trust-container">
+      <div class="trust-item">
+        <span class="trust-number">2024</span>
+        <span class="trust-label" data-translate-id="about-badge1">Debiut Roku</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-number">TOP 3</span>
+        <span class="trust-label" data-translate-id="about-badge2">Nest Brokers 2026</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-number">PL+EN</span>
+        <span class="trust-label" data-translate-id="about-badge3">Obsługa w języku polskim i angielskim</span>
+      </div>
+    </div>
+  </div>
 
 
   <!-- 4. STEPS / OD CZEGO ZACZĄĆ WSPÓŁPRACĘ -->
@@ -2536,13 +2611,13 @@
         <div class="step-card fade-up-init" style="transition-delay: 0.3s;">
           <span class="step-number" data-translate-id="step4-num">04</span>
           <h3 class="step-title" data-translate-id="step4-title">Promocja i prezentacja</h3>
-          <p class="step-body" data-translate-id="step4-body">Skuteczne dotarcie do tysięcy kupców lub najemców oraz profesjonalne, angażujące prezentacje.</p>
+          <p class="step-body" data-translate-id="step4-body">Skuteczne dotarcie do tysięcy Kupujących lub najemców oraz profesjonalne, angażujące prezentacje.</p>
         </div>
         <!-- Card 5 -->
         <div class="step-card fade-up-init" style="transition-delay: 0.4s;">
           <span class="step-number" data-translate-id="step5-num">05</span>
           <h3 class="step-title" data-translate-id="step5-title">Finalizacja i klucze</h3>
-          <p class="step-body" data-translate-id="step5-body">Kompleksowa opieka prawna, bezpieczne podpisanie umowy i radosne przekazanie kluczy.</p>
+          <p class="step-body" data-translate-id="step5-body">Kompleksowa opieka prawna, bezpieczne podpisanie umowy i finalne przekazanie kluczy.</p>
         </div>
       </div>
 
@@ -2552,7 +2627,7 @@
       <!-- Embedded Contact Form -->
       <div class="steps-contact-form-container fade-up-init" id="formularz-konsultacji" style="transition-delay: 0.1s;">
         <div class="steps-form-card">
-          <h3 class="steps-form-title" data-translate-id="steps-form-title">Zacznijmy współpracę</h3>
+          <h3 class="steps-form-title" data-translate-id="steps-form-title">Jak zacząć współpracę</h3>
           <p class="steps-form-subtitle" data-translate-id="steps-form-subtitle">Zostaw swoje dane – skontaktuję się z Tobą w ciągu 24 godzin.</p>
           
           <form class="steps-form" id="steps-contact-form">
@@ -2711,38 +2786,73 @@
   <section class="testimonials-section" id="opinie">
     <div class="testimonials-container fade-up-init">
       <span class="label-caps" style="color: var(--gold);" data-translate-id="test-label">Opinie Klientów</span>
-      <div class="giant-quote">“</div>
+      
 
       <div class="reviews-carousel">
         <div class="reviews-track-container">
           <!-- Review 1: Martyna -->
           <div class="review-slide active" data-review-idx="0">
-            <p class="quote-text">Miałam ogromną przyjemność współpracować z Julią Nowak podczas zakupu mojego pierwszego mieszkania. Od samego początku czułam się w pełni zaopiekowana i mogłam liczyć na jej wsparcie na każdym etapie tego procesu. Zakup nieruchomości w moim przypadku wiązał się z kilkoma wyzwaniami i nieoczekiwanymi sytuacjami, jednak Julia za każdym razem podchodziła do nich z pełnym profesjonalizmem, spokojem i skutecznością. Dzięki jej doświadczeniu oraz zaangażowaniu nawet bardziej skomplikowane kwestie były sprawnie rozwiązywane, a ja mogłam czuć się bezpiecznie i pewnie podczas podejmowania ważnych decyzji. Dla Julii priorytetem jest zadowolenie jej klientów. Współpracuje ona również z wieloma sprawdzonymi specjalistami – od fachowców technicznych po ekspertów związanych z rynkiem nieruchomości, dzięki czemu mogłam liczyć na rzetelne wsparcie i profesjonalną pomoc praktycznie na wszystkich frontach.<br><br>Jestem bardzo zadowolona ze współpracy i z pełnym przekonaniem mogę polecić zarówno Julię, jak i całą agencję Nest Brokers każdemu, kto szuka rzetelnego, skutecznego i zaangażowanego pośrednika nieruchomości.<br><br>Dziękuję ❤️</p>
-            <div class="quote-attribution">Martyna</div>
+            <div class="g-card">
+              <svg class="g-logo" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+              <div class="g-head">
+                <div class="g-avatar" style="background:#B8924A">M</div>
+                <div><div class="g-name">Martyna</div><div class="g-meta">Opinia w Google</div></div>
+              </div>
+              <div class="g-stars" aria-label="5 na 5 gwiazdek">★★★★★</div>
+              <p class="g-text">Miałam ogromną przyjemność współpracować z Julią Nowak podczas zakupu mojego pierwszego mieszkania. Od samego początku czułam się w pełni zaopiekowana i mogłam liczyć na jej wsparcie na każdym etapie tego procesu. Zakup nieruchomości w moim przypadku wiązał się z kilkoma wyzwaniami i nieoczekiwanymi sytuacjami, jednak Julia za każdym razem podchodziła do nich z pełnym profesjonalizmem, spokojem i skutecznością. Dzięki jej doświadczeniu oraz zaangażowaniu nawet bardziej skomplikowane kwestie były sprawnie rozwiązywane, a ja mogłam czuć się bezpiecznie i pewnie podczas podejmowania ważnych decyzji. Dla Julii priorytetem jest zadowolenie jej Klientów. Współpracuje ona również z wieloma sprawdzonymi specjalistami – od fachowców technicznych po ekspertów związanych z rynkiem nieruchomości, dzięki czemu mogłam liczyć na rzetelne wsparcie i profesjonalną pomoc praktycznie na wszystkich frontach.<br><br>Jestem bardzo zadowolona ze współpracy i z pełnym przekonaniem mogę polecić zarówno Julię, jak i całą agencję Nest Brokers każdemu, kto szuka rzetelnego, skutecznego i zaangażowanego pośrednika nieruchomości.<br><br>Dziękuję ❤️</p>
+            </div>
           </div>
 
           <!-- Review 2: Przemysław -->
           <div class="review-slide" data-review-idx="1">
-            <p class="quote-text">Gorąco polecam współpracę z panią Julią Nowak. Niech nikogo nie zwiedzie jej młody wiek czy ekstrawagancki styl. Julia to 100% profesjonalistki zaangażowanej w proces sprzedaży nieruchomości od początku do końca. Na wstępie może nieco szokować przedstawieniem realnych możliwości sprzedażowych (w opozycji do wybujałych oczekiwań klienta 😉), ale po opadnięciu emocji i wspólnym ustaleniu scenariusza działań spokojnie poprowadzi za rękę przez meandry rynku nieruchomości do szczęśliwego finału w postaci umowy sprzedaży.</p>
-            <div class="quote-attribution">Przemysław</div>
+            <div class="g-card">
+              <svg class="g-logo" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+              <div class="g-head">
+                <div class="g-avatar" style="background:#5B7F95">P</div>
+                <div><div class="g-name">Przemysław</div><div class="g-meta">Opinia w Google</div></div>
+              </div>
+              <div class="g-stars" aria-label="5 na 5 gwiazdek">★★★★★</div>
+              <p class="g-text">Gorąco polecam współpracę z panią Julią Nowak. Niech nikogo nie zwiedzie jej młody wiek czy ekstrawagancki styl. Julia to 100% profesjonalistki zaangażowanej w proces sprzedaży nieruchomości od początku do końca. Na wstępie może nieco szokować przedstawieniem realnych możliwości sprzedażowych (w opozycji do wybujałych oczekiwań Klienta 😉), ale po opadnięciu emocji i wspólnym ustaleniu scenariusza działań spokojnie poprowadzi za rękę przez meandry rynku nieruchomości do szczęśliwego finału w postaci umowy sprzedaży.</p>
+            </div>
           </div>
 
           <!-- Review 3: Angelika -->
           <div class="review-slide" data-review-idx="2">
-            <p class="quote-text">Bardzo polecam współpracę z panią Julią Nowak! Obejrzenie jak i wynajęcie mieszkania przebiegło szybko, sprawnie i z pełną opieką po jej stronie. Jesteśmy z partnerem bardzo zadowoleni ze współpracy i polecamy</p>
-            <div class="quote-attribution">Angelika</div>
+            <div class="g-card">
+              <svg class="g-logo" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+              <div class="g-head">
+                <div class="g-avatar" style="background:#8A5A7A">A</div>
+                <div><div class="g-name">Angelika</div><div class="g-meta">Opinia w Google</div></div>
+              </div>
+              <div class="g-stars" aria-label="5 na 5 gwiazdek">★★★★★</div>
+              <p class="g-text">Bardzo polecam współpracę z panią Julią Nowak! Obejrzenie jak i wynajęcie mieszkania przebiegło szybko, sprawnie i z pełną opieką po jej stronie. Jesteśmy z partnerem bardzo zadowoleni ze współpracy i polecamy</p>
+            </div>
           </div>
 
           <!-- Review 4: Adam -->
           <div class="review-slide" data-review-idx="3">
-            <p class="quote-text">Chciałbym serdecznie podziękować naszej agentce Julii Nowak za nieocenioną pomoc w przeprowadzeniu nas przez złożona transakcję sprzedaży i zakupu mieszkania. Jej pewność siebie, umiejętność rozwiązywania problemów oraz wsparcie na każdym kroku sprawiły, że cały proces przebiegł sprawnie i minimalnie stresowo :) Była zawsze dostępna, gotowa do odpowiedzi na nasze pytania i zaangażowana w znajdowanie najlepszych rozwiązań. Szczerze polecamy jej usługi każdemu, kto szuka profesjonalnego i rzetelnego agenta nieruchomości!</p>
-            <div class="quote-attribution">Adam</div>
+            <div class="g-card">
+              <svg class="g-logo" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+              <div class="g-head">
+                <div class="g-avatar" style="background:#4F7A5A">A</div>
+                <div><div class="g-name">Adam</div><div class="g-meta">Opinia w Google</div></div>
+              </div>
+              <div class="g-stars" aria-label="5 na 5 gwiazdek">★★★★★</div>
+              <p class="g-text">Chciałbym serdecznie podziękować naszej agentce Julii Nowak za nieocenioną pomoc w przeprowadzeniu nas przez złożona transakcję sprzedaży i zakupu mieszkania. Jej pewność siebie, umiejętność rozwiązywania problemów oraz wsparcie na każdym kroku sprawiły, że cały proces przebiegł sprawnie i minimalnie stresowo :) Była zawsze dostępna, gotowa do odpowiedzi na nasze pytania i zaangażowana w znajdowanie najlepszych rozwiązań. Szczerze polecamy jej usługi każdemu, kto szuka profesjonalnej i rzetelnej agentki nieruchomości!</p>
+            </div>
           </div>
 
           <!-- Review 5: Marta -->
           <div class="review-slide" data-review-idx="4">
-            <p class="quote-text">Bardzo wysoka jakość usług, z pomocą pani Julii Nowak z Nest Brokers kupiłam swoje pierwsze wymarzone mieszkanie. Z pomocą Julii cały proces przebiegł szybko i bezproblemowo, nie musiałam się martwić o umawianie wizyt u notariusza etc, skorzystałam też z usług świetnego doradcy kredytowego współpracującego z Nest. Niecałe 2 miesiące od kliknięcia na ogłoszenie w otodom mogłam już otwierać butelkę wina na kanapie w nowym mieszkaniu (wino dostałam jako prezent od Julii).</p>
-            <div class="quote-attribution">Marta</div>
+            <div class="g-card">
+              <svg class="g-logo" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+              <div class="g-head">
+                <div class="g-avatar" style="background:#A5573E">M</div>
+                <div><div class="g-name">Marta</div><div class="g-meta">Opinia w Google</div></div>
+              </div>
+              <div class="g-stars" aria-label="5 na 5 gwiazdek">★★★★★</div>
+              <p class="g-text">Bardzo wysoka jakość usług, z pomocą pani Julii Nowak z Nest Brokers kupiłam swoje pierwsze wymarzone mieszkanie. Z pomocą Julii cały proces przebiegł szybko i bezproblemowo, nie musiałam się martwić o umawianie wizyt u notariusza etc, skorzystałam też z usług świetnego doradcy kredytowego współpracującego z Nest. Niecałe 2 miesiące od kliknięcia na ogłoszenie w otodom mogłam już otwierać butelkę wina na kanapie w nowym mieszkaniu (wino dostałam jako prezent od Julii).</p>
+            </div>
           </div>
         </div>
 
@@ -2826,9 +2936,9 @@
     <div class="footer-grid">
       <!-- Footer Left -->
       <div class="footer-col-left">
-        <span class="footer-monogram">JN</span>
+        <img class="site-logo-img footer-logo-img" src="https://i.ibb.co/gFvjS3Qq/Black-White-Minimalist-Simple-Monogram-Typography-Logo.png" alt="Julia Nowak logo">
         <span class="footer-agent-title" data-translate-id="footer-agent-title">Julia Nowak Nieruchomości</span>
-        <span class="footer-location" data-translate-id="footer-location">Kraków · Wieliczka · Libertów</span>
+        <span class="footer-location" data-translate-id="footer-location">Kraków, Małopolska</span>
       </div>
 
       <!-- Footer Center -->
@@ -2973,7 +3083,7 @@
           <li>dostosowania zawartości strony internetowej do preferencji użytkownika,</li>
           <li>tworzenia statystyk pomagających zrozumieć, w jaki sposób użytkownicy korzystają ze strony,</li>
           <li>prowadzenia działań marketingowych i remarketingowych,</li>
-          <li>utrzymania sesji użytkownika (np. po zalogowaniu do panelu klienta, jeśli dotyczy).</li>
+          <li>utrzymania sesji użytkownika (np. po zalogowaniu do panelu Klienta, jeśli dotyczy).</li>
         </ul>
 
         <h3>9.4. Zgoda na wykorzystanie cookies</h3>
@@ -3103,7 +3213,7 @@
     // Multi-language translation dictionaries
     const translations = {
       PL: {
-        "logo-text": "<span class=\"logo-name\">Julia Nowak</span><br>Agent nieruchomości",
+        "logo-text": "<span class=\"logo-name\">Julia Nowak</span><br>Agentka nieruchomości",
         "nav-about": "O mnie",
         "nav-properties": "Oferty",
         "nav-reviews": "Opinie",
@@ -3112,18 +3222,18 @@
         "mob-properties": "Oferty",
         "mob-reviews": "Opinie",
         "mob-contact": "Kontakt",
-        "hero-title": "Julia Nowak<br>agent<br>nieruchomości",
+        "hero-title": "Julia Nowak<br>agentka<br>nieruchomości",
         "hero-subtitle": "Sprzedaż i wynajem nieruchomości, profesjonalna obsługa dla Polaków i obcokrajowców.",
         "hero-btn-consultation": "Darmowa konsultacja",
         "hero-btn-properties": "Zobacz oferty",
-        "hero-location": "Kraków · Wieliczka · Libertów",
+        "hero-location": "Kraków, Małopolska",
         "trust-1": "Ponad 100 zrealizowanych transakcji",
         "trust-2": "Ponad 90% nieruchomości sprzedanych w mniej niż miesiąc",
-        "trust-3": "Miesięczne dotarcie na poziomie 250 tyś",
+        "trust-3": "Miesięczne dotarcie na poziomie<br>250&nbsp;tysięcy",
         "about-label": "O mnie",
         "about-headline": "Sprzedaję i wynajmuję, z zaangażowaniem i wynikami.",
-        "about-p1": "Specjalizuję się w transakcjach na krakowskim rynku nieruchomości. Moja praca opiera się na pełnym wsparciu klientów od pierwszego kontaktu aż do przekazania kluczy. Zwracam szczególną uwagę na detale, przygotowanie nieruchomości (home staging) i skuteczne negocjacje.",
-        "about-p2": "Pracuję zarówno z klientami z Polski, jak i z zagranicy, swobodnie prowadząc cały proces w języku polskim oraz angielskim. Zamiast szablonowych schematów, wybieram szczere, ludzkie podejście. Spotkajmy się przy dobrej kawce, porozmawiajmy o Twoich planach i zobacz, jak bezpiecznie przejść przez cały proces transakcji.",
+        "about-p1": "Specjalizuję się w transakcjach na krakowskim rynku nieruchomości. Moja praca opiera się na pełnym wsparciu Klientów od pierwszego kontaktu aż do przekazania kluczy. Zwracam szczególną uwagę na detale, przygotowanie nieruchomości (home staging) i skuteczne negocjacje.",
+        "about-p2": "Pracuję zarówno z Klientami z Polski, jak i z zagranicy, swobodnie prowadząc cały proces w języku polskim oraz angielskim. Zamiast szablonowych schematów, wybieram szczere, ludzkie podejście. Spotkajmy się przy dobrej kawce, porozmawiajmy o Twoich planach i zobacz, jak bezpiecznie przejść przez cały proces transakcji.",
         "about-btn": "Umów bezpłatną konsultację",
         "about-badge1": "Debiut Roku",
         "about-badge2": "Nest Brokers 2026",
@@ -3141,10 +3251,10 @@
         "step3-body": "Profesjonalny home staging, piękna sesja zdjęciowa oraz opracowanie materiałów reklamowych.",
         "step4-num": "04",
         "step4-title": "Promocja i prezentacja",
-        "step4-body": "Skuteczne dotarcie do tysięcy kupców lub najemców oraz profesjonalne, angażujące prezentacje.",
+        "step4-body": "Skuteczne dotarcie do tysięcy Kupujących lub najemców oraz profesjonalne, angażujące prezentacje.",
         "step5-num": "05",
         "step5-title": "Finalizacja i klucze",
-        "step5-body": "Kompleksowa opieka prawna, bezpieczne podpisanie umowy i radosne przekazanie kluczy.",
+        "step5-body": "Kompleksowa opieka prawna, bezpieczne podpisanie umowy i finalne przekazanie kluczy.",
         "listings-label": "Aktualne oferty",
         "listings-headline": "Wybrane nieruchomości",
         "list1-badge": "Na Sprzedaż",
@@ -3176,7 +3286,7 @@
         "list2-tagline": "Splatają się tu nowoczesność i kameralność, a unikatowy widok na kojącą zieleń to absolutna rzadkość w wielkim mieście.",
         "list2-btn": "Napisz na Instagram lub zadzwoń",
         "test-label": "Opinie",
-        "test-quote": "Miałam ogromną przyjemność współpracować z Julią Nowak podczas zakupu mojego pierwszego mieszkania. Od samego początku czułam się w pełni zaopiekowana i mogłam liczyć na jej wsparcie na każdym etapie tego procesu. Zakup nieruchomości w moim przypadku wiązał się z kilkoma wyzwaniami i nieoczekiwanymi sytuacjami, jednak Julia za każdym razem podchodziła do nich z pełnym profesjonalizmem, spokojem i skutecznością. Dzięki jej doświadczeniu oraz zaangażowaniu nawet bardziej skomplikowane kwestie były sprawnie rozwiązywane, a ja mogłam czuć się bezpiecznie i pewnie podczas podejmowania ważnych decyzji. Dla Julii priorytetem jest zadowolenie jej klientów. Współpracuje ona również z wieloma sprawdzonymi specjalistami – od fachowców technicznych po ekspertów związanych z rynkiem nieruchomości, dzięki czemu mogłam liczyć na rzetelne wsparcie i profesjonalną pomoc praktycznie na wszystkich frontach.<br><br>Jestem bardzo zadowolona ze współpracy i z pełnym przekonaniem mogę polecić zarówno Julię, jak i całą agencję Nest Brokers każdemu, kto szuka rzetelnego, skutecznego i zaangażowanego pośrednika nieruchomości.",
+        "test-quote": "Miałam ogromną przyjemność współpracować z Julią Nowak podczas zakupu mojego pierwszego mieszkania. Od samego początku czułam się w pełni zaopiekowana i mogłam liczyć na jej wsparcie na każdym etapie tego procesu. Zakup nieruchomości w moim przypadku wiązał się z kilkoma wyzwaniami i nieoczekiwanymi sytuacjami, jednak Julia za każdym razem podchodziła do nich z pełnym profesjonalizmem, spokojem i skutecznością. Dzięki jej doświadczeniu oraz zaangażowaniu nawet bardziej skomplikowane kwestie były sprawnie rozwiązywane, a ja mogłam czuć się bezpiecznie i pewnie podczas podejmowania ważnych decyzji. Dla Julii priorytetem jest zadowolenie jej Klientów. Współpracuje ona również z wieloma sprawdzonymi specjalistami – od fachowców technicznych po ekspertów związanych z rynkiem nieruchomości, dzięki czemu mogłam liczyć na rzetelne wsparcie i profesjonalną pomoc praktycznie na wszystkich frontach.<br><br>Jestem bardzo zadowolona ze współpracy i z pełnym przekonaniem mogę polecić zarówno Julię, jak i całą agencję Nest Brokers każdemu, kto szuka rzetelnego, skutecznego i zaangażowanego pośrednika nieruchomości.",
         "test-attr": "Martyna",
         "test-btn": "Czytaj więcej opinii na Facebook →",
         "contact-label": "Męczy Cię szukanie?",
@@ -3185,7 +3295,7 @@
         "contact-area": "Obsługiwany obszar:<br>Kraków i okolice do 20km",
         "contact-badge": "✦ Darmowa konsultacja, bez zobowiązań",
         "footer-agent-title": "Julia Nowak Nieruchomości",
-        "footer-location": "Kraków · Wieliczka · Libertów",
+        "footer-location": "Kraków, Małopolska",
         "footer-nav-title": "Skróty",
         "foot-about": "O mnie",
         "foot-properties": "Oferty",
@@ -3196,7 +3306,7 @@
         "footer-privacy-btn": "Polityka Prywatności i Pliki Cookies",
         "modal-title": "Polityka Prywatności i Pliki Cookies",
         "steps-hint": "← Przesuń w bok, aby zobaczyć kolejne kroki →",
-        "steps-form-title": "Zacznijmy współpracę",
+        "steps-form-title": "Jak zacząć współpracę",
         "steps-form-subtitle": "Zostaw swoje dane – skontaktuję się z Tobą w ciągu 24 godzin.",
         "form-label-name": "Imię i nazwisko",
         "form-label-phone": "Numer telefonu",
@@ -3226,10 +3336,10 @@
         "hero-subtitle": "Property sales and rentals, professional service for Polish and foreign clients.",
         "hero-btn-consultation": "Free consultation",
         "hero-btn-properties": "View properties",
-        "hero-location": "Cracow · Wieliczka · Libertow",
+        "hero-location": "Cracow, Lesser Poland",
         "trust-1": "Over 100 completed transactions",
         "trust-2": "Over 90% of properties sold in under a month",
-        "trust-3": "Monthly reach of 250k views",
+        "trust-3": "Monthly reach of<br>250k views",
         "about-label": "About me",
         "about-headline": "I sell and rent, with commitment and high results.",
         "about-p1": "I specialize in transactions on the Cracow real estate market. My work is built upon providing full support for my customers from the first touchpoint until the keys are handed over. I pay close attention to nuances, proper presentation (home staging), and highly effective negotiations.",
@@ -3295,7 +3405,7 @@
         "contact-area": "Served Area:<br>Cracow and surroundings up to 20km",
         "contact-badge": "✦ Free consultation, no obligations",
         "footer-agent-title": "Julia Nowak Real Estate",
-        "footer-location": "Cracow · Wieliczka · Libertow",
+        "footer-location": "Cracow, Lesser Poland",
         "footer-nav-title": "Navigation",
         "foot-about": "About me",
         "foot-properties": "Properties",
@@ -3306,7 +3416,7 @@
         "footer-privacy-btn": "Privacy Policy & Cookies",
         "modal-title": "Privacy Policy & Cookies",
         "steps-hint": "← Scroll sideways to see more steps →",
-        "steps-form-title": "Let's work together",
+        "steps-form-title": "How to start working together",
         "steps-form-subtitle": "Leave your details – I will contact you within 24 hours.",
         "form-label-name": "Full Name",
         "form-label-phone": "Phone Number",
@@ -3448,110 +3558,98 @@
       });
     }
 
-    // Steps Contact Form submission logic
-    const stepsForm = document.getElementById('steps-contact-form');
-    const stepsStatus = document.getElementById('steps-form-status');
-    
-    if (stepsForm) {
-      stepsForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        
-        const submitBtn = stepsForm.querySelector('.form-submit-btn');
-        const btnText = stepsForm.querySelector('.btn-text');
-        const spinner = stepsForm.querySelector('.btn-spinner');
-        
-        // Show loading state
-        submitBtn.disabled = true;
-        if (btnText) btnText.style.opacity = '0.5';
-        if (spinner) spinner.style.display = 'inline-block';
-        
-        if (stepsStatus) {
-          stepsStatus.style.display = 'none';
-          stepsStatus.className = 'form-status-message';
-        }
-        
-        // Simulate premium network request
-        setTimeout(() => {
-          // Re-enable and hide spinner
-          submitBtn.disabled = false;
-          if (btnText) btnText.style.opacity = '1';
-          if (spinner) spinner.style.display = 'none';
-          
-          // Get translated message
-          const successMsg = translations[currentLang]["form-success"] || "Dziękujemy! Wiadomość została wysłana.";
-          
-          if (stepsStatus) {
-            stepsStatus.innerHTML = successMsg;
-            stepsStatus.classList.add('success');
-            stepsStatus.style.display = 'block';
-          }
-          
-          // Reset form fields
-          stepsForm.reset();
-          
-          // Auto-hide success message after 7 seconds
-          setTimeout(() => {
-            if (stepsStatus) {
-              stepsStatus.style.transition = 'opacity 0.5s ease';
-              stepsStatus.style.opacity = '0';
-              setTimeout(() => {
-                stepsStatus.style.display = 'none';
-                stepsStatus.style.opacity = '1';
-                stepsStatus.style.transition = '';
-              }, 500);
-            }
-          }, 7000);
-          
-        }, 1500);
-      });
-    }
+    // Contact forms -> Formspree
+    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xdeawjad';
 
-    // Quick Bottom Contact Form submission logic
-    const quickForm = document.getElementById('quick-bottom-form');
-    const quickStatus = document.getElementById('quick-form-status');
-    if (quickForm) {
-      quickForm.addEventListener('submit', function(e) {
+    function setupFormspreeForm(form, statusEl, btnSelector, sourceLabel) {
+      if (!form) return;
+
+      // Honeypot field (hidden from humans, bots fill it in)
+      const honeypot = document.createElement('input');
+      honeypot.type = 'text';
+      honeypot.name = '_gotcha';
+      honeypot.tabIndex = -1;
+      honeypot.autocomplete = 'off';
+      honeypot.setAttribute('aria-hidden', 'true');
+      honeypot.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;opacity:0;';
+      form.appendChild(honeypot);
+
+      form.addEventListener('submit', function (e) {
         e.preventDefault();
-        const submitBtn = quickForm.querySelector('.quick-form-btn');
-        const btnText = quickForm.querySelector('.btn-text');
-        const spinner = quickForm.querySelector('.btn-spinner');
+
+        const submitBtn = form.querySelector(btnSelector);
+        const btnText = form.querySelector('.btn-text');
+        const spinner = form.querySelector('.btn-spinner');
 
         submitBtn.disabled = true;
         if (btnText) btnText.style.opacity = '0.5';
         if (spinner) spinner.style.display = 'inline-block';
 
-        if (quickStatus) {
-          quickStatus.style.display = 'none';
-          quickStatus.className = 'form-status-message';
+        if (statusEl) {
+          statusEl.style.display = 'none';
+          statusEl.className = 'form-status-message';
         }
 
-        setTimeout(() => {
+        const data = new FormData(form);
+        data.append('_subject', 'Nowa wiadomość ze strony – ' + sourceLabel);
+        data.append('source', sourceLabel);
+        data.append('language', currentLang);
+
+        function finish(ok) {
           submitBtn.disabled = false;
           if (btnText) btnText.style.opacity = '1';
           if (spinner) spinner.style.display = 'none';
 
-          const successMsg = translations[currentLang]["form-success"] || "Dziękujemy! Wiadomość została wysłana.";
-          if (quickStatus) {
-            quickStatus.innerHTML = successMsg;
-            quickStatus.classList.add('success');
-            quickStatus.style.display = 'block';
+          const msg = ok
+            ? (translations[currentLang]["form-success"] || "Dziękujemy! Wiadomość została wysłana.")
+            : (translations[currentLang]["form-error"] || "Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie lub zadzwoń bezpośrednio.");
+
+          if (statusEl) {
+            statusEl.innerHTML = msg;
+            statusEl.classList.add(ok ? 'success' : 'error');
+            statusEl.style.display = 'block';
+            statusEl.style.opacity = '1';
+            statusEl.style.transition = '';
           }
-          quickForm.reset();
+
+          if (ok) form.reset();
 
           setTimeout(() => {
-            if (quickStatus) {
-              quickStatus.style.transition = 'opacity 0.5s ease';
-              quickStatus.style.opacity = '0';
+            if (statusEl) {
+              statusEl.style.transition = 'opacity 0.5s ease';
+              statusEl.style.opacity = '0';
               setTimeout(() => {
-                quickStatus.style.display = 'none';
-                quickStatus.style.opacity = '1';
-                quickStatus.style.transition = '';
+                statusEl.style.display = 'none';
+                statusEl.style.opacity = '1';
+                statusEl.style.transition = '';
               }, 500);
             }
           }, 7000);
-        }, 1200);
+        }
+
+        fetch(FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        })
+          .then(function (response) { finish(response.ok); })
+          .catch(function () { finish(false); });
       });
     }
+
+    setupFormspreeForm(
+      document.getElementById('steps-contact-form'),
+      document.getElementById('steps-form-status'),
+      '.form-submit-btn',
+      'Formularz konsultacji'
+    );
+
+    setupFormspreeForm(
+      document.getElementById('quick-bottom-form'),
+      document.getElementById('quick-form-status'),
+      '.quick-form-btn',
+      'Szybki kontakt'
+    );
 
     // LIGHTBOX IMAGE ZOOM & PAN LOGIC
     const lightboxModal = document.getElementById('lightbox-modal');
