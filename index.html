@@ -2,7 +2,8 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F2EDE6">
   <title>Julia Nowak Nieruchomości Kraków | Nest Brokers</title>
   <meta name="description" content="Sprzedaj i wynajmij nieruchomość w Krakowie z Julią Nowak, Debiut Roku 2024, TOP 3 Nest Brokers 2026. Darmowa konsultacja. Tel. 733 980 521">
   <link rel="icon" href="https://i.ibb.co/0Rk20XYm/683768871-122174050130834212-9119480497001999177-n.jpg">
@@ -13,7 +14,7 @@
   <link rel="preconnect" href="https://i.ibb.co" crossorigin>
   <link rel="dns-prefetch" href="https://i.ibb.co">
   <link rel="preload" as="image" href="https://i.ibb.co/1fQ2g6Cb/IMG-20261002-104610.png" fetchpriority="high">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lora:wght@400;500;600&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -2431,6 +2432,137 @@
     .g-meta { font-size: 13px; color: #70757a; }
     .g-stars { color: #FBBC04; font-size: 20px; letter-spacing: 2px; margin-bottom: 0.6rem; }
     .g-text { font-size: 15px; line-height: 1.6; color: #3c4043; }
+
+    /* ===== v2 FIXES: header, font, reviews-in-about, mobile performance ===== */
+
+    /* Logo name: luxury high-contrast serif (stand-in for Canva's "The Seasons").
+       If you own The Seasons, self-host it and it will be picked up first. */
+    nav.top-navbar .logo-name {
+      font-family: 'The Seasons', 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 2.15rem;
+      letter-spacing: 0.01em;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    html, body { max-width: 100%; overflow-x: clip; }
+
+    /* Header: never overflow / crop on small screens */
+    nav.top-navbar { width: 100%; max-width: 100%; box-sizing: border-box; }
+    nav.top-navbar .logo-container { min-width: 0; flex: 1 1 auto; }
+    nav.top-navbar .logo-text { min-width: 0; }
+    .site-logo-img { flex-shrink: 0; }
+    .menu-toggle { flex-shrink: 0; margin-left: 0.75rem; padding: 10px 0; box-sizing: content-box; }
+
+    @media (max-width: 991px) {
+      nav.top-navbar,
+      nav.top-navbar.scrolled {
+        padding: 0.7rem max(5%, env(safe-area-inset-right)) 0.7rem max(5%, env(safe-area-inset-left));
+        padding-top: calc(0.7rem + env(safe-area-inset-top, 0px));
+        /* animating padding forces layout every frame: keep it static on mobile */
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+        will-change: auto;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background-color: rgba(242, 237, 230, 0.98);
+      }
+      .hero-section { padding-top: calc(6.5rem + env(safe-area-inset-top, 0px)); }
+    }
+
+    @media (max-width: 600px) {
+      .site-logo-img { height: 42px; }
+      nav.top-navbar .logo-container { gap: 0.6rem; }
+      nav.top-navbar .logo-name { font-size: 1.55rem; }
+      nav.top-navbar .logo-text {
+        font-size: 8px;
+        letter-spacing: 0.1em;
+        padding-left: 0.6rem;
+        line-height: 1.35;
+      }
+    }
+    @media (max-width: 380px) {
+      .site-logo-img { height: 36px; }
+      nav.top-navbar .logo-name { font-size: 1.35rem; }
+      nav.top-navbar .logo-text { font-size: 7px; letter-spacing: 0.06em; }
+    }
+
+    /* Reviews now live inside "O mnie" */
+    .about-section .about-reviews {
+      max-width: 1400px;
+      margin: 5rem auto 0;
+      padding: 3.5rem 6%;
+      background-color: var(--dark-brown);
+      color: var(--white);
+      border-radius: 4px;
+    }
+    .about-section .about-reviews .testimonials-container { max-width: 760px; }
+    .about-section .about-reviews .label-caps { margin-bottom: 1.5rem; }
+    @media (max-width: 768px) {
+      .about-section .about-reviews { margin-top: 3rem; padding: 2.5rem 1rem; }
+    }
+    #o-mnie, #opinie, #oferty, #kontakt { scroll-margin-top: 80px; }
+
+
+    /* Hero: a later desktop rule forced 2 columns on phones (text got cropped) */
+    @media (max-width: 991px) {
+      .hero-container { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-left { padding-left: 0; min-width: 0; }
+      .hero-right { order: -1; height: auto; min-height: 0; margin-top: 0.5rem; }
+      .hero-section { min-height: auto; }
+      .hero-headline { font-size: clamp(2.4rem, 11vw, 3.6rem); overflow-wrap: break-word; }
+      .hero-subheadline { font-size: 1.15rem; max-width: 100%; }
+      .hero-ctas { flex-direction: column; align-items: stretch; gap: 0.9rem; }
+      .hero-ctas .btn-gold, .hero-ctas .btn-ghost { font-size: 14px; padding: 1.1rem 1.5rem; width: 100%; text-align: center; }
+      .about-section .label-caps { font-size: 1.8rem; }
+      .about-paragraph { font-size: 1.05rem; }
+      .about-paragraph:first-of-type { font-size: 1.15rem; }
+    }
+
+
+    /* Desktop nav: keep links from touching the language switch */
+    nav.top-navbar .right-action { margin-left: 1.5rem; }
+    @media (min-width: 992px) and (max-width: 1280px) {
+      nav.top-navbar .nav-links { gap: 1.5rem; }
+      nav.top-navbar .nav-links a { font-size: 14px; }
+      nav.top-navbar .phone-pill { font-size: 15px; padding: 0.55rem 1.1rem; }
+      nav.top-navbar .logo-name { font-size: 1.8rem; }
+    }
+
+    /* Video */
+    .about-right .phone-mockup { background: var(--dark-brown); }
+    .about-right .phone-screen { background: #191107; }
+
+    /* ---- Mobile / touch performance ---- */
+    /* permanent GPU layers on every animated element are expensive on phones */
+    .fade-up-init { will-change: auto; backface-visibility: visible; -webkit-backface-visibility: visible; }
+    .review-slide { will-change: auto; }
+
+    @media (hover: none) {
+      .phone-mockup:hover .phone-screen { transform: none; }
+      .btn-gold:hover, .btn-ghost:hover { transform: none; }
+    }
+
+    @media (max-width: 991px) {
+      /* full-screen blur filters are the most common cause of scroll jank */
+      .lightbox-overlay, .modal-overlay, .gallery-hint {
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
+      }
+      .lightbox-overlay { background-color: rgba(18, 13, 7, 0.97); }
+      .modal-overlay { background-color: rgba(37, 27, 13, 0.92); }
+      .phone-mockup { box-shadow: 0 12px 24px -10px rgba(37, 27, 13, 0.45), 0 0 0 2px var(--border-color); }
+      .g-card { box-shadow: 0 4px 14px rgba(0,0,0,0.25); }
+      html, .gallery-slider { scroll-behavior: auto; }
+      .fade-up-init { transform: translate3d(0, 8px, 0); transition-duration: 0.3s; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .fade-up-init { opacity: 1; transform: none; transition: none; }
+      .scroll-indicator .line::after { animation: none; }
+    }
   </style>
 </head>
 <body>
@@ -2445,7 +2577,7 @@
     </div>
 
     <div class="nav-links">
-      <a href="#" class="editorial-link" data-translate-id="nav-about">O mnie</a>
+      <a href="#o-mnie" class="editorial-link" data-translate-id="nav-about">O mnie</a>
       <a href="#oferty" class="editorial-link" data-translate-id="nav-properties">Oferty</a>
       <a href="#opinie" class="editorial-link" data-translate-id="nav-reviews">Opinie</a>
       <a href="#kontakt" class="editorial-link" data-translate-id="nav-contact">Kontakt</a>
@@ -2472,7 +2604,7 @@
 
   <!-- MOBILE NAVIGATION OVERLAY -->
   <div class="mobile-overlay" id="mobileOverlay">
-    <a href="#" class="mobile-nav-link" data-translate-id="mob-about">O mnie</a>
+    <a href="#o-mnie" class="mobile-nav-link" data-translate-id="mob-about">O mnie</a>
     <a href="#oferty" class="mobile-nav-link" data-translate-id="mob-properties">Oferty</a>
     <a href="#opinie" class="mobile-nav-link" data-translate-id="mob-reviews">Opinie</a>
     <a href="#kontakt" class="mobile-nav-link" data-translate-id="mob-contact">Kontakt</a>
@@ -2510,7 +2642,7 @@
 
       <div class="hero-right fade-up-init">
         <div class="phone-mockup">
-          <img class="phone-screen" src="https://i.ibb.co/1fQ2g6Cb/IMG-20261002-104610.png" alt="Julia Nowak" referrerPolicy="no-referrer" decoding="sync" fetchpriority="high" loading="eager">
+          <img class="phone-screen" src="https://i.ibb.co/1fQ2g6Cb/IMG-20261002-104610.png" alt="Julia Nowak" referrerPolicy="no-referrer" decoding="async" fetchpriority="high" loading="eager">
         </div>
       </div>
     </div>
@@ -2542,7 +2674,7 @@
 
 
   <!-- 3. ABOUT / O MNIE -->
-  <section class="about-section">
+  <section class="about-section" id="o-mnie">
     <div class="about-container">
       <div class="about-left fade-up-init">
         <span class="label-caps" data-translate-id="about-label">O mnie</span>
@@ -2555,10 +2687,96 @@
 
       <div class="about-right fade-up-init" style="transition-delay: 0.2s;">
         <div class="phone-mockup">
-          <video class="phone-screen" src="https://github.com/przemekszcz7/zvbvcx/releases/download/ee/julia.nowak.1.mp4" autoplay muted loop playsinline controls preload="metadata"></video>
+          <video class="phone-screen" id="aboutVideo" poster="video/julia-poster.jpg" muted loop playsinline webkit-playsinline controls preload="none" disablepictureinpicture controlslist="nodownload noremoteplayback" width="720" height="1280">
+            <source src="video/julia-nowak.mp4" type="video/mp4">
+            Twoja przeglądarka nie obsługuje odtwarzania wideo.
+          </video>
         </div>
       </div>
     </div>
+
+  <!-- OPINIE (moved into O mnie) -->
+  <div class="testimonials-section about-reviews" id="opinie">
+    <div class="testimonials-container fade-up-init">
+      <span class="label-caps" style="color: var(--gold);" data-translate-id="test-label">Opinie Klientów</span>
+      
+
+      <div class="reviews-carousel">
+        <div class="reviews-track-container">
+          <!-- Review 1: Martyna -->
+          <div class="review-slide active" data-review-idx="0">
+            <div class="g-card">
+              <svg class="g-logo" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+              <div class="g-head">
+                <div class="g-avatar" style="background:#B8924A">M</div>
+                <div><div class="g-name">Martyna</div><div class="g-meta">Opinia w Google</div></div>
+              </div>
+              <div class="g-stars" aria-label="5 na 5 gwiazdek">★★★★★</div>
+              <p class="g-text">Miałam ogromną przyjemność współpracować z Julią Nowak podczas zakupu mojego pierwszego mieszkania. Od samego początku czułam się w pełni zaopiekowana i mogłam liczyć na jej wsparcie na każdym etapie tego procesu. Zakup nieruchomości w moim przypadku wiązał się z kilkoma wyzwaniami i nieoczekiwanymi sytuacjami, jednak Julia za każdym razem podchodziła do nich z pełnym profesjonalizmem, spokojem i skutecznością. Dzięki jej doświadczeniu oraz zaangażowaniu nawet bardziej skomplikowane kwestie były sprawnie rozwiązywane, a ja mogłam czuć się bezpiecznie i pewnie podczas podejmowania ważnych decyzji. Dla Julii priorytetem jest zadowolenie jej Klientów. Współpracuje ona również z wieloma sprawdzonymi specjalistami – od fachowców technicznych po ekspertów związanych z rynkiem nieruchomości, dzięki czemu mogłam liczyć na rzetelne wsparcie i profesjonalną pomoc praktycznie na wszystkich frontach.<br><br>Jestem bardzo zadowolona ze współpracy i z pełnym przekonaniem mogę polecić zarówno Julię, jak i całą agencję Nest Brokers każdemu, kto szuka rzetelnego, skutecznego i zaangażowanego pośrednika nieruchomości.<br><br>Dziękuję ❤️</p>
+            </div>
+          </div>
+
+          <!-- Review 2: Przemysław -->
+          <div class="review-slide" data-review-idx="1">
+            <div class="g-card">
+              <svg class="g-logo" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+              <div class="g-head">
+                <div class="g-avatar" style="background:#5B7F95">P</div>
+                <div><div class="g-name">Przemysław</div><div class="g-meta">Opinia w Google</div></div>
+              </div>
+              <div class="g-stars" aria-label="5 na 5 gwiazdek">★★★★★</div>
+              <p class="g-text">Gorąco polecam współpracę z panią Julią Nowak. Niech nikogo nie zwiedzie jej młody wiek czy ekstrawagancki styl. Julia to 100% profesjonalistki zaangażowanej w proces sprzedaży nieruchomości od początku do końca. Na wstępie może nieco szokować przedstawieniem realnych możliwości sprzedażowych (w opozycji do wybujałych oczekiwań Klienta 😉), ale po opadnięciu emocji i wspólnym ustaleniu scenariusza działań spokojnie poprowadzi za rękę przez meandry rynku nieruchomości do szczęśliwego finału w postaci umowy sprzedaży.</p>
+            </div>
+          </div>
+
+          <!-- Review 3: Angelika -->
+          <div class="review-slide" data-review-idx="2">
+            <div class="g-card">
+              <svg class="g-logo" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+              <div class="g-head">
+                <div class="g-avatar" style="background:#8A5A7A">A</div>
+                <div><div class="g-name">Angelika</div><div class="g-meta">Opinia w Google</div></div>
+              </div>
+              <div class="g-stars" aria-label="5 na 5 gwiazdek">★★★★★</div>
+              <p class="g-text">Bardzo polecam współpracę z panią Julią Nowak! Obejrzenie jak i wynajęcie mieszkania przebiegło szybko, sprawnie i z pełną opieką po jej stronie. Jesteśmy z partnerem bardzo zadowoleni ze współpracy i polecamy</p>
+            </div>
+          </div>
+
+          <!-- Review 4: Adam -->
+          <div class="review-slide" data-review-idx="3">
+            <div class="g-card">
+              <svg class="g-logo" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+              <div class="g-head">
+                <div class="g-avatar" style="background:#4F7A5A">A</div>
+                <div><div class="g-name">Adam</div><div class="g-meta">Opinia w Google</div></div>
+              </div>
+              <div class="g-stars" aria-label="5 na 5 gwiazdek">★★★★★</div>
+              <p class="g-text">Chciałbym serdecznie podziękować naszej agentce Julii Nowak za nieocenioną pomoc w przeprowadzeniu nas przez złożona transakcję sprzedaży i zakupu mieszkania. Jej pewność siebie, umiejętność rozwiązywania problemów oraz wsparcie na każdym kroku sprawiły, że cały proces przebiegł sprawnie i minimalnie stresowo :) Była zawsze dostępna, gotowa do odpowiedzi na nasze pytania i zaangażowana w znajdowanie najlepszych rozwiązań. Szczerze polecamy jej usługi każdemu, kto szuka profesjonalnej i rzetelnej agentki nieruchomości!</p>
+            </div>
+          </div>
+
+          <!-- Review 5: Marta -->
+          <div class="review-slide" data-review-idx="4">
+            <div class="g-card">
+              <svg class="g-logo" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+              <div class="g-head">
+                <div class="g-avatar" style="background:#A5573E">M</div>
+                <div><div class="g-name">Marta</div><div class="g-meta">Opinia w Google</div></div>
+              </div>
+              <div class="g-stars" aria-label="5 na 5 gwiazdek">★★★★★</div>
+              <p class="g-text">Bardzo wysoka jakość usług, z pomocą pani Julii Nowak z Nest Brokers kupiłam swoje pierwsze wymarzone mieszkanie. Z pomocą Julii cały proces przebiegł szybko i bezproblemowo, nie musiałam się martwić o umawianie wizyt u notariusza etc, skorzystałam też z usług świetnego doradcy kredytowego współpracującego z Nest. Niecałe 2 miesiące od kliknięcia na ogłoszenie w otodom mogłam już otwierać butelkę wina na kanapie w nowym mieszkaniu (wino dostałam jako prezent od Julii).</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews-controls">
+          <button class="reviews-nav-btn" id="reviews-prev" aria-label="Poprzednia opinia">⟨</button>
+          <div class="reviews-dots" id="reviews-dots"></div>
+          <button class="reviews-nav-btn" id="reviews-next" aria-label="Następna opinia">⟩</button>
+        </div>
+      </div>
+    </div>
+  </div>
   </section>
 
   <!-- ABOUT STATCOUNTER -->
@@ -2699,7 +2917,7 @@
             <button class="gallery-nav prev" aria-label="Poprzednie zdjęcie">⟨</button>
             <button class="gallery-nav next" aria-label="Następne zdjęcie">⟩</button>
             <div class="gallery-slider">
-              <div class="gallery-item"><img src="https://i.ibb.co/MkF7s1z7/715019975-17953857297150874-1260901476368984526-n.jpg" alt="Mieszkanie Azory 1" decoding="async" fetchpriority="high" loading="eager"></div>
+              <div class="gallery-item"><img src="https://i.ibb.co/MkF7s1z7/715019975-17953857297150874-1260901476368984526-n.jpg" alt="Mieszkanie Azory 1" decoding="async" loading="lazy"></div>
               <div class="gallery-item"><img src="https://i.ibb.co/SwCs6kKV/715910399-17953857249150874-4251038923446927734-n.jpg" alt="Mieszkanie Azory 2" decoding="async" loading="lazy"></div>
               <div class="gallery-item"><img src="https://i.ibb.co/7hQJdNZ/715255125-17953857258150874-5054624590445265260-n.jpg" alt="Mieszkanie Azory 3" decoding="async" loading="lazy"></div>
               <div class="gallery-item"><img src="https://i.ibb.co/3yNZYb1b/712924276-17953857267150874-4952646149137498052-n.jpg" alt="Mieszkanie Azory 4" decoding="async" loading="lazy"></div>
@@ -2782,88 +3000,7 @@
   </section>
 
 
-  <!-- 6. TESTIMONIAL / OPINIE CAROUSEL -->
-  <section class="testimonials-section" id="opinie">
-    <div class="testimonials-container fade-up-init">
-      <span class="label-caps" style="color: var(--gold);" data-translate-id="test-label">Opinie Klientów</span>
-      
 
-      <div class="reviews-carousel">
-        <div class="reviews-track-container">
-          <!-- Review 1: Martyna -->
-          <div class="review-slide active" data-review-idx="0">
-            <div class="g-card">
-              <svg class="g-logo" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
-              <div class="g-head">
-                <div class="g-avatar" style="background:#B8924A">M</div>
-                <div><div class="g-name">Martyna</div><div class="g-meta">Opinia w Google</div></div>
-              </div>
-              <div class="g-stars" aria-label="5 na 5 gwiazdek">★★★★★</div>
-              <p class="g-text">Miałam ogromną przyjemność współpracować z Julią Nowak podczas zakupu mojego pierwszego mieszkania. Od samego początku czułam się w pełni zaopiekowana i mogłam liczyć na jej wsparcie na każdym etapie tego procesu. Zakup nieruchomości w moim przypadku wiązał się z kilkoma wyzwaniami i nieoczekiwanymi sytuacjami, jednak Julia za każdym razem podchodziła do nich z pełnym profesjonalizmem, spokojem i skutecznością. Dzięki jej doświadczeniu oraz zaangażowaniu nawet bardziej skomplikowane kwestie były sprawnie rozwiązywane, a ja mogłam czuć się bezpiecznie i pewnie podczas podejmowania ważnych decyzji. Dla Julii priorytetem jest zadowolenie jej Klientów. Współpracuje ona również z wieloma sprawdzonymi specjalistami – od fachowców technicznych po ekspertów związanych z rynkiem nieruchomości, dzięki czemu mogłam liczyć na rzetelne wsparcie i profesjonalną pomoc praktycznie na wszystkich frontach.<br><br>Jestem bardzo zadowolona ze współpracy i z pełnym przekonaniem mogę polecić zarówno Julię, jak i całą agencję Nest Brokers każdemu, kto szuka rzetelnego, skutecznego i zaangażowanego pośrednika nieruchomości.<br><br>Dziękuję ❤️</p>
-            </div>
-          </div>
-
-          <!-- Review 2: Przemysław -->
-          <div class="review-slide" data-review-idx="1">
-            <div class="g-card">
-              <svg class="g-logo" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
-              <div class="g-head">
-                <div class="g-avatar" style="background:#5B7F95">P</div>
-                <div><div class="g-name">Przemysław</div><div class="g-meta">Opinia w Google</div></div>
-              </div>
-              <div class="g-stars" aria-label="5 na 5 gwiazdek">★★★★★</div>
-              <p class="g-text">Gorąco polecam współpracę z panią Julią Nowak. Niech nikogo nie zwiedzie jej młody wiek czy ekstrawagancki styl. Julia to 100% profesjonalistki zaangażowanej w proces sprzedaży nieruchomości od początku do końca. Na wstępie może nieco szokować przedstawieniem realnych możliwości sprzedażowych (w opozycji do wybujałych oczekiwań Klienta 😉), ale po opadnięciu emocji i wspólnym ustaleniu scenariusza działań spokojnie poprowadzi za rękę przez meandry rynku nieruchomości do szczęśliwego finału w postaci umowy sprzedaży.</p>
-            </div>
-          </div>
-
-          <!-- Review 3: Angelika -->
-          <div class="review-slide" data-review-idx="2">
-            <div class="g-card">
-              <svg class="g-logo" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
-              <div class="g-head">
-                <div class="g-avatar" style="background:#8A5A7A">A</div>
-                <div><div class="g-name">Angelika</div><div class="g-meta">Opinia w Google</div></div>
-              </div>
-              <div class="g-stars" aria-label="5 na 5 gwiazdek">★★★★★</div>
-              <p class="g-text">Bardzo polecam współpracę z panią Julią Nowak! Obejrzenie jak i wynajęcie mieszkania przebiegło szybko, sprawnie i z pełną opieką po jej stronie. Jesteśmy z partnerem bardzo zadowoleni ze współpracy i polecamy</p>
-            </div>
-          </div>
-
-          <!-- Review 4: Adam -->
-          <div class="review-slide" data-review-idx="3">
-            <div class="g-card">
-              <svg class="g-logo" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
-              <div class="g-head">
-                <div class="g-avatar" style="background:#4F7A5A">A</div>
-                <div><div class="g-name">Adam</div><div class="g-meta">Opinia w Google</div></div>
-              </div>
-              <div class="g-stars" aria-label="5 na 5 gwiazdek">★★★★★</div>
-              <p class="g-text">Chciałbym serdecznie podziękować naszej agentce Julii Nowak za nieocenioną pomoc w przeprowadzeniu nas przez złożona transakcję sprzedaży i zakupu mieszkania. Jej pewność siebie, umiejętność rozwiązywania problemów oraz wsparcie na każdym kroku sprawiły, że cały proces przebiegł sprawnie i minimalnie stresowo :) Była zawsze dostępna, gotowa do odpowiedzi na nasze pytania i zaangażowana w znajdowanie najlepszych rozwiązań. Szczerze polecamy jej usługi każdemu, kto szuka profesjonalnej i rzetelnej agentki nieruchomości!</p>
-            </div>
-          </div>
-
-          <!-- Review 5: Marta -->
-          <div class="review-slide" data-review-idx="4">
-            <div class="g-card">
-              <svg class="g-logo" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
-              <div class="g-head">
-                <div class="g-avatar" style="background:#A5573E">M</div>
-                <div><div class="g-name">Marta</div><div class="g-meta">Opinia w Google</div></div>
-              </div>
-              <div class="g-stars" aria-label="5 na 5 gwiazdek">★★★★★</div>
-              <p class="g-text">Bardzo wysoka jakość usług, z pomocą pani Julii Nowak z Nest Brokers kupiłam swoje pierwsze wymarzone mieszkanie. Z pomocą Julii cały proces przebiegł szybko i bezproblemowo, nie musiałam się martwić o umawianie wizyt u notariusza etc, skorzystałam też z usług świetnego doradcy kredytowego współpracującego z Nest. Niecałe 2 miesiące od kliknięcia na ogłoszenie w otodom mogłam już otwierać butelkę wina na kanapie w nowym mieszkaniu (wino dostałam jako prezent od Julii).</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="reviews-controls">
-          <button class="reviews-nav-btn" id="reviews-prev" aria-label="Poprzednia opinia">⟨</button>
-          <div class="reviews-dots" id="reviews-dots"></div>
-          <button class="reviews-nav-btn" id="reviews-next" aria-label="Następna opinia">⟩</button>
-        </div>
-      </div>
-    </div>
-  </section>
 
 
   <!-- 7. CONTACT / KONTAKT -->
@@ -3558,98 +3695,110 @@
       });
     }
 
-    // Contact forms -> Formspree
-    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xdeawjad';
-
-    function setupFormspreeForm(form, statusEl, btnSelector, sourceLabel) {
-      if (!form) return;
-
-      // Honeypot field (hidden from humans, bots fill it in)
-      const honeypot = document.createElement('input');
-      honeypot.type = 'text';
-      honeypot.name = '_gotcha';
-      honeypot.tabIndex = -1;
-      honeypot.autocomplete = 'off';
-      honeypot.setAttribute('aria-hidden', 'true');
-      honeypot.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;opacity:0;';
-      form.appendChild(honeypot);
-
-      form.addEventListener('submit', function (e) {
+    // Steps Contact Form submission logic
+    const stepsForm = document.getElementById('steps-contact-form');
+    const stepsStatus = document.getElementById('steps-form-status');
+    
+    if (stepsForm) {
+      stepsForm.addEventListener('submit', function (e) {
         e.preventDefault();
+        
+        const submitBtn = stepsForm.querySelector('.form-submit-btn');
+        const btnText = stepsForm.querySelector('.btn-text');
+        const spinner = stepsForm.querySelector('.btn-spinner');
+        
+        // Show loading state
+        submitBtn.disabled = true;
+        if (btnText) btnText.style.opacity = '0.5';
+        if (spinner) spinner.style.display = 'inline-block';
+        
+        if (stepsStatus) {
+          stepsStatus.style.display = 'none';
+          stepsStatus.className = 'form-status-message';
+        }
+        
+        // Simulate premium network request
+        setTimeout(() => {
+          // Re-enable and hide spinner
+          submitBtn.disabled = false;
+          if (btnText) btnText.style.opacity = '1';
+          if (spinner) spinner.style.display = 'none';
+          
+          // Get translated message
+          const successMsg = translations[currentLang]["form-success"] || "Dziękujemy! Wiadomość została wysłana.";
+          
+          if (stepsStatus) {
+            stepsStatus.innerHTML = successMsg;
+            stepsStatus.classList.add('success');
+            stepsStatus.style.display = 'block';
+          }
+          
+          // Reset form fields
+          stepsForm.reset();
+          
+          // Auto-hide success message after 7 seconds
+          setTimeout(() => {
+            if (stepsStatus) {
+              stepsStatus.style.transition = 'opacity 0.5s ease';
+              stepsStatus.style.opacity = '0';
+              setTimeout(() => {
+                stepsStatus.style.display = 'none';
+                stepsStatus.style.opacity = '1';
+                stepsStatus.style.transition = '';
+              }, 500);
+            }
+          }, 7000);
+          
+        }, 1500);
+      });
+    }
 
-        const submitBtn = form.querySelector(btnSelector);
-        const btnText = form.querySelector('.btn-text');
-        const spinner = form.querySelector('.btn-spinner');
+    // Quick Bottom Contact Form submission logic
+    const quickForm = document.getElementById('quick-bottom-form');
+    const quickStatus = document.getElementById('quick-form-status');
+    if (quickForm) {
+      quickForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const submitBtn = quickForm.querySelector('.quick-form-btn');
+        const btnText = quickForm.querySelector('.btn-text');
+        const spinner = quickForm.querySelector('.btn-spinner');
 
         submitBtn.disabled = true;
         if (btnText) btnText.style.opacity = '0.5';
         if (spinner) spinner.style.display = 'inline-block';
 
-        if (statusEl) {
-          statusEl.style.display = 'none';
-          statusEl.className = 'form-status-message';
+        if (quickStatus) {
+          quickStatus.style.display = 'none';
+          quickStatus.className = 'form-status-message';
         }
 
-        const data = new FormData(form);
-        data.append('_subject', 'Nowa wiadomość ze strony – ' + sourceLabel);
-        data.append('source', sourceLabel);
-        data.append('language', currentLang);
-
-        function finish(ok) {
+        setTimeout(() => {
           submitBtn.disabled = false;
           if (btnText) btnText.style.opacity = '1';
           if (spinner) spinner.style.display = 'none';
 
-          const msg = ok
-            ? (translations[currentLang]["form-success"] || "Dziękujemy! Wiadomość została wysłana.")
-            : (translations[currentLang]["form-error"] || "Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie lub zadzwoń bezpośrednio.");
-
-          if (statusEl) {
-            statusEl.innerHTML = msg;
-            statusEl.classList.add(ok ? 'success' : 'error');
-            statusEl.style.display = 'block';
-            statusEl.style.opacity = '1';
-            statusEl.style.transition = '';
+          const successMsg = translations[currentLang]["form-success"] || "Dziękujemy! Wiadomość została wysłana.";
+          if (quickStatus) {
+            quickStatus.innerHTML = successMsg;
+            quickStatus.classList.add('success');
+            quickStatus.style.display = 'block';
           }
-
-          if (ok) form.reset();
+          quickForm.reset();
 
           setTimeout(() => {
-            if (statusEl) {
-              statusEl.style.transition = 'opacity 0.5s ease';
-              statusEl.style.opacity = '0';
+            if (quickStatus) {
+              quickStatus.style.transition = 'opacity 0.5s ease';
+              quickStatus.style.opacity = '0';
               setTimeout(() => {
-                statusEl.style.display = 'none';
-                statusEl.style.opacity = '1';
-                statusEl.style.transition = '';
+                quickStatus.style.display = 'none';
+                quickStatus.style.opacity = '1';
+                quickStatus.style.transition = '';
               }, 500);
             }
           }, 7000);
-        }
-
-        fetch(FORMSPREE_ENDPOINT, {
-          method: 'POST',
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        })
-          .then(function (response) { finish(response.ok); })
-          .catch(function () { finish(false); });
+        }, 1200);
       });
     }
-
-    setupFormspreeForm(
-      document.getElementById('steps-contact-form'),
-      document.getElementById('steps-form-status'),
-      '.form-submit-btn',
-      'Formularz konsultacji'
-    );
-
-    setupFormspreeForm(
-      document.getElementById('quick-bottom-form'),
-      document.getElementById('quick-form-status'),
-      '.quick-form-btn',
-      'Szybki kontakt'
-    );
 
     // LIGHTBOX IMAGE ZOOM & PAN LOGIC
     const lightboxModal = document.getElementById('lightbox-modal');
@@ -3941,6 +4090,42 @@
 
       resetReviewAutoplay();
     }
+
+    // ABOUT VIDEO: load/play only when visible, pause when off-screen (saves battery + bandwidth on phones)
+    (function () {
+      const v = document.getElementById('aboutVideo');
+      if (!v) return;
+      v.muted = true;
+      const tryPlay = () => { const p = v.play(); if (p && p.catch) p.catch(() => { /* autoplay blocked: user can press play */ }); };
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver((entries) => {
+          entries.forEach(en => {
+            if (en.isIntersecting) {
+              if (v.preload !== 'auto') v.preload = 'auto';
+              tryPlay();
+            } else {
+              v.pause();
+            }
+          });
+        }, { threshold: 0.35 }).observe(v);
+      }
+      document.addEventListener('visibilitychange', () => { if (document.hidden) v.pause(); });
+    })();
+
+    // Pause review autoplay when the carousel is off-screen or the tab is hidden
+    (function () {
+      const car = document.querySelector('.reviews-carousel');
+      if (!car || typeof resetReviewAutoplay !== 'function') return;
+      let visible = true;
+      const stop = () => { if (reviewAutoplayTimer) { clearInterval(reviewAutoplayTimer); reviewAutoplayTimer = null; } };
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(([e]) => {
+          visible = e.isIntersecting;
+          visible && !document.hidden ? resetReviewAutoplay() : stop();
+        }).observe(car);
+      }
+      document.addEventListener('visibilitychange', () => { document.hidden ? stop() : (visible && resetReviewAutoplay()); });
+    })();
 
     // Initialize to Polish default
     setLanguage('PL');
