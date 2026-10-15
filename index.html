@@ -2687,10 +2687,11 @@
 
       <div class="about-right fade-up-init" style="transition-delay: 0.2s;">
         <div class="phone-mockup">
-          <video class="phone-screen" id="aboutVideo" poster="julia-poster.jpg" muted loop playsinline webkit-playsinline controls preload="none" disablepictureinpicture controlslist="nodownload noremoteplayback" width="720" height="1280">
-            <source src="julia-nowak.mp4" type="video/mp4">
+          <video class="phone-screen" id="aboutVideo" poster="julia-poster.jpg?v=2" muted loop playsinline webkit-playsinline controls preload="metadata" disablepictureinpicture controlslist="nodownload noremoteplayback" width="720" height="1280">
+            <source src="julia-nowak.mp4?v=2" type="video/mp4">
             Twoja przeglądarka nie obsługuje odtwarzania wideo.
           </video>
+          <div id="videoErr" style="display:none;position:absolute;inset:0;z-index:20;align-items:center;justify-content:center;text-align:center;padding:1.5rem;color:#fff;font:14px/1.5 sans-serif;background:rgba(25,17,7,.92)"></div>
         </div>
       </div>
     </div>
@@ -4096,6 +4097,16 @@
       const v = document.getElementById('aboutVideo');
       if (!v) return;
       v.muted = true;
+      const showErr = () => {
+        const box = document.getElementById('videoErr');
+        if (!box) return;
+        const c = v.error ? v.error.code : 'brak pliku (404)';
+        box.style.display = 'flex';
+        box.innerHTML = 'Nie można wczytać wideo.<br>Kod błędu: ' + c + '<br>Plik: ' + (v.currentSrc || 'julia-nowak.mp4');
+      };
+      v.addEventListener('error', showErr);
+      const srcEl = v.querySelector('source');
+      if (srcEl) srcEl.addEventListener('error', showErr);
       const tryPlay = () => { const p = v.play(); if (p && p.catch) p.catch(() => { /* autoplay blocked: user can press play */ }); };
       if ('IntersectionObserver' in window) {
         new IntersectionObserver((entries) => {
