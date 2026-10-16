@@ -2563,6 +2563,16 @@
       .fade-up-init { opacity: 1; transform: none; transition: none; }
       .scroll-indicator .line::after { animation: none; }
     }
+
+    /* HERO mobile: naglowek -> podtytul -> zdjecie w ramce telefonu -> przyciski CTA */
+    @media (max-width: 991px) {
+      .hero-container { display: grid; grid-template-columns: 1fr; gap: 0; justify-items: stretch; }
+      .hero-left { display: contents; }
+      .hero-headline    { order: 1; margin-bottom: 1rem; }
+      .hero-subheadline { order: 2; margin-bottom: 1.5rem; max-width: 100%; }
+      .hero-right       { order: 3; height: auto; min-height: 0; margin: 0 0 2rem; }
+      .hero-ctas        { order: 4; margin-bottom: 1rem; }
+    }
   </style>
 </head>
 <body>
